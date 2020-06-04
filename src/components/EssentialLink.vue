@@ -1,5 +1,5 @@
 <template>
-  <q-item clickable tag="a" :href="link">
+  <q-item clickable tag="router-link" :to="{name: routeName}">
     <q-item-section v-if="icon" avatar>
       <q-icon :name="icon" />
     </q-item-section>
@@ -15,8 +15,14 @@
 </template>
 
 <script>
+
+// import { QSideLink } from quasar
+
 export default {
   name: 'EssentialLink',
+  components: {
+    // QSideLink
+  },
   props: {
     title: {
       type: String,
@@ -28,9 +34,9 @@ export default {
       default: ''
     },
 
-    link: {
+    routeName: {
       type: String,
-      default: '#'
+      default: ''
     },
 
     icon: {

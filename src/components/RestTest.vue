@@ -6,10 +6,7 @@
         Skolmåltids-API:t är under utveckling.
       </p>
       <p>
-         Här är istället en rymdbild hämtad via NASAs API.
-      </p>
-      <p>
-        NASA API, Astronomy picture of the day: <a :href="result.url" target="_blank">{{result.title}}</a>
+         Här är istället dagens rymdbild hämtad via NASAs API: <a :href="result.url" target="_blank">{{result.title}}</a>
       </p>
     </div>
   </div>

@@ -31,6 +31,7 @@
         >
           Navigera
         </q-item-label>
+
         <EssentialLink
           v-for="link in essentialLinks"
           :key="link.title"
@@ -60,16 +61,21 @@ export default {
       leftDrawerOpen: false,
       essentialLinks: [
         {
+          title: 'Hem',
+          icon: 'home',
+          routeName: 'Home'
+        },
+        {
           title: 'Översikt',
           caption: 'Se alla bräden',
           icon: 'apps',
-          link: '#'
+          routeName: 'Dashboard'
         },
         {
           title: 'Inställningar',
           caption: 'Dina inställningar',
           icon: 'settings',
-          link: '#'
+          routeName: 'Settings'
         }
       ]
     }

@@ -1,7 +1,7 @@
 <template>
   <q-page class="flex flex-center">
     <div>
-      <h2>Svinnfinity 🍛♾️</h2>
+      <h2>Svinnfinity 🍛</h2>
       <RestTest></RestTest>
     </div>
   </q-page>
