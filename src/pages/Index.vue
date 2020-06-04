@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex flex-center">
+  <q-page class="">
     <div>
       <h2>Svinnfinity 🍛</h2>
       <RestTest></RestTest>
