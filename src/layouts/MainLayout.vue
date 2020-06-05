@@ -14,7 +14,6 @@
         <q-toolbar-title>
           Hållbar skolmåltid
         </q-toolbar-title>
-
       </q-toolbar>
     </q-header>
 
@@ -44,7 +43,7 @@
 </template>
 
 <script>
-import EssentialLink from 'components/EssentialLink'
+import EssentialLink from 'components/EssentialLink';
 
 export default {
   name: 'MainLayout',
@@ -75,7 +74,7 @@ export default {
           routeName: 'Settings'
         }
       ]
-    }
+    };
   }
-}
+};
 </script>

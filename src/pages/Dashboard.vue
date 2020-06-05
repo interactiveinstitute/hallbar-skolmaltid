@@ -6,7 +6,6 @@
       <p>
         Här är alla dina bräden för skolkök, lärare, elever och föräldrar.
       </p>
-
     </div>
   </q-page>
 </template>
@@ -17,5 +16,5 @@ export default {
   name: 'PageIndex',
   components: {
   }
-}
+};
 </script>

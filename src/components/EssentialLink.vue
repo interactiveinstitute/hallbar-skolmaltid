@@ -10,7 +10,6 @@
         {{ caption }}
       </q-item-label>
     </q-item-section>
-
   </q-item>
 </template>
 
@@ -44,5 +43,5 @@ export default {
       default: ''
     }
   }
-}
+};
 </script>

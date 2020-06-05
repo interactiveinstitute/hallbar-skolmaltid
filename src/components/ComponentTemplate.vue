@@ -1,40 +1,38 @@
 <template>
-  <div class="ComponentTemplate">
-
-  </div>
+  <div class="ComponentTemplate" />
 </template>
 
 <script>
 
-//import { mapState, mapGetters } from 'vuex'
-//import ComponentName from '@/components/ComponentName.vue'
+// import { mapState, mapGetters } from 'vuex'
+// import ComponentName from '@/components/ComponentName.vue'
 
 export default {
   name: 'ComponentTemplate',
   components: {
-    //ComponentName
+    // ComponentName
+  },
+  props: {
+    // value: Number
   },
   data: function () {
     return {
-      //name: "My Name"
-    }
-  },
-  props: {
-    //value: Number
+      // name: "My Name"
+    };
   },
   computed: {
-    /*...mapState([
+    /* ...mapState([
       'myState',
-    ]),*/
-    /*...mapGetters([
+    ]), */
+    /* ...mapGetters([
       'myGetter'
-    ])*/
-  },
-  methods: {
+    ]) */
   },
   mounted: function () {
+  },
+  methods: {
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

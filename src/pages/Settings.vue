@@ -12,5 +12,5 @@ export default {
   name: 'PageIndex',
   components: {
   }
-}
+};
 </script>
