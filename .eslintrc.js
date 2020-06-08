@@ -71,6 +71,9 @@ module.exports = {
     semi: [1, "always"],
     indent: [1, 2],
 
+    "no-unused-vars": process.env.NODE_ENV === 'production' ? 2 : 1,
+    "no-trailing-spaces": process.env.NODE_ENV === 'production' ? 2 : 1,
+
     "vue/max-attributes-per-line": ["error", {
       "singleline": 4,
       "multiline": {
