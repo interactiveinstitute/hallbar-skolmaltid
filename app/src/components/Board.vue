@@ -1,7 +1,7 @@
 <template>
   <div class="Board">
     <div>
-      <h2>{{ data.name }}</h2>
+      <h3>{{ data.name }}</h3>
       <div v-for="(chart, i) in data.charts" :key="i">
         <Chart :data="chart" />
       </div>
