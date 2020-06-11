@@ -61,6 +61,12 @@ module.exports = function (/* ctx */) {
       // gzip: true,
       // analyze: true,
 
+      // this is a configuration passed on
+      // to the underlying Webpack
+      // it's so we can use vs code debugger more easily (with full source maps)
+      // it increases build time though
+      devtool: 'source-map',
+
       // Options below are automatically set depending on the env, set them if you want to override
       // extractCSS: false,
 
