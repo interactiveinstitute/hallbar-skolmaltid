@@ -50,8 +50,14 @@ export default {
   display: flex;
 }
 
+.Board > * {
+  flex: 1;
+}
+
 pre {
   padding: 5px;
-  background: lightgray;
+  background: rgb(240, 240, 240);
+  border-left: 1px solid lightgray;
+  margin: 10px;
 }
 </style>
