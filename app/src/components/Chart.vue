@@ -57,8 +57,8 @@ export default {
             {
               data: [data.present, data.absent],
               backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)'
+                'rgba(99, 255, 132, 0.2)',
+                'rgba(255, 99, 132, 0.2)'
               ],
               borderWidth: 1
             }

@@ -1,0 +1,33 @@
+[debug] [2020-06-11T13:33:51.014Z] ----------------------------------------------------------------------
+[debug] [2020-06-11T13:33:51.015Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2020-06-11T13:33:51.016Z] CLI Version:   7.15.0
+[debug] [2020-06-11T13:33:51.016Z] Platform:      darwin
+[debug] [2020-06-11T13:33:51.016Z] Node Version:  v12.14.1
+[debug] [2020-06-11T13:33:51.016Z] Time:          Thu Jun 11 2020 15:33:51 GMT+0200 (GMT+02:00)
+[debug] [2020-06-11T13:33:51.016Z] ----------------------------------------------------------------------
+[debug] [2020-06-11T13:33:51.016Z] 
+[debug] [2020-06-11T13:33:51.023Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-06-11T13:33:51.023Z] > authorizing via signed-in user
+[debug] [2020-06-11T13:33:51.023Z] [iam] checking project hallbar-skolmaltid for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-06-11T13:33:51.025Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/hallbar-skolmaltid:testIamPermissions  
+
+[debug] [2020-06-11T13:33:51.373Z] <<< HTTP RESPONSE 200
+[debug] [2020-06-11T13:33:51.375Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/hallbar-skolmaltid  
+ 
+[debug] [2020-06-11T13:33:51.749Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'hallbar-skolmaltid'...
+[info] 
+[info] i  deploying hosting
+[debug] [2020-06-11T13:33:51.754Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/hallbar-skolmaltid/versions  
+
+[debug] [2020-06-11T13:33:53.364Z] <<< HTTP RESPONSE 200
+[info] i  hosting[hallbar-skolmaltid]: beginning deploy...
+[info] i  hosting[hallbar-skolmaltid]: found 24 files in ./dist/spa
+[debug] [2020-06-11T13:33:53.420Z] [hosting] hash cache [ZGlzdC9zcGE] stored for 24 files
+[debug] [2020-06-11T13:33:53.420Z] [hosting][hash queue][FINAL]
+[debug] [2020-06-11T13:33:53.420Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/hallbar-skolmaltid/versions/2fa00a8d16cad9d2:populateFiles  
+ <request body omitted>
+[debug] [2020-06-11T13:33:54.710Z] <<< HTTP RESPONSE 200
+[debug] [2020-06-11T13:33:54.712Z] [hosting][populate queue][FINAL]
+[debug] [2020-06-11T13:33:54.713Z] [hosting] uploads queued: 4
