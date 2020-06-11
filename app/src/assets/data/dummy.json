@@ -1,0 +1,7 @@
+{
+  "type": "presence",
+  "data": {
+    "present": 324,
+    "absent": 14
+  }
+}

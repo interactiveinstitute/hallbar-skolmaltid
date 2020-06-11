@@ -2,19 +2,28 @@
   <q-page class="">
     <div>
       <h2>Svinnfinity 🍛</h2>
-      <RestTest />
+      <!--RestTest /-->
+      <Graph :data="data" />
     </div>
   </q-page>
 </template>
 
 <script>
+// import RestTest from 'components/RestTest.vue';
+import Graph from 'components/Chart.vue';
 
-import RestTest from 'components/RestTest.vue'; // why is @ not src? @/components/... does not work.
+import data from 'assets/data/dummy.json';
 
 export default {
   name: 'PageIndex',
   components: {
-    RestTest
+    // RestTest,
+    Graph
+  },
+  data: function () {
+    return {
+      data: data
+    };
   }
 };
 </script>
