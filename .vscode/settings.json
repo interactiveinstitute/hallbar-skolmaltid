@@ -1,7 +1,16 @@
 {
   "vetur.validation.template": false,
-  
-  "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],
-  
-  "vetur.experimental.templateInterpolationService": true
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "vue"
+  ],
+  "javascript.format.enable": false, // seems to conflict with eslints formatter
+  "eslint.workingDirectories": [ // This is so we can have the .eslintrc.js in subfolders without problem
+    {
+      "mode": "auto"
+    }
+  ],
+  "vetur.experimental.templateInterpolationService": true,
 }
