@@ -1,7 +1,21 @@
 {
-  "type": "presence",
-  "data": {
-    "present": 324,
-    "absent": 14
+  "board": {
+    "name": "Mitt bräde",
+    "charts": [
+      {
+        "type": "presence",
+        "data": {
+          "present": 324,
+          "absent": 14
+        }
+      },
+      {
+        "type": "waste",
+        "data": {
+          "kitchen": 124,
+          "canteen": 83
+        }
+      }
+    ]
   }
 }

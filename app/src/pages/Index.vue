@@ -3,14 +3,14 @@
     <div>
       <h2>Svinnfinity 🍛</h2>
       <!--RestTest /-->
-      <Graph :data="data" />
+      <Board :data="data" />
     </div>
   </q-page>
 </template>
 
 <script>
 // import RestTest from 'components/RestTest.vue';
-import Graph from 'components/Chart.vue';
+import Board from 'components/Board.vue';
 
 import data from 'assets/data/dummy.json';
 
@@ -18,11 +18,11 @@ export default {
   name: 'PageIndex',
   components: {
     // RestTest,
-    Graph
+    Board
   },
   data: function () {
     return {
-      data: data
+      data: data.board
     };
   }
 };
