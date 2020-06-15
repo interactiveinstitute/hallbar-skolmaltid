@@ -1,0 +1,87 @@
+version: "3.5"
+
+services:
+  # Database
+  mongo-db:
+    image: mongo:3.6
+    hostname: mongo-db
+    container_name: db-mongo
+    expose:
+      - "27017"
+    ports:
+      - "27017:27017"
+    networks:
+      - default
+    command: --bind_ip_all --smallfiles
+    volumes:
+      - mongo-db:/data
+
+  # Orion is the context broker
+  orion:
+    image: fiware/orion:2.4.0
+    hostname: orion
+    container_name: fiware-orion
+    depends_on:
+      - mongo-db
+    networks:
+      - default
+    expose:
+      - "1026"
+    ports:
+      - "1026:1026"
+    command: -dbhost mongo-db -logLevel DEBUG
+    healthcheck:
+      test: curl --fail -s http://orion:1026/version || exit 1
+
+  # STH-Comet is persisting Short Term History to Mongo-DB
+  sth-comet:
+    image: fiware/sth-comet:2.7.0
+    hostname: sth-comet
+    container_name: fiware-sth-comet
+    depends_on:
+      - mongo-db
+    networks:
+      - default
+    ports:
+      - "8666:8666"  # localhost:8666
+    environment:
+      - STH_HOST=0.0.0.0
+      - STH_PORT=8666
+      - DB_PREFIX=sth_
+      - DB_URI=mongo-db:27017
+      - LOGOPS_LEVEL=DEBUG
+    healthcheck:
+      test: curl --fail -s http://localhost:8666/version || exit 1
+
+  # Apache NiFi data streams editor
+  draco:
+    image: ging/fiware-draco:1.1.0
+    hostname: draco
+    container_name: fiware-draco
+    networks:
+      - default
+    environment:
+      - NIFI_WEB_HTTP_PORT=9090
+    expose:
+      - "5050"
+      - "9090"
+    ports:
+      - "9090:9090"
+      - "5050:5050"
+    healthcheck:
+      test: curl --fail -s http://draco:9090/nifi-api/system-diagnostics || exit 1
+      start_period: 1m
+    volumes:
+      - type: bind
+        source: ./draco/conf
+        target: /opt/nifi/nifi-current/conf
+      # - draco/conf:/opt/nifi/nifi-current/conf
+
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: 172.18.100.0/24
+
+volumes:
+  mongo-db: ~
