@@ -3,7 +3,7 @@ version: "3.5"
 services:
   # Database
   mongo-db:
-    image: mongo:3.6
+    image: mongo:4.2
     hostname: mongo-db
     container_name: db-mongo
     expose:
@@ -12,7 +12,7 @@ services:
       - "27017:27017"
     networks:
       - default
-    command: --bind_ip_all --smallfiles
+    command: --bind_ip_all
     volumes:
       - mongo-db:/data
 
