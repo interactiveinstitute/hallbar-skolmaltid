@@ -48,7 +48,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"description\": \"Notify STH-Comet of all special diet absence changes\",\n  \"subject\": {\n    \"entities\": [\n      {\n        \"idPattern\": \"schoolAttendance.*\"\n      }\n    ],\n    \"condition\": {\n      \"attrs\": [\n        \"specialDietAbsence\"\n      ]\n    }\n  },\n  \"notification\": {\n    \"http\": {\n      \"url\": \"http://sth-comet:8666/notify\"\n    },\n    \"attrs\": [\n      \"specialDietAbsence\"\n    ],\n    \"attrsFormat\": \"legacy\"\n  }\n}"
+							"raw": "{\n  \"description\": \"Notify STH-Comet of all special diet absence changes\",\n  \"subject\": {\n    \"entities\": [\n      {\n        \"idPattern\": \"schoolAttendance.*\"\n      }\n    ],\n    \"condition\": {\n      \"attrs\": [\n        \"absent\"\n      ]\n    }\n  },\n  \"notification\": {\n    \"http\": {\n      \"url\": \"http://sth-comet:8666/notify\"\n    },\n    \"attrs\": [\n      \"absent\"\n    ],\n    \"attrsFormat\": \"legacy\"\n  }\n}"
 						},
 						"url": {
 							"raw": "http://{{orion}}/v2/subscriptions/",
@@ -160,7 +160,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": \"schoolAttendance1\",\n    \"type\": \"SchoolAttendance\",\n    \"source\": {\n    \t\"value\": \"http://www.vklass.se\"\n    },\n    \"totalAttendance\": {\n        \"type\": \"Integer\",\n        \"value\": 444\n    },\n    \"specialDietAbsence\": {\n    \t\"type\": \"Integer\",\n        \"value\": 44\n    },\n    \"refSchool\": {\n        \"type\": \"Reference\",\n        \"value\": \"storaSkolan1\"\n    }\n}"
+							"raw": "{\n    \"id\": \"schoolAttendance1\",\n    \"type\": \"SchoolAttendance\",\n    \"source\": {\n    \t\"value\": \"http://www.vklass.se\"\n    },\n    \"present\": {\n        \"type\": \"Integer\",\n        \"value\": 444\n    },\n    \"absent\": {\n    \t\"type\": \"Integer\",\n        \"value\": 44\n    },\n    \"refSchool\": {\n        \"type\": \"Reference\",\n        \"value\": \"storaSkolan1\"\n    }\n}"
 						},
 						"url": {
 							"raw": "http://{{orion}}/v2/entities/",
@@ -208,7 +208,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{orion}}/v2/entities/schoolAttendance1/attrs/specialDietAbsence/value",
+							"raw": "http://{{orion}}/v2/entities/schoolAttendance1/attrs/absent/value",
 							"protocol": "http",
 							"host": [
 								"{{orion}}"
@@ -218,7 +218,7 @@
 								"entities",
 								"schoolAttendance1",
 								"attrs",
-								"specialDietAbsence",
+								"absent",
 								"value"
 							]
 						},
@@ -426,7 +426,7 @@
 					"response": []
 				},
 				{
-					"name": "List N Sampled Values at an Offset",
+					"name": "(NOT ADAPTED YET) List N Sampled Values at an Offset",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -479,7 +479,7 @@
 					"response": []
 				},
 				{
-					"name": "(NOT ADAPTED YET) List the latest N sampled special diet absence values",
+					"name": "List the latest N sampled special diet absence values",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -498,7 +498,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{sth-comet}}/STH/v1/contextEntities/type/SchoolAttendance/id/schoolAttendance1/attributes/specialDietAbsence?lastN=3",
+							"raw": "http://{{sth-comet}}/STH/v1/contextEntities/type/SchoolAttendance/id/schoolAttendance1/attributes/absent?lastN=3",
 							"protocol": "http",
 							"host": [
 								"{{sth-comet}}"
@@ -512,7 +512,7 @@
 								"id",
 								"schoolAttendance1",
 								"attributes",
-								"specialDietAbsence"
+								"absent"
 							],
 							"query": [
 								{
@@ -829,13 +829,13 @@
 	],
 	"variable": [
 		{
-			"id": "bb0eb62d-6c73-432d-81dc-3a863f881f7e",
+			"id": "8bc95d52-c0d4-463b-a345-4e5c20b5c03c",
 			"key": "orion",
 			"value": "localhost:1026",
 			"type": "string"
 		},
 		{
-			"id": "27a9953c-cc4d-462e-9cbb-9b4abd5ec4e1",
+			"id": "082dbbed-9f6c-4af0-97a8-a4945d1fe2e0",
 			"key": "sth-comet",
 			"value": "localhost:8666",
 			"type": "string"
