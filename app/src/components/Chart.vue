@@ -1,6 +1,6 @@
 <template>
   <div class="Chart">
-    <h4>{{ chart.data.name }}</h4>
+    <h4>{{ chart.name }}</h4>
     <canvas :id="'myChart' + _uid" width="600" height="400" />
   </div>
 </template>
@@ -32,8 +32,7 @@ export default {
       const ctx = document
         .getElementById('myChart' + this._uid)
         .getContext('2d');
-      const chartTyped = new chartTypes[this.chart.data.type]();
-      this.myChart = new Chart(ctx, chartTyped.chartJSData(this.chart.data.values));
+      this.myChart = new Chart(ctx, this.chart.chartJSData(this.chart.values));
     }
   }
 };

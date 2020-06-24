@@ -29,15 +29,13 @@ export default {
         attached: ['school1']
       };
 
-      const chart = new Chart(chartData);
-      const chartTyped = new chartTypes[chart.data.type]();
-      chart.data.name = chartTyped.name;
+      const chart = new chartTypes[chartData.type]();
 
       const promiseArray = [];
-      chartTyped.endpoints(chartData.attached).forEach((ep, i) => {
+      chart.endpoints(chartData.attached).forEach((ep, i) => {
         promiseArray.push(
           backendUtils.getEntity(ep).then((response) => {
-            chart.data.values.push(response.data[i]);
+            chart.values.push(response.data[i]);
           })
         );
       });

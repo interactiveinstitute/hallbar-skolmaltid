@@ -1,18 +1,22 @@
-import ChartTypedBase from './chart-typed-base'; // path needs to be fixed
+import Chart from './chart';
+
+// Define new charts below
+// Each chart must return a ChartTyped object
 
 const attendance = function () {
-  const chartTyped = new ChartTypedBase();
+  const chart = new Chart();
 
-  chartTyped.name = 'Närvaro och frånvaro';
-  chartTyped.attachmentTypes = ['School'];
+  chart.type = 'attendance';
+  chart.name = 'Närvaro och frånvaro';
+  chart.attachmentTypes = ['School'];
 
-  chartTyped.endpoints = (attached) => {
+  chart.endpoints = (attached) => {
     return [
       '?type=SchoolAttendance&refSchool=' + attached[0]
     ];
   };
 
-  chartTyped.chartJSData = (values) => {
+  chart.chartJSData = (values) => {
     return {
       type: 'bar',
       data: {
@@ -41,7 +45,7 @@ const attendance = function () {
     };
   };
 
-  return chartTyped;
+  return chart;
 };
 
 export default {
