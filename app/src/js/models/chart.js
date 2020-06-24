@@ -4,7 +4,6 @@ export default function (chartInit) {
     type: '',
     values: [],
     name: ''
-    // attached: []
   };
 
   if (chartInit) {
@@ -13,7 +12,6 @@ export default function (chartInit) {
 
   function init (chartData) {
     data.type = chartData.type;
-    // data.attached = chartData.attached;
   }
 
   return {
