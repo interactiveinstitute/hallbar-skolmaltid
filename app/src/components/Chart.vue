@@ -1,15 +1,14 @@
 <template>
   <div class="Chart">
-    <h4>{{ name }}</h4>
+    <h4>{{ chart.data.name }}</h4>
     <canvas :id="'myChart' + _uid" width="600" height="400" />
   </div>
 </template>
 
 <script>
-// import { mapState, mapGetters } from 'vuex'
-// import ComponentName from '@/components/ComponentName.vue'
 
-import Chart from 'chart.js';
+import Chart from 'chart.js'; // NOTE! npm package Chart.js
+import chartTypes from '../js/models/chart-types'; // path needs to be fixed
 
 export default {
   name: 'Chart',
@@ -17,65 +16,24 @@ export default {
     // ComponentName
   },
   props: {
-    chart: Object
+    chart: { type: Object, default: function () { return {}; } } // Feels like overkill, but eslint wants default type that needs to be a function!?
   },
   data: function () {
     return {
-      myChart: undefined,
-      ctx: undefined,
-      name: ''
+      myChart: undefined
     };
   },
   computed: {
-    /* ...mapState([
-      'myState',
-    ]), */
-    /* ...mapGetters([
-      'myGetter'
-    ]) */
   },
   mounted: function () {
     this.initChart();
   },
   methods: {
     initChart: function () {
-      this.ctx = document
+      const ctx = document
         .getElementById('myChart' + this._uid)
         .getContext('2d');
-      if (this.chart.data.type === 'attendance') {
-        this.name = 'Närvaro och frånvaro';
-        this.chartAttendance(this.chart.data.values);
-      } else if (this.chart.data.type === 'waste') {
-        this.chartWaste(this.chart.data.values);
-      }
-    },
-    chartAttendance: function (values) {
-      this.myChart = new Chart(this.ctx, {
-        type: 'bar',
-        data: {
-          labels: ['Närvarande', 'Frånvarande'],
-          datasets: [
-            {
-              data: [values[0].attendance.value.present.value, values[0].attendance.value.absent.value],
-              backgroundColor: [
-                'rgba(99, 255, 132, 0.2)',
-                'rgba(255, 99, 132, 0.2)'
-              ],
-              borderWidth: 1
-            }
-          ]
-        },
-        options: {
-          legend: {
-            display: false
-          },
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        }
-      });
+      this.myChart = new Chart(ctx, chartTypes[this.chart.data.type](this.chart.data.values));
     }
   }
 };

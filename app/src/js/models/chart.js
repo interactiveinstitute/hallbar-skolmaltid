@@ -6,7 +6,8 @@ export default function (chartInit) {
   // reactive data
   const data = {
     type: '',
-    values: []
+    values: [],
+    name: ''
   };
 
   function init (chart) {

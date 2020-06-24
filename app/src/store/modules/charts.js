@@ -24,6 +24,7 @@ export default {
       // dummy chart for attendance
       const chart = new Chart();
       chart.data.type = 'attendance';
+      chart.data.name = 'Närvaro och frånvaro';
       backendUtils.getEntity('?type=SchoolAttendance&refSchool=' + payload.user.refSchool.value).then((response) => {
         chart.data.values.push(response.data[0]);
         commit('addChart', { chart: chart });
