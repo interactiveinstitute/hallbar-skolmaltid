@@ -1,12 +1,17 @@
 import Chart from './chart';
 
-// Define new charts below
+export default function (type) {
+  const chart = chartTypes[type]();
+  chart.type = type;
+  return chart;
+};
+
+// Define charts and add to chartTypes object at the bottom of the file
 // Each chart must return a Chart object
 
 const attendance = function () {
   const chart = new Chart();
 
-  chart.type = 'attendance';
   chart.name = 'Närvaro och frånvaro';
   chart.attachmentTypes = ['School'];
 
@@ -48,6 +53,7 @@ const attendance = function () {
   return chart;
 };
 
-export default {
+// Add charts in the chartTypes object
+const chartTypes = {
   attendance
 };

@@ -29,7 +29,8 @@ export default {
         attached: ['school1']
       };
 
-      const chart = new chartTypes[chartData.type]();
+      // const chart = new chartTypes[chartData.type]();
+      const chart = chartTypes(chartData.type);
 
       const promiseArray = [];
       chart.endpoints(chartData.attached).forEach((ep, i) => {
