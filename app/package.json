@@ -2,7 +2,7 @@
   "name": "hallbar-skolmaltid",
   "version": "0.0.1",
   "description": "Hållbar skolmåltid app",
-  "productName": "hallbar-skolmaltid",
+  "productName": "Hållbar skolmåltid",
   "cordovaId": "org.cordova.quasar.app",
   "capacitorId": "",
   "author": "RISE Research Institutes of Sweden",
