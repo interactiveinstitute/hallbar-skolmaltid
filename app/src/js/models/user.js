@@ -1,13 +1,13 @@
 export default function (userInit) {
-  if (userInit) {
-    init(userInit);
-  }
-
   // reactive data
   const data = {
     givenName: '',
     familyName: ''
   };
+
+  if (userInit) {
+    init(userInit);
+  }
 
   function init (user) {
     data.givenName = user.givenName.value;

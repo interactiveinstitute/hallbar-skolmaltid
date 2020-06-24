@@ -1,13 +1,13 @@
 export default function (schoolInit) {
-  if (schoolInit) {
-    init(schoolInit);
-  }
-
   // reactive data
   const data = {
     name: '',
     logo: ''
   };
+
+  if (schoolInit) {
+    init(schoolInit);
+  }
 
   function init (school) {
     data.name = school.name.value;

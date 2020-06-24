@@ -13,7 +13,6 @@ import chartTypes from '../js/models/chart-types'; // path needs to be fixed
 export default {
   name: 'Chart',
   components: {
-    // ComponentName
   },
   props: {
     chart: { type: Object, default: function () { return {}; } } // Feels like overkill, but eslint wants default type that needs to be a function!?
@@ -33,7 +32,8 @@ export default {
       const ctx = document
         .getElementById('myChart' + this._uid)
         .getContext('2d');
-      this.myChart = new Chart(ctx, chartTypes[this.chart.data.type](this.chart.data.values));
+      const chartTyped = new chartTypes[this.chart.data.type]();
+      this.myChart = new Chart(ctx, chartTyped.chartJSData(this.chart.data.values));
     }
   }
 };

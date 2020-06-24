@@ -1,16 +1,19 @@
 export default function (chartInit) {
-  if (chartInit) {
-    init(chartInit);
-  }
-
   // reactive data
   const data = {
     type: '',
     values: [],
     name: ''
+    // attached: []
   };
 
-  function init (chart) {
+  if (chartInit) {
+    init(chartInit);
+  }
+
+  function init (chartData) {
+    data.type = chartData.type;
+    // data.attached = chartData.attached;
   }
 
   return {

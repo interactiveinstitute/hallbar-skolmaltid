@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 
 import backendUtils from '../../js/backend-utils';
 import Chart from '../../js/models/chart'; // path needs to be fixed
+import chartTypes from '../../js/models/chart-types'; // path needs to be fixed
 
 Vue.use(Vuex);
 
@@ -20,13 +21,28 @@ export default {
   },
   actions: {
     initByUser: function ({ commit }, payload) {
-      // iterate over all user charts in all user boards
-      // dummy chart for attendance
-      const chart = new Chart();
-      chart.data.type = 'attendance';
-      chart.data.name = 'Närvaro och frånvaro';
-      backendUtils.getEntity('?type=SchoolAttendance&refSchool=' + payload.user.refSchool.value).then((response) => {
-        chart.data.values.push(response.data[0]);
+      // TODO: iterate over all user charts in all user boards
+
+      // dummy chart for attendance: should be fetched from database
+      const chartData = {
+        type: 'attendance',
+        attached: ['school1']
+      };
+
+      const chart = new Chart(chartData);
+      const chartTyped = new chartTypes[chart.data.type]();
+      chart.data.name = chartTyped.name;
+
+      const promiseArray = [];
+      chartTyped.endpoints(chartData.attached).forEach((ep, i) => {
+        promiseArray.push(
+          backendUtils.getEntity(ep).then((response) => {
+            chart.data.values.push(response.data[i]);
+          })
+        );
+      });
+
+      Promise.all(promiseArray).then((values) => {
         commit('addChart', { chart: chart });
       });
     }
