@@ -8,7 +8,6 @@
 <script>
 
 import Chart from 'chart.js'; // NOTE! npm package Chart.js
-import chartTypes from '../js/models/chart-types'; // path needs to be fixed
 
 export default {
   name: 'Chart',

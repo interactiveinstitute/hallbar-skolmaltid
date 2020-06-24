@@ -1,7 +1,7 @@
 import Chart from './chart';
 
 // Define new charts below
-// Each chart must return a ChartTyped object
+// Each chart must return a Chart object
 
 const attendance = function () {
   const chart = new Chart();
