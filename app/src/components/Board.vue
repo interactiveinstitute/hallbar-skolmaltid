@@ -1,19 +1,16 @@
 <template>
   <div class="Board">
     <div>
-      <h3>{{ data.name }}</h3>
-      <div v-for="(chart, i) in data.charts" :key="i">
-        <Chart :data="chart" />
+      <h3>Mitt bräde</h3>
+      <div v-for="(chart, i) in charts" :key="i">
+        <Chart :chart="chart" />
       </div>
     </div>
-    <pre>
-      {{ data }}
-    </pre>
   </div>
 </template>
 
 <script>
-// import { mapState, mapGetters } from 'vuex'
+import { mapState } from 'vuex';
 import Chart from 'components/Chart.vue';
 
 export default {
@@ -22,7 +19,6 @@ export default {
     Chart
   },
   props: {
-    data: Object
   },
   data: function () {
     return {
@@ -30,15 +26,11 @@ export default {
     };
   },
   computed: {
-    /* ...mapState([
-      'myState',
-    ]), */
-    /* ...mapGetters([
-      'myGetter'
-    ]) */
+    ...mapState('charts', [
+      'charts'
+    ])
   },
   mounted: function () {
-    console.log(this.data);
   },
   methods: {}
 };

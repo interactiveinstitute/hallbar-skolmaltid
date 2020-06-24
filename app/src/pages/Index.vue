@@ -1,9 +1,9 @@
 <template>
   <q-page class="">
     <div>
-      <h2>Svinnfinity 🍛</h2>
+      <!--h2>Svinnfinity 🍛</h2-->
       <!--RestTest /-->
-      <Board :data="data" />
+      <Board />
     </div>
   </q-page>
 </template>
@@ -12,7 +12,7 @@
 // import RestTest from 'components/RestTest.vue';
 import Board from 'components/Board.vue';
 
-import data from 'assets/data/dummy.json';
+// import data from 'assets/data/dummy.json';
 
 export default {
   name: 'PageIndex',
@@ -22,7 +22,7 @@ export default {
   },
   data: function () {
     return {
-      data: data.board
+      // data: data.board
     };
   }
 };

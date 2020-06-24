@@ -1,18 +1,21 @@
 <template>
   <div class="RestTest">
-    <q-btn color="primary" label="Hämta skolmåltidsdata" class="q-ma-md" @click="loadData" />
-    <div v-if="result">
-      <p>
-        Skolmåltids-API:t är under utveckling.
-      </p>
-      <p>
-        Här är istället dagens rymdbild hämtad via NASAs API: <a :href="result.url" target="_blank">{{ result.title }}</a>
-      </p>
-    </div>
+    <pre>
+      {{ user }}
+    </pre>
+    <pre>
+      {{ school }}
+    </pre>
+    <!--q-btn color="primary" label="Hämta skolmåltidsdata" class="q-ma-md" @click="loadData" /-->
+    <!--pre v-if="result">
+        {{ result }}
+    </pre-->
   </div>
 </template>
 
 <script>
+
+import { mapState } from 'vuex';
 
 export default {
   name: 'RestTest',
@@ -26,11 +29,16 @@ export default {
     };
   },
   computed: {
+    ...mapState('user', [
+      'user',
+      'school'
+    ])
   },
   mounted: function () {
+    this.loadData();
   },
   methods: {
-    loadData () {
+    loadNasaData () {
       this.$axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
         .then((response) => {
           this.result = response.data;
@@ -43,6 +51,9 @@ export default {
             icon: 'report_problem'
           });
         });
+    },
+    loadData () {
+      this.$store.dispatch('user/getUserById', { idUser: 'user1' });
     }
   }
 };

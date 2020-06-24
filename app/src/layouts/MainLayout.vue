@@ -25,7 +25,13 @@
     >
       <q-list>
         <q-item-label header class="text-grey-8">
-          Huvudmeny
+          Inloggad som:
+          <strong>
+            <br>
+            {{ user.data.givenName }} {{ user.data.familyName }}
+            <br>
+            {{ school.data.name }}
+          </strong>
         </q-item-label>
 
         <EssentialLink
@@ -43,6 +49,9 @@
 </template>
 
 <script>
+
+import { mapState } from 'vuex';
+
 import EssentialLink from 'components/EssentialLink';
 
 export default {
@@ -75,6 +84,13 @@ export default {
         }
       ]
     };
+  },
+  computed: {
+    ...mapState('user', [
+      'user',
+      'school'
+    ])
   }
+
 };
 </script>

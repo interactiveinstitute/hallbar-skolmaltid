@@ -12,5 +12,9 @@
       "mode": "auto"
     }
   ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
   "vetur.experimental.templateInterpolationService": true,
+  "vetur.format.enable": false,
 }
