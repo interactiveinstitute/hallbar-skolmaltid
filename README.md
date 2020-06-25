@@ -1,4 +1,4 @@
-# Hållbar Skolmåltid server
+# Hållbar Skolmåltid portal
 
 This is the repository for the Hållbar Skolmåltid project, started June 2020.
 
