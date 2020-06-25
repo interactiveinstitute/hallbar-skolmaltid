@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "1d8ba61e-2c1c-4b98-aefa-a344a11531f0",
+		"name": "vklass-demo-data",
+		"description": "end points for working with vklass",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "frånvaro rådata",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ }}?UID=780b3ad6-26a0-4fc5-8959-d6fe27ddbf74&startdate=2020-01-20&enddate=2020-03-30",
+					"host": [
+						"{{ }}"
+					],
+					"query": [
+						{
+							"key": "UID",
+							"value": "780b3ad6-26a0-4fc5-8959-d6fe27ddbf74"
+						},
+						{
+							"key": "startdate",
+							"value": "2020-01-20"
+						},
+						{
+							"key": "enddate",
+							"value": "2020-03-30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "frånvaroanmälda",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "x-password",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "xkOli8da-s!..wWiLoda0zxjfs-waufnepc.sdo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://export.vklass.net/output.ashx?UID=8de0d630-209d-41d6-bef2-87e3a2fd24c3&startdate=2020-01-20&enddate=2020-01-20",
+					"protocol": "https",
+					"host": [
+						"export",
+						"vklass",
+						"net"
+					],
+					"path": [
+						"output.ashx"
+					],
+					"query": [
+						{
+							"key": "UID",
+							"value": "8de0d630-209d-41d6-bef2-87e3a2fd24c3"
+						},
+						{
+							"key": "startdate",
+							"value": "2020-01-20"
+						},
+						{
+							"key": "enddate",
+							"value": "2020-01-20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "lunchmeny",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "x-password",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "xkOli8da-s!..wWiLoda0zxjfs-waufnepc.sdo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://export.vklass.net/output.ashx?UID=8de0d630-209d-41d6-bef2-87e3a2fd24c3&startdate=2020-01-20&enddate=2020-01-20",
+					"protocol": "https",
+					"host": [
+						"export",
+						"vklass",
+						"net"
+					],
+					"path": [
+						"output.ashx"
+					],
+					"query": [
+						{
+							"key": "UID",
+							"value": "8de0d630-209d-41d6-bef2-87e3a2fd24c3"
+						},
+						{
+							"key": "startdate",
+							"value": "2020-01-20"
+						},
+						{
+							"key": "enddate",
+							"value": "2020-01-20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "skolinfo",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "x-password",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "xkOli8da-s!..wWiLoda0zxjfs-waufnepc.sdo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "ps://export.vklass.net/output.ashx?UID=fac42e2f-e118-465a-ba23-a38fee3efb2e",
+					"protocol": "ps",
+					"host": [
+						"export",
+						"vklass",
+						"net"
+					],
+					"path": [
+						"output.ashx"
+					],
+					"query": [
+						{
+							"key": "UID",
+							"value": "fac42e2f-e118-465a-ba23-a38fee3efb2e"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "1345439e-fd8f-4014-96f7-c236831d7ade",
+			"key": "mainUrl",
+			"value": "https://export.vklass.net/output.ashx"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
