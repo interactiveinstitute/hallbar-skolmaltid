@@ -9,12 +9,33 @@
 		{
 			"name": "frånvaro rådata",
 			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "x-password",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "xkOli8da-s!..wWiLoda0zxjfs-waufnepc.sdo",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{ }}?UID=780b3ad6-26a0-4fc5-8959-d6fe27ddbf74&startdate=2020-01-20&enddate=2020-03-30",
+					"raw": "https://export.vklass.net/output.ashx?UID=780b3ad6-26a0-4fc5-8959-d6fe27ddbf74&startdate=2020-01-20&enddate=2020-03-30",
+					"protocol": "https",
 					"host": [
-						"{{ }}"
+						"export",
+						"vklass",
+						"net"
+					],
+					"path": [
+						"output.ashx"
 					],
 					"query": [
 						{
@@ -55,7 +76,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://export.vklass.net/output.ashx?UID=8de0d630-209d-41d6-bef2-87e3a2fd24c3&startdate=2020-01-20&enddate=2020-01-20",
+					"raw": "https://export.vklass.net/output.ashx?UID=8de0d630-209d-41d6-bef2-87e3a2fd24c3&startdate=2020-03-29&enddate=2020-03-30",
 					"protocol": "https",
 					"host": [
 						"export",
@@ -72,11 +93,11 @@
 						},
 						{
 							"key": "startdate",
-							"value": "2020-01-20"
+							"value": "2020-03-29"
 						},
 						{
 							"key": "enddate",
-							"value": "2020-01-20"
+							"value": "2020-03-30"
 						}
 					]
 				}
@@ -104,7 +125,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://export.vklass.net/output.ashx?UID=8de0d630-209d-41d6-bef2-87e3a2fd24c3&startdate=2020-01-20&enddate=2020-01-20",
+					"raw": "https://export.vklass.net/output.ashx?UID=f34f5dc5-c620-4dfb-9374-ca5a9f1d2db2&date=2020-01-20",
 					"protocol": "https",
 					"host": [
 						"export",
@@ -117,14 +138,10 @@
 					"query": [
 						{
 							"key": "UID",
-							"value": "8de0d630-209d-41d6-bef2-87e3a2fd24c3"
+							"value": "f34f5dc5-c620-4dfb-9374-ca5a9f1d2db2"
 						},
 						{
-							"key": "startdate",
-							"value": "2020-01-20"
-						},
-						{
-							"key": "enddate",
+							"key": "date",
 							"value": "2020-01-20"
 						}
 					]
@@ -153,8 +170,8 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "ps://export.vklass.net/output.ashx?UID=fac42e2f-e118-465a-ba23-a38fee3efb2e",
-					"protocol": "ps",
+					"raw": "https://export.vklass.net/output.ashx?UID=fac42e2f-e118-465a-ba23-a38fee3efb2e",
+					"protocol": "https",
 					"host": [
 						"export",
 						"vklass",
@@ -176,7 +193,7 @@
 	],
 	"variable": [
 		{
-			"id": "1345439e-fd8f-4014-96f7-c236831d7ade",
+			"id": "61175ec2-e2b7-479c-b3ee-f5978d5d2fec",
 			"key": "mainUrl",
 			"value": "https://export.vklass.net/output.ashx"
 		}
