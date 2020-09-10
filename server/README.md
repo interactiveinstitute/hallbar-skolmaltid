@@ -19,50 +19,55 @@ If that is not the case, follow [Docker's installation instructions](https://doc
 
 ## Execution
 
+### Starting
 To start the backend, do the following:
 
-    server/docker> docker-compose up
+```bash
+server/docker> docker-compose up
+```
 
 The first startup takes a while, since all containers are downloaded/built.
+
+### Persistent data
 **For empty database** - first time, or if mongo volume has been removed ... to initiate with some test data, either
 
 **import** *hallbar_skolmaltid_server_init* collection in [Postman](https://www.postman.com/) and run (locally, or change collection variables accordingly) collection using Postman 'Runner' feature.
 
 **OR**
 
-<details>
-  <summary>**restore** a saved database dump</summary>
+<details style="background-color=grey">
+  <summary> <b>restore</b> a saved database dump</summary>
+  
+  #### Restore
+  Copy to container:
 
-### Restore
-Copy to container:
+      server/docker> docker cp ../200618_rise_mongo.tar.gz db-mongo:/dump.tar.gz
 
-    server/docker> docker cp ../200618_rise_mongo.tar.gz db-mongo:/dump.tar.gz
+  Uncompress:
 
-Uncompress:
+      server/docker> docker exec db-mongo tar -xvzf dump.tar.gz
 
-    server/docker> docker exec db-mongo tar -xvzf dump.tar.gz
+  Restore:
 
-Restore:
+      server/docker> docker exec -it db-mongo mongorestore /dump
 
-    server/docker> docker exec -it db-mongo mongorestore /dump
+  #### Save
+  Dump:
 
-### Save
-Dump:
+      server/docker> docker exec -it db-mongo mongodump --host localhost --port 27017 -o dump
 
-    server/docker> docker exec -it db-mongo mongodump --host localhost --port 27017 -o dump
+  Compress:
 
-Compress:
+      server/docker> docker exec -it db-mongo tar -zcvf 200618_rise_mongo.tar.gz dump
 
-    server/docker> docker exec -it db-mongo tar -zcvf 200618_rise_mongo.tar.gz dump
+  Copy to host
 
-Copy to host
+      server/docker> docker cp db-mongo:/200618_rise_mongo.tar.gz ../
 
-    server/docker> docker cp db-mongo:/200618_rise_mongo.tar.gz ../
-
+---
 </details>
 
-To stop:
-
+### Stopping
     server/docker> docker-compose down
 
 ## Usage
