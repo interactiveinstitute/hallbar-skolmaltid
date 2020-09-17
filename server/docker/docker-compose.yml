@@ -58,6 +58,7 @@ services:
     image: ging/fiware-draco:1.1.0
     hostname: draco
     container_name: fiware-draco
+    user: "root"
     networks:
       - default
     environment:
