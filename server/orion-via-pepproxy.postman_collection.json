@@ -1,0 +1,358 @@
+{
+	"info": {
+		"_postman_id": "323dff97-d51b-480a-b7df-8107b55236fe",
+		"name": "Orion-via-pepproxy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Keyrock - create access token for alice-the-admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "05e1e9a0-cd88-4600-80aa-4569117a1fd5",
+						"exec": [
+							"pm.environment.set(\"access_token\", pm.response.json().access_token);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "tutorial-dckr-site-0000-clientsecret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "tutorial-dckr-site-0000-xpresswebapp",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "fiware-service",
+						"type": "text",
+						"value": "timeseries",
+						"disabled": true
+					},
+					{
+						"key": "fiware-servicepath",
+						"type": "text",
+						"value": "/",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "alice-the-admin@test.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://{{keyrock}}/oauth2/token",
+					"protocol": "http",
+					"host": [
+						"{{keyrock}}"
+					],
+					"path": [
+						"oauth2",
+						"token"
+					]
+				},
+				"description": "## Creating Context Data\n\nAt its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a  new entity (a store in **Berlin**). Any entity must have a `id` and `type` attributes, additional attributes are optional and will depend on the system being described. Each additional attribute should also have a defined `type` and a `value` attribute."
+			},
+			"response": []
+		},
+		{
+			"name": "Keyrock - create access token for bob-the-manager",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8365671b-54bc-4510-a0b0-808c9fa8ffce",
+						"exec": [
+							"pm.environment.set(\"access_token\", pm.response.json().access_token);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "tutorial-dckr-site-0000-clientsecret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "tutorial-dckr-site-0000-xpresswebapp",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "fiware-service",
+						"type": "text",
+						"value": "timeseries",
+						"disabled": true
+					},
+					{
+						"key": "fiware-servicepath",
+						"type": "text",
+						"value": "/",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "bob-the-manager@test.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://{{keyrock}}/oauth2/token",
+					"protocol": "http",
+					"host": [
+						"{{keyrock}}"
+					],
+					"path": [
+						"oauth2",
+						"token"
+					]
+				},
+				"description": "## Creating Context Data\n\nAt its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a  new entity (a store in **Berlin**). Any entity must have a `id` and `type` attributes, additional attributes are optional and will depend on the system being described. Each additional attribute should also have a defined `type` and a `value` attribute."
+			},
+			"response": []
+		},
+		{
+			"name": "Orion-Proxy - all entities using access token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "51c1232c-878c-472f-aea7-c45c2e1114da",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					},
+					{
+						"key": "fiware-service",
+						"type": "text",
+						"value": "timeseries"
+					},
+					{
+						"key": "fiware-servicepath",
+						"type": "text",
+						"value": "/"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://{{orion-proxy}}/v2/entities",
+					"protocol": "http",
+					"host": [
+						"{{orion-proxy}}"
+					],
+					"path": [
+						"v2",
+						"entities"
+					]
+				},
+				"description": "## Creating Context Data\n\nAt its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a  new entity (a store in **Berlin**). Any entity must have a `id` and `type` attributes, additional attributes are optional and will depend on the system being described. Each additional attribute should also have a defined `type` and a `value` attribute."
+			},
+			"response": []
+		},
+		{
+			"name": "Orion-Proxy - all entities using wrong token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9e6e21e3-47e3-4ca2-8c7b-529632a3bcf8",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "thisisnotavalidtoken",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					},
+					{
+						"key": "fiware-service",
+						"type": "text",
+						"value": "timeseries"
+					},
+					{
+						"key": "fiware-servicepath",
+						"type": "text",
+						"value": "/"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://{{orion-proxy}}/v2/entities",
+					"protocol": "http",
+					"host": [
+						"{{orion-proxy}}"
+					],
+					"path": [
+						"v2",
+						"entities"
+					]
+				},
+				"description": "## Creating Context Data\n\nAt its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a  new entity (a store in **Berlin**). Any entity must have a `id` and `type` attributes, additional attributes are optional and will depend on the system being described. Each additional attribute should also have a defined `type` and a `value` attribute."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "6497f9d5-a24d-44d1-9f3d-f11784d8453a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "1c4e7e36-9283-4fab-8f95-a60b4c6d38d9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "4797ee8d-3657-46b1-a8bd-93fb29d1a320",
+			"key": "orion-proxy",
+			"value": "localhost:1027"
+		},
+		{
+			"id": "9078f352-b7cc-409e-aa4d-94feda17f38b",
+			"key": "keyrock",
+			"value": "localhost:3005"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
