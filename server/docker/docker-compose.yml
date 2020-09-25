@@ -1,21 +1,6 @@
 version: "3.5"
 
 services:
-  # Database
-  mongo-db:
-    image: mongo:4.2
-    hostname: mongo-db
-    container_name: db-mongo
-    expose:
-      - "27017"
-    ports:
-      - "27017:27017"
-    networks:
-      - default
-    command: --bind_ip_all
-    volumes:
-      - mongo-db:/data
-
   # Orion is the context broker
   orion:
     image: fiware/orion:2.4.0
@@ -24,7 +9,8 @@ services:
     depends_on:
       - mongo-db
     networks:
-      - default
+      default:
+        ipv4_address: 172.18.1.9
     expose:
       - "1026"
     ports:
@@ -32,6 +18,70 @@ services:
     command: -dbhost mongo-db -logLevel DEBUG -corsOrigin __ALL
     healthcheck:
       test: curl --fail -s http://orion:1026/version || exit 1
+
+  # Keyrock is an Identity Management Front-End
+  keyrock:
+    image: fiware/idm:7.8.2
+    container_name: fiware-keyrock
+    hostname: keyrock
+    networks:
+      default:
+        ipv4_address: 172.18.1.5
+    depends_on:
+      - mysql-db
+    ports:
+      - "3005:3005" # localhost:3005
+    environment:
+      - DEBUG=idm:*
+      - IDM_DB_HOST=mysql-db
+      - IDM_DB_PASS_FILE=/run/secrets/my_secret_data
+      - IDM_DB_USER=root
+      - IDM_HOST=http://localhost:3005
+      - IDM_PORT=3005
+      - IDM_HTTPS_ENABLED=false
+      - IDM_HTTPS_PORT=3443
+      - IDM_ADMIN_USER=alice
+      - IDM_ADMIN_EMAIL=alice-the-admin@test.com
+      - IDM_ADMIN_PASS=test
+    secrets:
+      - my_secret_data
+    healthcheck:
+      test: curl --fail -s http://localhost:3005/version || exit 1
+
+  # PEP Proxy for Orion
+  orion-proxy:
+    image: fiware/pep-proxy:7.8.2
+    container_name: fiware-orion-proxy
+    hostname: orion-proxy
+    networks:
+      default:
+        ipv4_address: 172.18.1.10
+    depends_on:
+      - keyrock
+    deploy:
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "1027:1027" # localhost:1027
+    expose:
+      - "1027"
+    environment:
+      - PEP_PROXY_APP_HOST=orion
+      - PEP_PROXY_APP_PORT=1026
+      - PEP_PROXY_PORT=1027
+      - PEP_PROXY_IDM_HOST=keyrock
+      - PEP_PROXY_HTTPS_ENABLED=false
+      - PEP_PROXY_AUTH_ENABLED=false
+      - PEP_PROXY_IDM_SSL_ENABLED=false
+      - PEP_PROXY_IDM_PORT=3005
+      - PEP_PROXY_APP_ID=tutorial-dckr-site-0000-xpresswebapp
+      - PEP_PROXY_USERNAME=pep_proxy_00000000-0000-0000-0000-000000000000
+      - PEP_PASSWORD=test
+      - PEP_PROXY_PDP=idm
+      - PEP_PROXY_MAGIC_KEY=1234
+      - PEP_PROXY_PUBLIC_PATHS=/version
+    healthcheck:
+      test: curl --fail -s http://orion-proxy:1027/version || exit 1
 
   # STH-Comet is persisting Short Term History to Mongo-DB
   sth-comet:
@@ -53,6 +103,41 @@ services:
     healthcheck:
       test: curl --fail -s http://localhost:8666/version || exit 1
 
+  # PEP Proxy for Draco
+  draco-proxy:
+    image: fiware/pep-proxy:7.8.2
+    container_name: fiware-draco-proxy
+    hostname: draco-proxy
+    networks:
+      default:
+        ipv4_address: 172.18.1.16
+    depends_on:
+      - keyrock
+    deploy:
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "1028:1028" # localhost:1028
+    expose:
+      - "1028"
+    environment:
+      - PEP_PROXY_APP_HOST=draco
+      - PEP_PROXY_APP_PORT=9090
+      - PEP_PROXY_PORT=1028
+      - PEP_PROXY_IDM_HOST=keyrock
+      - PEP_PROXY_HTTPS_ENABLED=false
+      - PEP_PROXY_AUTH_ENABLED=false
+      - PEP_PROXY_IDM_SSL_ENABLED=false
+      - PEP_PROXY_IDM_PORT=3005
+      - PEP_PROXY_APP_ID=tutorial-dckr-site-0000-xpresswebapp
+      - PEP_PROXY_USERNAME=pep_proxy_00000000-0000-0000-0000-000000000000
+      - PEP_PASSWORD=test
+      - PEP_PROXY_PDP=idm
+      - PEP_PROXY_MAGIC_KEY=1234
+      - PEP_PROXY_PUBLIC_PATHS=/version
+    healthcheck:
+      test: curl --fail -s http://draco-proxy:1028/version || exit 1
+
   # Apache NiFi data streams editor
   draco:
     image: ging/fiware-draco:1.1.0
@@ -60,7 +145,8 @@ services:
     container_name: fiware-draco
     user: "root"
     networks:
-      - default
+      default:
+        ipv4_address: 172.18.1.15
     environment:
       - NIFI_WEB_HTTP_PORT=9090
     expose:
@@ -78,11 +164,57 @@ services:
         target: /opt/nifi/nifi-current/conf
       # - draco/conf:/opt/nifi/nifi-current/conf
 
+  # Database for orion/comet
+  mongo-db:
+    image: mongo:4.2
+    hostname: mongo-db
+    container_name: db-mongo
+    expose:
+      - "27017"
+    ports:
+      - "27017:27017"
+    networks:
+      - default
+    command: --bind_ip_all
+    volumes:
+      - mongo-db:/data
+    healthcheck:
+      test: |
+        host=`hostname --ip-address || echo '127.0.0.1'`;
+        mongo --quiet $host/test --eval 'quit(db.runCommand({ ping: 1 }).ok ? 0 : 2)' && echo 0 || echo 1
+
+  # Database for keyrock
+  mysql-db:
+    restart: always
+    image: mysql:5.7
+    hostname: mysql-db
+    container_name: db-mysql
+    expose:
+      - "3306"
+    ports:
+      - "3306:3306" # localhost:3306
+    networks:
+      default:
+        ipv4_address: 172.18.1.6
+    environment:
+      - "MYSQL_ROOT_PASSWORD_FILE=/run/secrets/my_secret_data"
+      - "MYSQL_ROOT_HOST=172.18.1.5" # Allow Keyrock to access this database
+    volumes:
+      - mysql-db:/var/lib/mysql
+      - ../mysql-data:/docker-entrypoint-initdb.d/:ro
+    secrets:
+      - my_secret_data
+
 networks:
   default:
     ipam:
       config:
-        - subnet: 172.18.100.0/24
+        - subnet: 172.18.1.0/24
 
 volumes:
+  mysql-db: ~
   mongo-db: ~
+
+secrets:
+  my_secret_data:
+    file: ../secrets.txt
