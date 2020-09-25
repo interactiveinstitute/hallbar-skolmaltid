@@ -15,7 +15,7 @@ If that is not the case, follow [Docker's installation instructions](https://doc
 
 ## Installation
 
-...
+<done first time during start, see below>
 
 ## Execution
 
@@ -101,3 +101,11 @@ Query orion for user1's related school1's schoolAttendanceObserved between dates
 ### Draco
 The web GUI is available at http://localhost:9090/nifi
 Currently the "flow" is saved/mapped from the server/docker/draco/conf directory.
+
+### Current demo scenario
+* As before, build/start according _Starting_ above
+* As before, load data using _hallbar_skolmaltid_server_init_ postman collection, see above (collection may have been updated!)
+* Use the _orion_via_pepproxy_ postman collection for usage ideas
+  - first use one of the _create_access_token_..._ calls to authenticate
+  - then use any of the other calls (which automatically sends the access_token along)
+Regarding users/authentication, it's using the same setup as [this tutorial](https://github.com/FIWARE/tutorials.PEP-Proxy#securing-the-orion-context-broker), look there if you're curious about keyrock/wilma.
