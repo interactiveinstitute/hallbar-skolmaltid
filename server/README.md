@@ -70,6 +70,15 @@ The first startup takes a while, since all containers are downloaded/built.
 ### Stopping
     server/docker> docker-compose down
 
+### Removing databases (orion/comet/keyrock)
+If you don't need to keep _any_ of your local volumes, the simplest is to remove them all
+
+    server/docker> docker-compose down
+    server/docker> docker volume rm $(docker volume ls -f dangling=true -q)
+    server/docker> docker-compose down
+
+... or if you have other volumes you want to keep, just use _docker volume rm_ to delete one by one.
+
 ## Usage
 
 ### Mongo DB
