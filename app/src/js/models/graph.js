@@ -4,7 +4,8 @@ export default function () {
     values: [],
     name: '',
     attachmentTypes: [],
-    endpoints: (attached) => {},
-    chartJSData: (values) => {}
+    endpoints: attached => {},
+    staticData: values => {},
+    chartJSData: values => {}
   };
 }

@@ -2,8 +2,8 @@
   <div class="Board">
     <div>
       <h3>Mitt bräde</h3>
-      <div v-for="(chart, i) in charts" :key="i">
-        <Chart :chart="chart" />
+      <div v-for="(graph, i) in graphs" :key="i">
+        <Graph :graph="graph" />
       </div>
     </div>
   </div>
@@ -11,27 +11,23 @@
 
 <script>
 import { mapState } from 'vuex';
-import Chart from 'components/Chart.vue';
+import Graph from 'components/Graph.vue';
 
 export default {
   name: 'ComponentTemplate',
   components: {
-    Chart
+    Graph
   },
-  props: {
-  },
+  props: {},
   data: function () {
     return {
       // name: "My Name"
     };
   },
   computed: {
-    ...mapState('charts', [
-      'charts'
-    ])
+    ...mapState('graphs', ['graphs'])
   },
-  mounted: function () {
-  },
+  mounted: function () {},
   methods: {}
 };
 </script>

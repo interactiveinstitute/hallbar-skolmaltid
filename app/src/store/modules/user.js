@@ -13,9 +13,7 @@ export default {
     user: new User(),
     school: new School()
   },
-  getters: {
-
-  },
+  getters: {},
   mutations: {
     setUser: function (state, payload) {
       // state.user = payload.user;
@@ -28,14 +26,19 @@ export default {
   },
   actions: {
     getUserById: function ({ dispatch, commit }, payload) {
-      backendUtils.getEntity(payload.idUser).then((response) => {
+      backendUtils.getEntity(payload.idUser).then(response => {
         commit('setUser', { user: response.data });
         dispatch('getSchoolById', { idSchool: response.data.refSchool.value });
-        dispatch('charts/initByUser', { user: response.data }, { root: true });
+        // dispatch('graphs/initByUser', { user: response.data }, { root: true });
+        dispatch(
+          'boards/setBoardsByUser',
+          { user: response.data },
+          { root: true }
+        );
       });
     },
     getSchoolById: function ({ commit }, payload) {
-      backendUtils.getEntity(payload.idSchool).then((response) => {
+      backendUtils.getEntity(payload.idSchool).then(response => {
         commit('setSchool', { school: response.data });
       });
     }

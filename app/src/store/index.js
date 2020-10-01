@@ -2,7 +2,8 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 import user from './modules/user.js';
-import charts from './modules/charts.js';
+import boards from './modules/boards.js';
+import graphs from './modules/graphs.js';
 
 Vue.use(Vuex);
 
@@ -19,7 +20,8 @@ export default (function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
       user: user,
-      charts: charts
+      boards: boards,
+      graphs: graphs
     },
 
     // enable strict mode (adds overhead!)
