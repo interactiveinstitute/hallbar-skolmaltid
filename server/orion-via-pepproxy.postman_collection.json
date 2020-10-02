@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "323dff97-d51b-480a-b7df-8107b55236fe",
+		"_postman_id": "e2e26ce7-2c6d-4a9e-8c8c-b0772a4ec226",
 		"name": "Orion-via-pepproxy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,7 +11,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "05e1e9a0-cd88-4600-80aa-4569117a1fd5",
+						"id": "a9818d69-8202-43b0-822d-ee8e0c39e00d",
 						"exec": [
 							"pm.environment.set(\"access_token\", pm.response.json().access_token);",
 							""
@@ -104,7 +104,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "8365671b-54bc-4510-a0b0-808c9fa8ffce",
+						"id": "b68b7728-206c-4a3a-87f3-9b37f2a192da",
 						"exec": [
 							"pm.environment.set(\"access_token\", pm.response.json().access_token);",
 							""
@@ -197,7 +197,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "51c1232c-878c-472f-aea7-c45c2e1114da",
+						"id": "924b0806-f29c-485f-a9e6-55151b2eeb57",
 						"exec": [
 							""
 						],
@@ -261,7 +261,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9e6e21e3-47e3-4ca2-8c7b-529632a3bcf8",
+						"id": "76deb34a-f6cc-4774-a846-2bb0421fac64",
 						"exec": [
 							""
 						],
@@ -318,13 +318,133 @@
 				"description": "## Creating Context Data\n\nAt its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a  new entity (a store in **Berlin**). Any entity must have a `id` and `type` attributes, additional attributes are optional and will depend on the system being described. Each additional attribute should also have a defined `type` and a `value` attribute."
 			},
 			"response": []
+		},
+		{
+			"name": "Orion - Get one entity - e.g. user1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					},
+					{
+						"key": "fiware-service",
+						"value": "timeseries"
+					},
+					{
+						"key": "fiware-servicepath",
+						"value": "/"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://{{orion-proxy}}/v2/entities/urn:ngsi-ld:Person:user1",
+					"protocol": "http",
+					"host": [
+						"{{orion-proxy}}"
+					],
+					"path": [
+						"v2",
+						"entities",
+						"urn:ngsi-ld:Person:user1"
+					]
+				},
+				"description": "Once a dynamic context system is up and running, we need to inform **STH-Comet** directly of changes in context.\nThe rate of change of the **Motion Sensor** is driven by events in the real-world. We need to receive\nevery event to be able to aggregate the results.\n\nThis is done by making a POST request to the `/v2/subscription` endpoint of the Orion Context Broker.\n\n* The `fiware-service` and `fiware-servicepath` headers are used to filter the subscription to only listen to measurements from the attached IoT Sensors\n* The `idPattern` in the request body ensures that **STH-Comet** will be informed of all **Motion Sensor** data changes.\n* The notification `url` must match the configured `STH_PORT`\n* The `attrsFormat=legacy` is required since **STH-Comet** currently only accepts notifications in the older NGSI v1 format."
+			},
+			"response": []
+		},
+		{
+			"name": "Orion - Filter entities - e.g. user1's boards",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					},
+					{
+						"key": "fiware-service",
+						"value": "timeseries"
+					},
+					{
+						"key": "fiware-servicepath",
+						"value": "/"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://{{orion-proxy}}/v2/entities/?type=Board&q=refUser==urn:ngsi-ld:Person:user1",
+					"protocol": "http",
+					"host": [
+						"{{orion-proxy}}"
+					],
+					"path": [
+						"v2",
+						"entities",
+						""
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "Board"
+						},
+						{
+							"key": "q",
+							"value": "refUser==urn:ngsi-ld:Person:user1"
+						}
+					]
+				},
+				"description": "Once a dynamic context system is up and running, we need to inform **STH-Comet** directly of changes in context.\nThe rate of change of the **Motion Sensor** is driven by events in the real-world. We need to receive\nevery event to be able to aggregate the results.\n\nThis is done by making a POST request to the `/v2/subscription` endpoint of the Orion Context Broker.\n\n* The `fiware-service` and `fiware-servicepath` headers are used to filter the subscription to only listen to measurements from the attached IoT Sensors\n* The `idPattern` in the request body ensures that **STH-Comet** will be informed of all **Motion Sensor** data changes.\n* The notification `url` must match the configured `STH_PORT`\n* The `attrsFormat=legacy` is required since **STH-Comet** currently only accepts notifications in the older NGSI v1 format."
+			},
+			"response": []
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "6497f9d5-a24d-44d1-9f3d-f11784d8453a",
+				"id": "3eed6185-f7c1-4522-9c73-72ae7d0b9b45",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -334,7 +454,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "1c4e7e36-9283-4fab-8f95-a60b4c6d38d9",
+				"id": "a5b04e4e-a5c6-4b9f-aa13-b4a1f89d4257",
 				"type": "text/javascript",
 				"exec": [
 					""

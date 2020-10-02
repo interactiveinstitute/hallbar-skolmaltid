@@ -84,24 +84,24 @@ services:
       test: curl --fail -s http://orion-proxy:1027/version || exit 1
 
   # STH-Comet is persisting Short Term History to Mongo-DB
-  sth-comet:
-    image: fiware/sth-comet:2.7.0
-    hostname: sth-comet
-    container_name: fiware-sth-comet
-    depends_on:
-      - mongo-db
-    networks:
-      - default
-    ports:
-      - "8666:8666"  # localhost:8666
-    environment:
-      - STH_HOST=0.0.0.0
-      - STH_PORT=8666
-      - DB_PREFIX=sth_
-      - DB_URI=mongo-db:27017
-      - LOGOPS_LEVEL=DEBUG
-    healthcheck:
-      test: curl --fail -s http://localhost:8666/version || exit 1
+  # sth-comet:
+  #   image: fiware/sth-comet:2.7.0
+  #   hostname: sth-comet
+  #   container_name: fiware-sth-comet
+  #   depends_on:
+  #     - mongo-db
+  #   networks:
+  #     - default
+  #   ports:
+  #     - "8666:8666"  # localhost:8666
+  #   environment:
+  #     - STH_HOST=0.0.0.0
+  #     - STH_PORT=8666
+  #     - DB_PREFIX=sth_
+  #     - DB_URI=mongo-db:27017
+  #     - LOGOPS_LEVEL=DEBUG
+  #   healthcheck:
+  #     test: curl --fail -s http://localhost:8666/version || exit 1
 
   # PEP Proxy for Draco
   draco-proxy:
