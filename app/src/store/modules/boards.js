@@ -11,7 +11,11 @@ export default {
   state: {
     boards: []
   },
-  getters: {},
+  getters: {
+    getBoardById: state => id => {
+      return state.boards.find(board => board.id === id);
+    }
+  },
   mutations: {
     setBoards: function (state, payload) {
       state.boards = payload.boards;

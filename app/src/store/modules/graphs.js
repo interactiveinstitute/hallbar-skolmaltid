@@ -12,7 +12,11 @@ export default {
   state: {
     graphs: []
   },
-  getters: {},
+  getters: {
+    getGraphsByBoardId: state => id => {
+      return state.graphs.filter(graph => graph.refBoard.value === id);
+    }
+  },
   mutations: {
     addGraph: function (state, payload) {
       state.graphs.push(payload.graph);
@@ -32,24 +36,24 @@ export default {
       });
     },
     addGraph: function ({ commit }, payload) {
-      // const graph = new graphTypes[graphData.type]();
       const graph = graphTypes(payload.graph.refGraphType.value);
       const promiseArray = [];
-      graph.endpoints(payload.graph.connectedData).forEach((ep, i) => {
+      graph.endpoints(payload.graph.connectedData.value).forEach((ep, i) => {
         if (ep) {
           promiseArray.push(
             backendUtils.getEntity(ep).then(response => {
-              graph.values[i] = response.data[i];
+              graph.values[i] = response.data[0];
             })
           );
         } else {
-          console.log(payload.graph.connectedData.value[i]);
           graph.values[i] = payload.graph.connectedData.value[i];
         }
       });
 
+      payload.graph.chart = graph;
+
       Promise.all(promiseArray).then(values => {
-        commit('addGraph', { graph: graph });
+        commit('addGraph', { graph: payload.graph });
       });
     }
   }

@@ -34,14 +34,14 @@ const graphTypeSchoolAttendance = function () {
   const graph = new Graph();
 
   graph.name = 'Närvaro och frånvaro';
-  graph.attachmentTypes = ['School'];
+  graph.attachmentTypes = ['Text', 'School'];
 
   graph.endpoints = attached => {
-    return ['?type=SchoolAttendance&refSchool=' + attached[0]];
+    return [null, '?type=SchoolAttendance&q=refSchool==' + attached[1]];
   };
 
   graph.staticData = values => {
-    return [];
+    return [values[0]];
   };
 
   graph.chartJSData = values => {
@@ -52,8 +52,8 @@ const graphTypeSchoolAttendance = function () {
         datasets: [
           {
             data: [
-              values[0].attendance.value.present.value,
-              values[0].attendance.value.absent.value
+              values[1].attendance.value.present.value,
+              values[1].attendance.value.absent.value
             ],
             backgroundColor: [
               'rgba(99, 255, 132, 0.2)',

@@ -1,7 +1,7 @@
 <template>
   <div class="Board">
     <div>
-      <h3>Mitt bräde</h3>
+      <h3>{{ board.id }}</h3>
       <div v-for="(graph, i) in graphs" :key="i">
         <Graph :graph="graph" />
       </div>
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapGetters } from 'vuex';
 import Graph from 'components/Graph.vue';
 
 export default {
@@ -18,14 +18,20 @@ export default {
   components: {
     Graph
   },
-  props: {},
+  props: {
+    board: Object
+  },
   data: function () {
     return {
       // name: "My Name"
     };
   },
   computed: {
-    ...mapState('graphs', ['graphs'])
+    // ...mapState('graphs', ['graphs']),
+    ...mapGetters('graphs', ['getGraphsByBoardId']),
+    graphs: function () {
+      return this.getGraphsByBoardId(this.board.id);
+    }
   },
   mounted: function () {},
   methods: {}

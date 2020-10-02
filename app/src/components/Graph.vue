@@ -1,7 +1,7 @@
 <template>
   <div class="Graph">
-    <h4>{{ graph.name }}</h4>
-    <div v-for="sd in graph.staticData(graph.values)" :key="sd">
+    <h4>{{ graph.chart.name }}</h4>
+    <div v-for="sd in graph.chart.staticData(graph.chart.values)" :key="sd">
       {{ sd }}
     </div>
     <canvas :id="'myChart' + _uid" width="600" height="400" />
@@ -36,7 +36,10 @@ export default {
       const ctx = document
         .getElementById('myChart' + this._uid)
         .getContext('2d');
-      this.myChart = new Chart(ctx, this.graph.chartJSData(this.graph.values));
+      this.myChart = new Chart(
+        ctx,
+        this.graph.chart.chartJSData(this.graph.chart.values)
+      );
     }
   }
 };

@@ -462,7 +462,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": \"board1\",\n    \"type\": \"Board\",\n    \"source\": {\n    \t\"value\": \"user\"\n    },\n    \"publicPresentationUrl\": {\n        \"type\": \"URL\",\n        \"value\": \"http://just.do.it\"\n    },\n    \"refUser\": {\n        \"type\": \"Reference\",\n        \"value\": \"user1\"\n    }\n}",
+					"raw": "{\n    \"id\": \"board2\",\n    \"type\": \"Board\",\n    \"source\": {\n    \t\"value\": \"user\"\n    },\n    \"publicPresentationUrl\": {\n        \"type\": \"URL\",\n        \"value\": \"http://just.do.it\"\n    },\n    \"refUser\": {\n        \"type\": \"Reference\",\n        \"value\": \"user1\"\n    }\n}",
 					"options": {
 						"raw": {}
 					}
@@ -548,7 +548,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": \"graphTypeSchoolAttendance\",\n    \"type\": \"GraphType\",\n    \"source\": {\n    \t\"value\": \"user\"\n    },\n    \"dataType\": {\n        \"type\": \"Text\",\n        \"value\": [\"School\"]\n    }\n}",
+					"raw": "{\n    \"id\": \"graphTypeSchoolAttendance\",\n    \"type\": \"GraphType\",\n    \"source\": {\n    \t\"value\": \"user\"\n    },\n    \"dataType\": {\n        \"type\": \"Text\",\n        \"value\": [\"Text\",\"School\"]\n    }\n}",
 					"options": {
 						"raw": {}
 					}
@@ -634,7 +634,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": \"graph2\",\n    \"type\": \"Graph\",\n    \"source\": {\n    \t\"value\": \"user\"\n    },\n    \"refBoard\": {\n        \"type\": \"Reference\",\n        \"value\": \"board1\"\n    },\n    \"refGraphType\": {\n        \"type\": \"Reference\",\n        \"value\": \"graphTypeSchoolAttendance\"\n    },\n    \"connectedData\": {\n        \"type\": \"Text\",\n        \"value\": [\"school1\"]\n    }\n}",
+					"raw": "{\n    \"id\": \"graph2\",\n    \"type\": \"Graph\",\n    \"source\": {\n    \t\"value\": \"user\"\n    },\n    \"refBoard\": {\n        \"type\": \"Reference\",\n        \"value\": \"board1\"\n    },\n    \"refGraphType\": {\n        \"type\": \"Reference\",\n        \"value\": \"graphTypeSchoolAttendance\"\n    },\n    \"connectedData\": {\n        \"type\": \"Text\",\n        \"value\": [\"Här är vår skolas närvaro\",\"school1\"]\n    }\n}",
 					"options": {
 						"raw": {}
 					}
