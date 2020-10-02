@@ -14,7 +14,7 @@ export default {
   },
   getters: {
     getGraphsByBoardId: state => id => {
-      return state.graphs.filter(graph => graph.refBoard.value === id);
+      return state.graphs.filter(graph => graph.refBoard === id);
     }
   },
   mutations: {
@@ -36,17 +36,18 @@ export default {
       });
     },
     addGraph: function ({ commit }, payload) {
-      const graph = graphTypes(payload.graph.refGraphType.value);
+      const graph = graphTypes(payload.graph.refGraphType);
       const promiseArray = [];
-      graph.endpoints(payload.graph.connectedData.value).forEach((ep, i) => {
+      graph.endpoints(payload.graph.connectedData).forEach((ep, i) => {
         if (ep) {
           promiseArray.push(
             backendUtils.getEntity(ep).then(response => {
+              console.log(response.data);
               graph.values[i] = response.data[0];
             })
           );
         } else {
-          graph.values[i] = payload.graph.connectedData.value[i];
+          graph.values[i] = payload.graph.connectedData[i];
         }
       });
 

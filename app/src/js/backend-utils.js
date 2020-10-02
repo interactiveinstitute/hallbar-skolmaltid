@@ -20,11 +20,22 @@ const getAllData = async () => {
   }
 };
 
-const getEntity = async (entity) => {
+const getParamsChar = function (entity) {
+  return entity.indexOf('?') === -1 ? '?' : '&';
+};
+
+const getEntity = async entity => {
   try {
-    const response = await axios.get(config.url + 'entities/' + entity, {
-      headers: config.headers
-    });
+    const response = await axios.get(
+      config.url +
+        'entities/' +
+        entity +
+        getParamsChar(entity) +
+        'options=keyValues',
+      {
+        headers: config.headers
+      }
+    );
     return response;
   } catch (err) {
     throw new Error(err);

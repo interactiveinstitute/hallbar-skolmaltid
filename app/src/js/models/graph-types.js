@@ -37,7 +37,7 @@ const graphTypeSchoolAttendance = function () {
   graph.attachmentTypes = ['Text', 'School'];
 
   graph.endpoints = attached => {
-    return [null, '?type=SchoolAttendance&q=refSchool==' + attached[1]];
+    return [null, '?type=SchoolAttendanceObserved&q=refSchool==' + attached[1]];
   };
 
   graph.staticData = values => {
@@ -51,10 +51,7 @@ const graphTypeSchoolAttendance = function () {
         labels: ['Närvarande', 'Frånvarande'],
         datasets: [
           {
-            data: [
-              values[1].attendance.value.present.value,
-              values[1].attendance.value.absent.value
-            ],
+            data: [values[1].present, values[1].absent],
             backgroundColor: [
               'rgba(99, 255, 132, 0.2)',
               'rgba(255, 99, 132, 0.2)'

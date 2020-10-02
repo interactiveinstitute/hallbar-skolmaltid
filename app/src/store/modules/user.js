@@ -29,7 +29,7 @@ export default {
     setUserById: function ({ dispatch, commit }, payload) {
       backendUtils.getEntity(payload.idUser).then(response => {
         commit('setUser', { user: response.data });
-        dispatch('setSchoolsById', { schools: response.data.refSchool.value });
+        dispatch('setSchoolsById', { schools: response.data.refSchool });
         // dispatch('graphs/initByUser', { user: response.data }, { root: true });
         dispatch(
           'boards/setBoardsByUser',

@@ -28,7 +28,7 @@
           Inloggad som:
           <strong>
             <br>
-            {{ user.givenName.value }} {{ user.familyName.value }}
+            {{ user.givenName }} {{ user.familyName }}
             <br>
             <div v-for="(school, i) in schools" :key="i">
               {{ school.id }}
