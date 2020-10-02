@@ -10,25 +10,26 @@ Vue.use(Vuex);
 export default {
   namespaced: true,
   state: {
-    user: new User(),
-    school: new School()
+    user: {},
+    schools: []
   },
   getters: {},
   mutations: {
     setUser: function (state, payload) {
       // state.user = payload.user;
-      state.user.init(payload.user);
+      console.log(payload.user);
+      state.user = payload.user;
     },
-    setSchool: function (state, payload) {
+    addSchool: function (state, payload) {
       // state.school = payload.school;
-      state.school.init(payload.school);
+      state.schools.push(payload.school);
     }
   },
   actions: {
-    getUserById: function ({ dispatch, commit }, payload) {
+    setUserById: function ({ dispatch, commit }, payload) {
       backendUtils.getEntity(payload.idUser).then(response => {
         commit('setUser', { user: response.data });
-        dispatch('getSchoolById', { idSchool: response.data.refSchool.value });
+        dispatch('setSchoolsById', { schools: response.data.refSchool.value });
         // dispatch('graphs/initByUser', { user: response.data }, { root: true });
         dispatch(
           'boards/setBoardsByUser',
@@ -37,9 +38,11 @@ export default {
         );
       });
     },
-    getSchoolById: function ({ commit }, payload) {
-      backendUtils.getEntity(payload.idSchool).then(response => {
-        commit('setSchool', { school: response.data });
+    setSchoolsById: function ({ commit }, payload) {
+      payload.schools.forEach((school, i) => {
+        backendUtils.getEntity(school).then(response => {
+          commit('addSchool', { school: response.data });
+        });
       });
     }
   }

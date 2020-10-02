@@ -28,9 +28,11 @@
           Inloggad som:
           <strong>
             <br>
-            {{ user.data.givenName }} {{ user.data.familyName }}
+            {{ user.givenName.value }} {{ user.familyName.value }}
             <br>
-            {{ school.data.name }}
+            <div v-for="(school, i) in schools" :key="i">
+              {{ school.id }}
+            </div>
           </strong>
         </q-item-label>
 
@@ -49,7 +51,6 @@
 </template>
 
 <script>
-
 import { mapState } from 'vuex';
 
 import EssentialLink from 'components/EssentialLink';
@@ -86,11 +87,7 @@ export default {
     };
   },
   computed: {
-    ...mapState('user', [
-      'user',
-      'school'
-    ])
+    ...mapState('user', ['user', 'schools'])
   }
-
 };
 </script>

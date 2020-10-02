@@ -8,7 +8,7 @@
 export default {
   name: 'App',
   mounted: function () {
-    this.$store.dispatch('user/getUserById', { idUser: 'user1' });
+    this.$store.dispatch('user/setUserById', { idUser: 'user1' });
   }
 };
 </script>

@@ -2,8 +2,10 @@
   <div class="Board">
     <div>
       <h3>{{ board.id }}</h3>
-      <div v-for="(graph, i) in graphs" :key="i">
-        <Graph :graph="graph" />
+      <div class="boards">
+        <div v-for="(graph, i) in graphs" :key="i">
+          <Graph :graph="graph" />
+        </div>
       </div>
     </div>
   </div>
@@ -53,5 +55,10 @@ pre {
   background: rgb(240, 240, 240);
   border-left: 1px solid lightgray;
   margin: 10px;
+}
+
+.boards {
+  display: flex;
+  flex-wrap: wrap;
 }
 </style>

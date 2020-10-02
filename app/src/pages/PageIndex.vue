@@ -1,10 +1,14 @@
 <template>
   <q-page class="">
-    <div />
+    <pre>
+      {{ user }}
+    </pre>
   </q-page>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: 'PageIndex',
   components: {},
@@ -12,6 +16,9 @@ export default {
     return {
       // data: data.board
     };
+  },
+  computed: {
+    ...mapState('user', ['user'])
   }
 };
 </script>
