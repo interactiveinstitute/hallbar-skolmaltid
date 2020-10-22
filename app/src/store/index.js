@@ -19,6 +19,10 @@ Vue.use(Vuex);
 export default (function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     mutations: {
+      setValue: function (state, payload) {
+        Vue.set(payload.object, payload.index, payload.value);
+        // payload.object[payload.index] = payload.value;
+      },
       addToArray: function (state, payload) {
         payload.array.push(payload.value);
       },

@@ -30,7 +30,7 @@
         </ul>
       </div>
       <div>
-        Elever att lista synligt vid frånvaro:
+        Lista som Viktig frånvarande:
         <ul>
           <li
             v-for="(p, i) in this.highlightList"
@@ -48,7 +48,7 @@
           </button>
         </form>
         <p class="small">
-          Klicka på ett namn för att sluta highlighta
+          Klicka på ett namn för att ta bort från listan
         </p>
       </div>
     </div>
@@ -77,10 +77,10 @@ export default {
   },
   computed: {
     highlightList: function () {
-      return this.graph.chart.values[0];
+      return this.graph.preparedData.values[0];
     },
     absence: function () {
-      return this.graph.chart.values[1][0];
+      return this.graph.preparedData.values[1][0];
     },
     highlighted: function () {
       return this.absence.absentList.filter(value =>
@@ -96,11 +96,7 @@ export default {
       const ctx = document
         .getElementById('myChart' + this._uid)
         .getContext('2d');
-      this.myChart = new Chart(
-        ctx,
-        // this.graph.chart.chartJSData(this.graph.chart.values)
-        this.chartSettings(this.absence)
-      );
+      this.myChart = new Chart(ctx, this.chartSettings(this.absence));
     },
     chartSettings: function (entity) {
       return {

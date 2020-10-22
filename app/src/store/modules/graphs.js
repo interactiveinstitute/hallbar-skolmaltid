@@ -38,11 +38,11 @@ export default {
     addGraph: function ({ commit }, payload) {
       const graph = graphTypes(payload.graph.refGraphType);
       const promiseArray = [];
+      // graph.values = payload.graph.connectedData;
       graph.endpoints(payload.graph.connectedData).forEach((ep, i) => {
         if (ep) {
           promiseArray.push(
             backendUtils.getEntity(ep).then(response => {
-              console.log(response.data);
               graph.values[i] = response.data;
             })
           );
@@ -51,7 +51,7 @@ export default {
         }
       });
 
-      payload.graph.chart = graph;
+      payload.graph.preparedData = graph;
 
       Promise.all(promiseArray).then(values => {
         commit('addGraph', { graph: payload.graph });
