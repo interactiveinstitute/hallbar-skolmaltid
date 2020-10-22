@@ -849,7 +849,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": \"graph2\",\n    \"type\": \"Graph\",\n    \"source\": {\n    \t\"value\": \"user\"\n    },\n    \"refBoard\": {\n        \"type\": \"Reference\",\n        \"value\": \"board1\"\n    },\n    \"refGraphType\": {\n        \"type\": \"Reference\",\n        \"value\": \"graphTypeSchoolAttendance\"\n    },\n    \"connectedData\": {\n        \"type\": \"Text\",\n        \"value\": [\"Adam Adamsson, Frida Kahlie\",\"school1\"]\n    }\n}",
+					"raw": "{\n    \"id\": \"graph2\",\n    \"type\": \"Graph\",\n    \"source\": {\n    \t\"value\": \"user\"\n    },\n    \"refBoard\": {\n        \"type\": \"Reference\",\n        \"value\": \"board1\"\n    },\n    \"refGraphType\": {\n        \"type\": \"Reference\",\n        \"value\": \"graphTypeSchoolAttendance\"\n    },\n    \"connectedData\": {\n        \"type\": \"Text\",\n        \"value\": [[\"Adam Adamsson\", \"Frida Kahlie\"],\"school1\"]\n    }\n}",
 					"options": {
 						"raw": {}
 					}

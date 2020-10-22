@@ -83,8 +83,8 @@ export default {
       return this.graph.chart.values[1][0];
     },
     highlighted: function () {
-      return this.highlightList.filter(value =>
-        this.absence.absentList.includes(value)
+      return this.absence.absentList.filter(value =>
+        this.highlightList.includes(value)
       );
     }
   },
