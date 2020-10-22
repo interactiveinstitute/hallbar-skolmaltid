@@ -43,7 +43,7 @@ export default {
           promiseArray.push(
             backendUtils.getEntity(ep).then(response => {
               console.log(response.data);
-              graph.values[i] = response.data[0];
+              graph.values[i] = response.data;
             })
           );
         } else {

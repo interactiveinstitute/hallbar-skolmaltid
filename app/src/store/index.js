@@ -18,6 +18,15 @@ Vue.use(Vuex);
 
 export default (function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
+    mutations: {
+      addToArray: function (state, payload) {
+        payload.array.push(payload.value);
+      },
+      removeFromArray: function (state, payload) {
+        payload.array.splice(payload.index, 1);
+      }
+    },
+
     modules: {
       user: user,
       boards: boards,

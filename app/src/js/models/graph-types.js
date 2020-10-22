@@ -32,15 +32,17 @@ const graphType1 = function () {
 
 const graphTypeSchoolAttendance = function () {
   const graph = new Graph();
-
-  graph.name = 'Närvaro och frånvaro';
   graph.attachmentTypes = ['Text', 'School'];
-
   graph.endpoints = attached => {
-    return [null, '?type=SchoolAttendanceObserved&q=refSchool==' + attached[1]];
+    return [
+      null,
+      '?type=SchoolAttendanceObserved&q=refSchool==' +
+        attached[1] +
+        '&limit=1&orderBy=!dateObserved'
+    ];
   };
 
-  graph.staticData = values => {
+  /* graph.staticData = values => {
     return [values[0]];
   };
 
@@ -71,7 +73,7 @@ const graphTypeSchoolAttendance = function () {
         }
       }
     };
-  };
+  }; */
 
   return graph;
 };

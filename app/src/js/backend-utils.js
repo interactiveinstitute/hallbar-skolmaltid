@@ -20,8 +20,8 @@ const getAllData = async () => {
   }
 };
 
-const getParamsChar = function (entity) {
-  return entity.indexOf('?') === -1 ? '?' : '&';
+const getParamsChar = function (url) {
+  return url.indexOf('?') === -1 ? '?' : '&';
 };
 
 const getEntity = async entity => {
@@ -42,7 +42,23 @@ const getEntity = async entity => {
   }
 };
 
+const updateAttribute = async (entity, attrName, value) => {
+  try {
+    const response = await axios.put(
+      config.url + 'entities/' + entity + '/attrs/' + attrName,
+      { value: value },
+      {
+        headers: config.headers
+      }
+    );
+    return response;
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+
 export default {
   getAllData,
-  getEntity
+  getEntity,
+  updateAttribute
 };
