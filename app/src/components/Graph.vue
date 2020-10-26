@@ -1,10 +1,10 @@
 <template>
   <div class="Graph">
-    <h4>{{ graph.chart.name }}</h4>
+    <!--h4>{{ graph.chart.name }}</h4>
     <div v-for="sd in graph.chart.staticData(graph.chart.values)" :key="sd">
       {{ sd }}
     </div>
-    <canvas :id="'myChart' + _uid" width="600" height="400" />
+    <canvas :id="'myChart' + _uid" width="600" height="400" /-->
   </div>
 </template>
 

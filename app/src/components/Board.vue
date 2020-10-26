@@ -1,10 +1,13 @@
 <template>
   <div class="Board">
     <div>
-      <h3>{{ board.id }}</h3>
+      <h3>{{ board.name }}</h3>
       <div class="boards">
         <div v-for="(graph, i) in graphs" :key="i">
-          <Graph :graph="graph" />
+          <component :is="graph.refGraphType" :graph="graph" />
+          <!--pre>
+            {{ graph }}
+          </pre-->
         </div>
       </div>
     </div>
@@ -13,12 +16,16 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import Graph from 'components/Graph.vue';
+// import Graph from 'components/Graph.vue';
+import graphType1 from 'components/graphTypes/graphType1.vue';
+import GraphTypeSchoolAttendance from 'components/graphTypes/graphTypeSchoolAttendance.vue';
 
 export default {
   name: 'ComponentTemplate',
   components: {
-    Graph
+    // Graph,
+    graphType1,
+    GraphTypeSchoolAttendance
   },
   props: {
     board: Object
@@ -60,5 +67,9 @@ pre {
 .boards {
   display: flex;
   flex-wrap: wrap;
+}
+
+.boards > div {
+  flex: 1 0 50%;
 }
 </style>

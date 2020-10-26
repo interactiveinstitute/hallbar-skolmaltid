@@ -1,11 +1,11 @@
 export default function () {
   return {
-    type: '',
+    // type: '',
     values: [],
-    name: '',
-    attachmentTypes: [],
-    endpoints: attached => {},
-    staticData: values => {},
-    chartJSData: values => {}
+    // name: '',
+    // attachmentTypes: [],
+    endpoints: attached => {}
+    // staticData: values => {},
+    // chartJSData: values => {}
   };
 }
