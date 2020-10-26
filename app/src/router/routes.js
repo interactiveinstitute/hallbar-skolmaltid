@@ -22,6 +22,11 @@ const routes = [
         name: 'Board',
         path: 'brade/:id',
         component: () => import('pages/PageBoard.vue')
+      },
+      {
+        name: 'GunnarTestar',
+        path: 'test',
+        component: () => import('pages/GunnarTestar.vue')
       }
     ]
   }
