@@ -1,7 +1,7 @@
 <template>
   <q-page padding>
     <h1>Frånvaro</h1>
-    <q-btn label="next" @click="calendarNext()" />
+    <!-- <q-btn label="next" @click="calendarNext()" /> -->
     <q-calendar
       ref="calendar"
       v-model="selectedDate"
@@ -11,10 +11,11 @@
       locale="sv-se"
     >
       <template #scheduler-resource-day="{ timestamp, resource}">
-        <div :class="{'absent': isOccupied(timestamp, resource.absentDays), 'absent-left': isSnakeHead(timestamp, resource.absentDays), 'absent-right': isSnakeTail(timestamp, resource.absentDays) }">
-          head: {{ isSnakeHead(timestamp, resource.absentDays) }}
+        <div v-if="isOccupied(timestamp, resource.absentDays)" class="absent" :class="{'absent-left': isSnakeHead(timestamp, resource.absentDays), 'absent-right': isSnakeTail(timestamp, resource.absentDays) }">
+          <!-- head: {{ isSnakeHead(timestamp, resource.absentDays) }}
           tail: {{ isSnakeTail(timestamp, resource.absentDays) }}
-          {{ resource.absentDays.includes(timestamp.date) }}
+          {{ resource.absentDays.includes(timestamp.date) }} -->
+          <!-- {{ resource.label }} -->
         </div>
       </template>
     </q-calendar>
@@ -108,18 +109,20 @@ export default {
 
 <style scoped>
 .absent {
-  background-color: blue;
+  background-color: rgb(47, 179, 255);
   height: 80%;
   overflow: hidden;
   width: calc(100% + 0.2rem);
 }
 
 .absent-left {
-  border-radius: 1rem 0rem 0rem 1rem;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
 }
 
 .absent-right {
-  border-radius: 0rem 1rem 1rem 0rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 </style>
