@@ -1,13 +1,35 @@
 <template>
   <div class="GraphTypeSchoolAttendance">
-    <h4>Närvaro och frånvaro</h4>
+    <h2>Närvaro och frånvaro</h2>
     <div class="columns">
       <div>
-        <h5>Total närvaro och frånvaro:</h5>
+        <h3>Total närvaro och frånvaro:</h3>
         <canvas :id="'myChart' + _uid" width="600" height="400" />
       </div>
 
       <div>
+        <h3>Frånvaro i dietgrupper</h3>
+
+        <div v-for="(dg, i) in dietGroups" :key="i">
+          <h4>{{ dg.name }}</h4>
+          <ul>
+            <li v-for="(p, i) in absenceByDietGroup(dg)" :key="i">
+              {{ p.givenName }} {{ p.familyName }}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h3>Samtliga frånvarande:</h3>
+        <ul>
+          <li v-for="(p, i) in this.absence" :key="i">
+            {{ p.givenName }} {{ p.familyName }}
+          </li>
+        </ul>
+      </div>
+
+      <!--div>
         <h5>Viktiga frånvarande:</h5>
 
         <ul>
@@ -15,17 +37,17 @@
             {{ p }}
           </li>
         </ul>
-      </div>
+      </div-->
     </div>
 
-    <hr>
+    <!--hr-->
 
-    <div class="columns">
+    <!--div class="columns">
       <div>
         Samtliga frånvarande:
         <ul>
-          <li v-for="p in this.absence.absentList" :key="p">
-            {{ p }}
+          <li v-for="(p, i) in this.absence" :key="i">
+            {{ p.givenName }} {{ p.familyName }}
           </li>
         </ul>
       </div>
@@ -51,7 +73,7 @@
           Klicka på ett namn för att ta bort från listan
         </p>
       </div>
-    </div>
+    </div-->
   </div>
 </template>
 
@@ -77,16 +99,22 @@ export default {
   },
   computed: {
     highlightList: function () {
-      return this.graph.preparedData.values[0];
+      return this.graph.connectedData[0];
+    },
+    school: function () {
+      return this.graph.endpointData.values[0];
     },
     absence: function () {
-      return this.graph.preparedData.values[1][0];
+      return this.graph.endpointData.values[1];
     },
-    highlighted: function () {
+    dietGroups: function () {
+      return this.graph.endpointData.values[2];
+    }
+    /* highlighted: function () {
       return this.absence.absentList.filter(value =>
         this.highlightList.includes(value)
       );
-    }
+    } */
   },
   mounted: function () {
     this.initGraph();
@@ -105,7 +133,7 @@ export default {
           labels: ['Närvarande', 'Frånvarande'],
           datasets: [
             {
-              data: [entity.present, entity.absent],
+              data: [this.school.studentCount, this.absence.length],
               backgroundColor: [
                 'rgba(99, 255, 132, 0.2)',
                 'rgba(255, 99, 132, 0.2)'
@@ -147,6 +175,11 @@ export default {
         'connectedData',
         this.graph.connectedData
       );
+    },
+    absenceByDietGroup: function (dietGroup) {
+      return this.absence.filter(a =>
+        dietGroup.socialNumbers.includes(a.socialNumber)
+      );
     }
   }
 };
@@ -167,6 +200,7 @@ canvas {
 }
 .columns > div {
   flex: 1;
+  margin: 1em;
 }
 .remove {
   cursor: no-drop;

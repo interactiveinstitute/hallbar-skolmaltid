@@ -40,18 +40,18 @@ export default {
       const promiseArray = [];
       // graph.values = payload.graph.connectedData;
       graph.endpoints(payload.graph.connectedData).forEach((ep, i) => {
-        if (ep) {
-          promiseArray.push(
-            backendUtils.getEntity(ep).then(response => {
-              graph.values[i] = response.data;
-            })
-          );
-        } else {
+        // if (ep) {
+        promiseArray.push(
+          backendUtils.getEntity(ep).then(response => {
+            graph.values[i] = response.data;
+          })
+        );
+        /* } else {
           graph.values[i] = payload.graph.connectedData[i];
-        }
+        } */
       });
 
-      payload.graph.preparedData = graph;
+      payload.graph.endpointData = graph;
 
       Promise.all(promiseArray).then(values => {
         commit('addGraph', { graph: payload.graph });

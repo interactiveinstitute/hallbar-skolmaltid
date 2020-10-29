@@ -1,7 +1,7 @@
 <template>
   <div class="Board">
     <div>
-      <h3>{{ board.name }}</h3>
+      <h1>{{ board.name }}</h1>
       <div class="boards">
         <div v-for="(graph, i) in graphs" :key="i">
           <component :is="graph.refGraphType" :graph="graph" />

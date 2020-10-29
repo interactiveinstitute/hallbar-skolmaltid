@@ -112,7 +112,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": \"school1\",\n    \"type\": \"School\",\n    \"source\": {\n    \t\"value\": \"http://www.vklass.se\"\n    },\n    \"name\": {\n        \"type\": \"Text\",\n        \"value\": \"Skola 1\"\n    },\n    \"logo\": {\n        \"type\": \"URL\",\n        \"value\": \"https://vignette.wikia.nocookie.net/harrypotter/images/a/ae/Hogwartscrest.png\"\n    },\n    \"identifier\": {\n    \t\"type\": \"Text\",\n        \"value\": \"112233-4455\"\n    }\n}",
+					"raw": "{\n    \"id\": \"school1\",\n    \"type\": \"School\",\n    \"source\": {\n    \t\"value\": \"http://www.vklass.se\"\n    },\n    \"name\": {\n        \"type\": \"Text\",\n        \"value\": \"Skola 1\"\n    },\n    \"logo\": {\n        \"type\": \"URL\",\n        \"value\": \"https://vignette.wikia.nocookie.net/harrypotter/images/a/ae/Hogwartscrest.png\"\n    },\n    \"identifier\": {\n    \t\"type\": \"Text\",\n        \"value\": \"112233-4455\"\n    },\n    \"studentCount\": \n    {\n    \t\"type\": \"Integer\",\n        \"value\": 409\n    },\n    \"staffCount\": \n    {\n    \t\"type\": \"Integer\",\n        \"value\": 72\n    }\n}",
 					"options": {
 						"raw": {}
 					}
@@ -127,6 +127,50 @@
 						"v2",
 						"entities",
 						""
+					]
+				},
+				"description": "## Creating Context Data\n\nAt its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a  new entity (a store in **Berlin**). Any entity must have a `id` and `type` attributes, additional attributes are optional and will depend on the system being described. Each additional attribute should also have a defined `type` and a `value` attribute."
+			},
+			"response": []
+		},
+		{
+			"name": "Orion - Update school1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "fiware-service",
+						"type": "text",
+						"value": "timeseries"
+					},
+					{
+						"key": "fiware-servicepath",
+						"type": "text",
+						"value": "/"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": {\n        \"type\": \"Text\",\n        \"value\": \"Skola 1\"\n    },\n    \"logo\": {\n        \"type\": \"URL\",\n        \"value\": \"https://vignette.wikia.nocookie.net/harrypotter/images/a/ae/Hogwartscrest.png\"\n    },\n    \"identifier\": {\n    \t\"type\": \"Text\",\n        \"value\": \"112233-4455\"\n    },\n    \"studentCount\": \n    {\n    \t\"type\": \"Integer\",\n        \"value\": 409\n    },\n    \"staffCount\": \n    {\n    \t\"type\": \"Integer\",\n        \"value\": 72\n    }\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://{{orion}}/v2/entities/school1/attrs",
+					"protocol": "http",
+					"host": [
+						"{{orion}}"
+					],
+					"path": [
+						"v2",
+						"entities",
+						"school1",
+						"attrs"
 					]
 				},
 				"description": "## Creating Context Data\n\nAt its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a  new entity (a store in **Berlin**). Any entity must have a `id` and `type` attributes, additional attributes are optional and will depend on the system being described. Each additional attribute should also have a defined `type` and a `value` attribute."
@@ -462,7 +506,180 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": \"attendance4\",\n    \"type\": \"SchoolAttendanceObserved\",\n    \"source\": {\n    \t\"value\": \"http://www.vklass.se\"\n    },\n    \"dateObserved\": {\n        \"type\": \"DateTime\",\n        \"value\": \"2020-02-05T00:00:00Z\"\n    },\n    \"enrolled\": {\n        \"type\": \"Integer\",\n        \"value\": 444\n    },\n    \"present\": {\n        \"type\": \"Integer\",\n        \"value\": 434\n    },\n    \"absent\": {\n    \t\"type\": \"Integer\",\n        \"value\": 10\n    },\n    \"absentList\": {\n        \"type\": \"Text\",\n        \"value\": [\"Adam Adamsson\", \"Bärta Beritsdotter\", \"Calle Carlsson\", \"Ditte Doo\", \"Emil Eskilsen\", \"Frida Kahlie\", \"Ghasaan Göransson\", \"Hadya Haddad\", \"Ingwar Igelsson\", \"Jenna Johansen\"]\n    },\n    \"refSchool\": {\n        \"type\": \"Reference\",\n        \"value\": \"school1\"\n    }\n}",
+					"raw": "{\n    \"id\": \"attendanceObservedSchool1\",\n    \"type\": \"SchoolAttendanceObserved\",\n    \"source\": {\n    \t\"value\": \"http://www.vklass.se\"\n    },\n    \"dateObserved\": {\n        \"type\": \"DateTime\",\n        \"value\": \"2020-02-05T00:00:00Z\"\n    },\n    \"enrolled\": {\n        \"type\": \"Integer\",\n        \"value\": 444\n    },\n    \"present\": {\n        \"type\": \"Integer\",\n        \"value\": 434\n    },\n    \"absent\": {\n    \t\"type\": \"Integer\",\n        \"value\": 10\n    },\n    \"absentList\": {\n        \"type\": \"Text\",\n        \"value\": [\"Adam Adamsson\", \"Bärta Beritsdotter\", \"Calle Carlsson\", \"Ditte Doo\", \"Emil Eskilsen\", \"Frida Kahlie\", \"Ghasaan Göransson\", \"Hadya Haddad\", \"Ingwar Igelsson\", \"Jenna Johansen\"]\n    },\n    \"refSchool\": {\n        \"type\": \"Reference\",\n        \"value\": \"school1\"\n    }\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://{{orion}}/v2/entities/",
+					"protocol": "http",
+					"host": [
+						"{{orion}}"
+					],
+					"path": [
+						"v2",
+						"entities",
+						""
+					]
+				},
+				"description": "## Creating Context Data\n\nAt its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a  new entity (a store in **Berlin**). Any entity must have a `id` and `type` attributes, additional attributes are optional and will depend on the system being described. Each additional attribute should also have a defined `type` and a `value` attribute."
+			},
+			"response": []
+		},
+		{
+			"name": "Orion - Create absenceReported batch",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "fiware-service",
+						"type": "text",
+						"value": "timeseries"
+					},
+					{
+						"key": "fiware-servicepath",
+						"type": "text",
+						"value": "/"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n    \"actionType\": \"append\",\n    \"entities\":[\n        {\n            \"id\": \"absenceReported1\",\n            \"type\": \"SchoolAbsenceReported\",\n            \"source\": {\n                \"value\": \"http://www.vklass.se\"\n            },\n            \"socialNumber\": {\n                \"type\": \"Text\",\n                \"value\": \"010101-0101\"\n            },\n            \"givenName\": {\n                \"type\": \"Text\",\n                \"value\": \"Adam\"\n            },\n            \"familyName\": {\n                \"type\": \"Text\",\n                \"value\": \"Andersson\"\n            },\n            \"dateStart\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-10-17T21:49:00\"\n            },\n            \"dateEnd\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-11-07T23:00:00\"\n            },\n            \"dateUpdated\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-03-18T21:50:27.877\"\n            },\n            \"refSchool\": {\n                \"type\": \"Reference\",\n                \"value\": \"school1\"\n            }\n        },\n        {\n            \"id\": \"absenceReported2\",\n            \"type\": \"SchoolAbsenceReported\",\n            \"source\": {\n                \"value\": \"http://www.vklass.se\"\n            },\n            \"socialNumber\": {\n                \"type\": \"Text\",\n                \"value\": \"020202-0202\"\n            },\n            \"givenName\": {\n                \"type\": \"Text\",\n                \"value\": \"Bärta\"\n            },\n            \"familyName\": {\n                \"type\": \"Text\",\n                \"value\": \"Beritsdotter\"\n            },\n            \"dateStart\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-10-17T21:49:00\"\n            },\n            \"dateEnd\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-11-07T23:00:00\"\n            },\n            \"dateUpdated\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-03-18T21:50:27.877\"\n            },\n            \"refSchool\": {\n                \"type\": \"Reference\",\n                \"value\": \"school1\"\n            }\n        },\n        {\n            \"id\": \"absenceReported3\",\n            \"type\": \"SchoolAbsenceReported\",\n            \"source\": {\n                \"value\": \"http://www.vklass.se\"\n            },\n            \"socialNumber\": {\n                \"type\": \"Text\",\n                \"value\": \"030303-0303\"\n            },\n            \"givenName\": {\n                \"type\": \"Text\",\n                \"value\": \"Calle\"\n            },\n            \"familyName\": {\n                \"type\": \"Text\",\n                \"value\": \"Carlsson Claesson\"\n            },\n            \"dateStart\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-10-17T21:49:00\"\n            },\n            \"dateEnd\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-11-07T23:00:00\"\n            },\n            \"dateUpdated\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-03-18T21:50:27.877\"\n            },\n            \"refSchool\": {\n                \"type\": \"Reference\",\n                \"value\": \"school1\"\n            }\n        },\n        {\n            \"id\": \"absenceReported4\",\n            \"type\": \"SchoolAbsenceReported\",\n            \"source\": {\n                \"value\": \"http://www.vklass.se\"\n            },\n            \"socialNumber\": {\n                \"type\": \"Text\",\n                \"value\": \"040404-0404\"\n            },\n            \"givenName\": {\n                \"type\": \"Text\",\n                \"value\": \"Ditte\"\n            },\n            \"familyName\": {\n                \"type\": \"Text\",\n                \"value\": \"Doolittle\"\n            },\n            \"dateStart\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-10-17T21:49:00\"\n            },\n            \"dateEnd\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-11-07T23:00:00\"\n            },\n            \"dateUpdated\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-03-18T21:50:27.877\"\n            },\n            \"refSchool\": {\n                \"type\": \"Reference\",\n                \"value\": \"school1\"\n            }\n        },\n        {\n            \"id\": \"absenceReported5\",\n            \"type\": \"SchoolAbsenceReported\",\n            \"source\": {\n                \"value\": \"http://www.vklass.se\"\n            },\n            \"socialNumber\": {\n                \"type\": \"Text\",\n                \"value\": \"050505-0505\"\n            },\n            \"givenName\": {\n                \"type\": \"Text\",\n                \"value\": \"Efraim\"\n            },\n            \"familyName\": {\n                \"type\": \"Text\",\n                \"value\": \"Eigenheim\"\n            },\n            \"dateStart\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-10-17T21:49:00\"\n            },\n            \"dateEnd\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-11-07T23:00:00\"\n            },\n            \"dateUpdated\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-03-18T21:50:27.877\"\n            },\n            \"refSchool\": {\n                \"type\": \"Reference\",\n                \"value\": \"school1\"\n            }\n        },\n        {\n            \"id\": \"absenceReported6\",\n            \"type\": \"SchoolAbsenceReported\",\n            \"source\": {\n                \"value\": \"http://www.vklass.se\"\n            },\n            \"socialNumber\": {\n                \"type\": \"Text\",\n                \"value\": \"060606-0606\"\n            },\n            \"givenName\": {\n                \"type\": \"Text\",\n                \"value\": \"Frida\"\n            },\n            \"familyName\": {\n                \"type\": \"Text\",\n                \"value\": \"Frohe\"\n            },\n            \"dateStart\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-10-17T21:49:00\"\n            },\n            \"dateEnd\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-11-07T23:00:00\"\n            },\n            \"dateUpdated\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-03-18T21:50:27.877\"\n            },\n            \"refSchool\": {\n                \"type\": \"Reference\",\n                \"value\": \"school1\"\n            }\n        },\n        {\n            \"id\": \"absenceReported7\",\n            \"type\": \"SchoolAbsenceReported\",\n            \"source\": {\n                \"value\": \"http://www.vklass.se\"\n            },\n            \"socialNumber\": {\n                \"type\": \"Text\",\n                \"value\": \"070707-0707\"\n            },\n            \"givenName\": {\n                \"type\": \"Text\",\n                \"value\": \"Ghasaan\"\n            },\n            \"familyName\": {\n                \"type\": \"Text\",\n                \"value\": \"Göransson\"\n            },\n            \"dateStart\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-10-17T21:49:00\"\n            },\n            \"dateEnd\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-11-07T23:00:00\"\n            },\n            \"dateUpdated\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-03-18T21:50:27.877\"\n            },\n            \"refSchool\": {\n                \"type\": \"Reference\",\n                \"value\": \"school1\"\n            }\n        },\n        {\n            \"id\": \"absenceReported8\",\n            \"type\": \"SchoolAbsenceReported\",\n            \"source\": {\n                \"value\": \"http://www.vklass.se\"\n            },\n            \"socialNumber\": {\n                \"type\": \"Text\",\n                \"value\": \"080808-0808\"\n            },\n            \"givenName\": {\n                \"type\": \"Text\",\n                \"value\": \"Hadya\"\n            },\n            \"familyName\": {\n                \"type\": \"Text\",\n                \"value\": \"Haddad\"\n            },\n            \"dateStart\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-10-17T21:49:00\"\n            },\n            \"dateEnd\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-11-07T23:00:00\"\n            },\n            \"dateUpdated\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-03-18T21:50:27.877\"\n            },\n            \"refSchool\": {\n                \"type\": \"Reference\",\n                \"value\": \"school1\"\n            }\n        },\n        {\n            \"id\": \"absenceReported9\",\n            \"type\": \"SchoolAbsenceReported\",\n            \"source\": {\n                \"value\": \"http://www.vklass.se\"\n            },\n            \"socialNumber\": {\n                \"type\": \"Text\",\n                \"value\": \"090909-0909\"\n            },\n            \"givenName\": {\n                \"type\": \"Text\",\n                \"value\": \"Ingwar\"\n            },\n            \"familyName\": {\n                \"type\": \"Text\",\n                \"value\": \"Igelsson\"\n            },\n            \"dateStart\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-10-17T21:49:00\"\n            },\n            \"dateEnd\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-11-07T23:00:00\"\n            },\n            \"dateUpdated\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-03-18T21:50:27.877\"\n            },\n            \"refSchool\": {\n                \"type\": \"Reference\",\n                \"value\": \"school1\"\n            }\n        },\n        {\n            \"id\": \"absenceReported10\",\n            \"type\": \"SchoolAbsenceReported\",\n            \"source\": {\n                \"value\": \"http://www.vklass.se\"\n            },\n            \"socialNumber\": {\n                \"type\": \"Text\",\n                \"value\": \"101010-1010\"\n            },\n            \"givenName\": {\n                \"type\": \"Text\",\n                \"value\": \"Jenna\"\n            },\n            \"familyName\": {\n                \"type\": \"Text\",\n                \"value\": \"Johansen\"\n            },\n            \"dateStart\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-10-17T21:49:00\"\n            },\n            \"dateEnd\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-11-07T23:00:00\"\n            },\n            \"dateUpdated\": {\n                \"type\": \"DateTime\",\n                \"value\": \"2020-03-18T21:50:27.877\"\n            },\n            \"refSchool\": {\n                \"type\": \"Reference\",\n                \"value\": \"school1\"\n            }\n        }\n    ]\n  }",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://{{orion}}/v2/op/update",
+					"protocol": "http",
+					"host": [
+						"{{orion}}"
+					],
+					"path": [
+						"v2",
+						"op",
+						"update"
+					]
+				},
+				"description": "## Creating Context Data\n\nAt its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a  new entity (a store in **Berlin**). Any entity must have a `id` and `type` attributes, additional attributes are optional and will depend on the system being described. Each additional attribute should also have a defined `type` and a `value` attribute."
+			},
+			"response": []
+		},
+		{
+			"name": "Orion - Create dietGroup batch",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "fiware-service",
+						"type": "text",
+						"value": "timeseries"
+					},
+					{
+						"key": "fiware-servicepath",
+						"type": "text",
+						"value": "/"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n    \"actionType\": \"append\",\n    \"entities\":[\n        {\n            \"id\": \"dietGroup1\",\n            \"type\": \"DietGroup\",\n            \"source\": {\n                \"value\": \"http://www.vklass.se\"\n            },\n            \"name\": {\n                \"type\": \"Text\",\n                \"value\": \"A+B\"\n            },\n            \"socialNumbers\": {\n                \"type\": \"Text\",\n                \"value\": [\"010101-0101\"]\n            },\n            \"refSchool\": {\n                \"type\": \"Reference\",\n                \"value\": \"school1\"\n            }\n        },\n        {\n            \"id\": \"dietGroup2\",\n            \"type\": \"DietGroup\",\n            \"source\": {\n                \"value\": \"http://www.vklass.se\"\n            },\n            \"name\": {\n                \"type\": \"Text\",\n                \"value\": \"A\"\n            },\n            \"socialNumbers\": {\n                \"type\": \"Text\",\n                \"value\": [\"040404-0404\",\"121212-1212\"]\n            },\n            \"refSchool\": {\n                \"type\": \"Reference\",\n                \"value\": \"school1\"\n            }\n        },\n        {\n            \"id\": \"dietGroup3\",\n            \"type\": \"DietGroup\",\n            \"source\": {\n                \"value\": \"http://www.vklass.se\"\n            },\n            \"name\": {\n                \"type\": \"Text\",\n                \"value\": \"B\"\n            },\n            \"socialNumbers\": {\n                \"type\": \"Text\",\n                \"value\": [\"030303-0303\",\"080808-0808\",\"131313-1313\"]\n            },\n            \"refSchool\": {\n                \"type\": \"Reference\",\n                \"value\": \"school1\"\n            }\n        }\n    ]\n  }",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://{{orion}}/v2/op/update",
+					"protocol": "http",
+					"host": [
+						"{{orion}}"
+					],
+					"path": [
+						"v2",
+						"op",
+						"update"
+					]
+				},
+				"description": "## Creating Context Data\n\nAt its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a  new entity (a store in **Berlin**). Any entity must have a `id` and `type` attributes, additional attributes are optional and will depend on the system being described. Each additional attribute should also have a defined `type` and a `value` attribute."
+			},
+			"response": []
+		},
+		{
+			"name": "Orion - Update absenceReported1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "fiware-service",
+						"type": "text",
+						"value": "timeseries"
+					},
+					{
+						"key": "fiware-servicepath",
+						"type": "text",
+						"value": "/"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dateStart\": {\n        \"type\": \"DateTime\",\n        \"value\": \"2020-10-28T21:49:00\"\n    },\n    \"dateEnd\": {\n        \"type\": \"DateTime\",\n        \"value\": \"2020-11-03T23:00:00\"\n    },\n    \"dateUpdated\": {\n        \"type\": \"DateTime\",\n        \"value\": \"2020-03-18T21:50:27.877\"\n    },\n    \"refSchool\": {\n        \"type\": \"Reference\",\n        \"value\": \"school1\"\n    }\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://{{orion}}/v2/entities/absenceReported1/attrs",
+					"protocol": "http",
+					"host": [
+						"{{orion}}"
+					],
+					"path": [
+						"v2",
+						"entities",
+						"absenceReported1",
+						"attrs"
+					]
+				},
+				"description": "## Creating Context Data\n\nAt its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a  new entity (a store in **Berlin**). Any entity must have a `id` and `type` attributes, additional attributes are optional and will depend on the system being described. Each additional attribute should also have a defined `type` and a `value` attribute."
+			},
+			"response": []
+		},
+		{
+			"name": "Orion - Create absenceReported2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "fiware-service",
+						"type": "text",
+						"value": "timeseries"
+					},
+					{
+						"key": "fiware-servicepath",
+						"type": "text",
+						"value": "/"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"absenceReported2\",\n    \"type\": \"SchoolAbsenceReported\",\n    \"source\": {\n    \t\"value\": \"http://www.vklass.se\"\n    },\n    \"givenName\": {\n        \"type\": \"Text\",\n        \"value\": \"Alfred\"\n    },\n    \"familyName\": {\n    \t\"type\": \"Text\",\n        \"value\": \"Carlsoon\"\n    },\n    \"dateStart\": {\n        \"type\": \"DateTime\",\n        \"value\": \"2020-03-17T21:49:00\"\n    },\n    \"dateEnd\": {\n        \"type\": \"DateTime\",\n        \"value\": \"2020-03-31T23:00:00\"\n    },\n    \"dateUpdated\": {\n        \"type\": \"DateTime\",\n        \"value\": \"2020-03-18T21:50:27.91\"\n    },\n    \"refSchool\": {\n        \"type\": \"Reference\",\n        \"value\": \"school1\"\n    }\n}",
 					"options": {
 						"raw": {}
 					}
@@ -505,13 +722,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": \"attendance4\",\n    \"type\": \"SchoolAttendanceObserved\",\n    \"source\": {\n    \t\"value\": \"http://www.vklass.se\"\n    },\n    \"dateObserved\": {\n        \"type\": \"DateTime\",\n        \"value\": \"2020-02-05T00:00:00Z\"\n    },\n    \"enrolled\": {\n        \"type\": \"Integer\",\n        \"value\": 444\n    },\n    \"present\": {\n        \"type\": \"Integer\",\n        \"value\": 434\n    },\n    \"absent\": {\n    \t\"type\": \"Integer\",\n        \"value\": 10\n    },\n    \"absentList\": {\n        \"type\": \"Text\",\n        \"value\": [\"Adam Adamsson\", \"Bärta Beritsdotter\", \"Calle Carlsson\", \"Ditte Doo\", \"Emil Eskilsen\", \"Frida Kahlie\", \"Ghasaan Göransson\", \"Hadya Haddad\", \"Ingwar Igelsson\", \"Jenna Johansen\"]\n    },\n    \"refSchool\": {\n        \"type\": \"Reference\",\n        \"value\": \"school1\"\n    }\n}",
+					"raw": "{\n    \"dateObserved\": {\n        \"type\": \"DateTime\",\n        \"value\": \"2020-02-05T00:00:00Z\"\n    },\n    \"enrolled\": {\n        \"type\": \"Integer\",\n        \"value\": 444\n    },\n    \"present\": {\n        \"type\": \"Integer\",\n        \"value\": 434\n    },\n    \"absent\": {\n    \t\"type\": \"Integer\",\n        \"value\": 10\n    },\n    \"absentList\": {\n        \"type\": \"Text\",\n        \"value\": [\"Adam Adamsson\", \"Bärta Beritsdotter\", \"Calle Carlsson\", \"Ditte Doo\", \"Emil Eskilsen\", \"Frida Kahlie\", \"Ghasaan Göransson\", \"Hadya Haddad\", \"Ingwar Igelsson\", \"Jenna Johansen\"]\n    },\n    \"refSchool\": {\n        \"type\": \"Reference\",\n        \"value\": \"school1\"\n    }\n}",
 					"options": {
 						"raw": {}
 					}
 				},
 				"url": {
-					"raw": "http://{{orion}}/v2/entities/",
+					"raw": "http://{{orion}}/v2/entities/attendanceObservedSchool1/attrs",
 					"protocol": "http",
 					"host": [
 						"{{orion}}"
@@ -519,7 +736,8 @@
 					"path": [
 						"v2",
 						"entities",
-						""
+						"attendanceObservedSchool1",
+						"attrs"
 					]
 				},
 				"description": "## Creating Context Data\n\nAt its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a  new entity (a store in **Berlin**). Any entity must have a `id` and `type` attributes, additional attributes are optional and will depend on the system being described. Each additional attribute should also have a defined `type` and a `value` attribute."
@@ -548,7 +766,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": \"board1\",\n    \"type\": \"Board\",\n    \"source\": {\n    \t\"value\": \"user\"\n    },\n    \"publicPresentationUrl\": {\n        \"type\": \"URL\",\n        \"value\": \"http://just.do.it\"\n    },\n    \"refUser\": {\n        \"type\": \"Reference\",\n        \"value\": \"user1\"\n    }\n}",
+					"raw": "{\n    \"id\": \"board1\",\n    \"type\": \"Board\",\n    \"source\": {\n    \t\"value\": \"user\"\n    },\n    \"name\": {\n        \"type\": \"Text\",\n        \"value\": \"Mina grafer\"\n    },\n    \"publicPresentationUrl\": {\n        \"type\": \"URL\",\n        \"value\": \"http://just.do.it\"\n    },\n    \"refUser\": {\n        \"type\": \"Reference\",\n        \"value\": \"user1\"\n    }\n}",
 					"options": {
 						"raw": {}
 					}
@@ -591,13 +809,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": \"board1\",\n    \"type\": \"Board\",\n    \"source\": {\n    \t\"value\": \"user\"\n    },\n    \"publicPresentationUrl\": {\n        \"type\": \"URL\",\n        \"value\": \"http://just.do.it\"\n    },\n    \"refUser\": {\n        \"type\": \"Reference\",\n        \"value\": \"user1\"\n    }\n}",
+					"raw": "{\n    \"name\": {\n        \"type\": \"Text\",\n        \"value\": \"Skolköket\"\n    },\n    \"publicPresentationUrl\": {\n        \"type\": \"URL\",\n        \"value\": \"http://just.do.it\"\n    },\n    \"refUser\": {\n        \"type\": \"Reference\",\n        \"value\": \"user1\"\n    }\n}",
 					"options": {
 						"raw": {}
 					}
 				},
 				"url": {
-					"raw": "http://{{orion}}/v2/entities/",
+					"raw": "http://{{orion}}/v2/entities/board1/attrs",
 					"protocol": "http",
 					"host": [
 						"{{orion}}"
@@ -605,7 +823,8 @@
 					"path": [
 						"v2",
 						"entities",
-						""
+						"board1",
+						"attrs"
 					]
 				},
 				"description": "## Creating Context Data\n\nAt its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a  new entity (a store in **Berlin**). Any entity must have a `id` and `type` attributes, additional attributes are optional and will depend on the system being described. Each additional attribute should also have a defined `type` and a `value` attribute."
@@ -634,7 +853,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": \"board2\",\n    \"type\": \"Board\",\n    \"source\": {\n    \t\"value\": \"user\"\n    },\n    \"publicPresentationUrl\": {\n        \"type\": \"URL\",\n        \"value\": \"http://just.do.it\"\n    },\n    \"refUser\": {\n        \"type\": \"Reference\",\n        \"value\": \"user1\"\n    }\n}",
+					"raw": "{\n    \"id\": \"board2\",\n    \"type\": \"Board\",\n    \"source\": {\n    \t\"value\": \"user\"\n    },\n    \"name\": {\n        \"type\": \"Text\",\n        \"value\": \"Fler grafer\"\n    },\n    \"publicPresentationUrl\": {\n        \"type\": \"URL\",\n        \"value\": \"http://just.do.it\"\n    },\n    \"refUser\": {\n        \"type\": \"Reference\",\n        \"value\": \"user1\"\n    }\n}",
 					"options": {
 						"raw": {}
 					}
@@ -806,13 +1025,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": \"graph1\",\n    \"type\": \"Graph\",\n    \"source\": {\n    \t\"value\": \"user\"\n    },\n    \"refBoard\": {\n        \"type\": \"Reference\",\n        \"value\": \"board1\"\n    },\n    \"refGraphType\": {\n        \"type\": \"Reference\",\n        \"value\": \"graphType1\"\n    },\n    \"connectedData\": {\n        \"type\": \"Text\",\n        \"value\": [\"cool data\"]\n    }\n}",
+					"raw": "{\n    \"refBoard\": {\n        \"type\": \"Reference\",\n        \"value\": \"board2\"\n    },\n    \"refGraphType\": {\n        \"type\": \"Reference\",\n        \"value\": \"graphType1\"\n    },\n    \"connectedData\": {\n        \"type\": \"Text\",\n        \"value\": [\"cool data\"]\n    }\n}",
 					"options": {
 						"raw": {}
 					}
 				},
 				"url": {
-					"raw": "http://{{orion}}/v2/entities/",
+					"raw": "http://{{orion}}/v2/entities/graph1/attrs",
 					"protocol": "http",
 					"host": [
 						"{{orion}}"
@@ -820,7 +1039,8 @@
 					"path": [
 						"v2",
 						"entities",
-						""
+						"graph1",
+						"attrs"
 					]
 				},
 				"description": "## Creating Context Data\n\nAt its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a  new entity (a store in **Berlin**). Any entity must have a `id` and `type` attributes, additional attributes are optional and will depend on the system being described. Each additional attribute should also have a defined `type` and a `value` attribute."
@@ -849,7 +1069,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": \"graph2\",\n    \"type\": \"Graph\",\n    \"source\": {\n    \t\"value\": \"user\"\n    },\n    \"refBoard\": {\n        \"type\": \"Reference\",\n        \"value\": \"board1\"\n    },\n    \"refGraphType\": {\n        \"type\": \"Reference\",\n        \"value\": \"graphTypeSchoolAttendance\"\n    },\n    \"connectedData\": {\n        \"type\": \"Text\",\n        \"value\": [[\"Adam Adamsson\", \"Frida Kahlie\"],\"school1\"]\n    }\n}",
+					"raw": "{\n    \"id\": \"graph2\",\n    \"type\": \"Graph\",\n    \"source\": {\n    \t\"value\": \"user\"\n    },\n    \"refBoard\": {\n        \"type\": \"Reference\",\n        \"value\": \"board1\"\n    },\n    \"refGraphType\": {\n        \"type\": \"Reference\",\n        \"value\": \"graphTypeSchoolAttendance\"\n    },\n    \"connectedData\": {\n        \"type\": \"Text\",\n        \"value\": [[\"Adam Adamsson\", \"Frida Kahlie\",\"Kalle Kobra\"],\"school1\"]\n    }\n}",
 					"options": {
 						"raw": {}
 					}
@@ -873,7 +1093,7 @@
 		{
 			"name": "Orion - Update graph2",
 			"request": {
-				"method": "POST",
+				"method": "PUT",
 				"header": [
 					{
 						"key": "Content-Type",
@@ -892,7 +1112,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"value\": [\"Adam Adamsson, Frida Kahlie, Kalle Kobra\", \"school1\"]\n}",
+					"raw": "{\n    \"value\": [[\"Adam Adamsson\", \"Frida Kahlie\", \"Kalle Kobra\"], \"school1\"]\n}",
 					"options": {
 						"raw": {}
 					}

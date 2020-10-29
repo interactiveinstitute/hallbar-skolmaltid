@@ -17,7 +17,6 @@ export default {
   mutations: {
     setUser: function (state, payload) {
       // state.user = payload.user;
-      console.log(payload.user);
       state.user = payload.user;
     },
     addSchool: function (state, payload) {

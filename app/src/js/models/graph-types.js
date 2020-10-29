@@ -12,19 +12,26 @@ export default function (type) {
 const graphType1 = function () {
   const graph = new Graph();
   graph.endpoints = attached => {
-    return [null];
+    return [];
   };
   return graph;
 };
 
 const graphTypeSchoolAttendance = function () {
   const graph = new Graph();
-  graph.endpoints = attached => {
+  /* graph.endpoints = attached => {
     return [
       null,
       '?type=SchoolAttendanceObserved&q=refSchool==' +
         attached[1] +
         '&limit=1&orderBy=!dateObserved'
+    ];
+  }; */
+  graph.endpoints = attached => {
+    return [
+      attached[1],
+      '?type=SchoolAbsenceReported&q=refSchool==' + attached[1],
+      '?type=DietGroup&q=refSchool==' + attached[1]
     ];
   };
   return graph;

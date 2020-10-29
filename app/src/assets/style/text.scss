@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:100,300,400,500,600,800');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,600,800,900');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,500,600');
+@import url('https://fonts.googleapis.com/css?family=Cookie');
+/*@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,500,600,800,900');*/
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC&display=swap');
+
+:root {
+  --font-header: 'Roboto Condensed';
+}
+
+body,
+body * {
+  font-family: 'Roboto';
+}
+
+body {
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color0);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1,
+.h1 {
+  font-size: 4em;
+  font-family: var(--font-header);
+  font-weight: bold;
+  color: DodgerBlue;
+  margin-bottom: 0.2em;
+  margin-top: 0.2em;
+  hyphens: auto;
+}
+
+h2,
+.h2 {
+  font-size: 2em;
+  font-family: var(--font-header);
+  font-weight: bold;
+  color: rgb(30, 30, 30);
+  margin-bottom: 0.2em;
+  margin-top: 0.2em;
+}
+
+h3 {
+  font-family: var(--font-header);
+  font-weight: 600;
+  font-size: 1.5em;
+  margin-bottom: 0.2em;
+  margin-top: 0.4em;
+  color: gray;
+}
+
+h4 {
+  font-family: var(--font-header);
+  font-weight: 600;
+  font-size: 1em;
+  margin-bottom: 0.2em;
+  margin-top: 0.1em;
+}
+
+p {
+  margin-top: 0.3em;
+  margin-bottom: 0.4em;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding-bottom: 0.2em;
+}
+
+li {
+  margin: 0;
+}
