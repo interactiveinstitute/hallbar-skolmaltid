@@ -31,7 +31,7 @@
             {{ user.givenName }} {{ user.familyName }}
             <br>
             <div v-for="(school, i) in schools" :key="i">
-              {{ school.id }}
+              {{ school.name }}
             </div>
           </strong>
         </q-item-label>

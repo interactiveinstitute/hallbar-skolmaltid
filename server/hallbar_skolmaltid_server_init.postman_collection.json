@@ -155,7 +155,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": {\n        \"type\": \"Text\",\n        \"value\": \"Skola 1\"\n    },\n    \"logo\": {\n        \"type\": \"URL\",\n        \"value\": \"https://vignette.wikia.nocookie.net/harrypotter/images/a/ae/Hogwartscrest.png\"\n    },\n    \"identifier\": {\n    \t\"type\": \"Text\",\n        \"value\": \"112233-4455\"\n    },\n    \"studentCount\": \n    {\n    \t\"type\": \"Integer\",\n        \"value\": 409\n    },\n    \"staffCount\": \n    {\n    \t\"type\": \"Integer\",\n        \"value\": 72\n    }\n}",
+					"raw": "{\n    \"name\": {\n        \"type\": \"Text\",\n        \"value\": \"Skogsskolan\"\n    },\n    \"logo\": {\n        \"type\": \"URL\",\n        \"value\": \"https://vignette.wikia.nocookie.net/harrypotter/images/a/ae/Hogwartscrest.png\"\n    },\n    \"identifier\": {\n    \t\"type\": \"Text\",\n        \"value\": \"112233-4455\"\n    },\n    \"studentCount\": \n    {\n    \t\"type\": \"Integer\",\n        \"value\": 409\n    },\n    \"staffCount\": \n    {\n    \t\"type\": \"Integer\",\n        \"value\": 72\n    }\n}",
 					"options": {
 						"raw": {}
 					}
@@ -485,49 +485,6 @@
 			"response": []
 		},
 		{
-			"name": "Orion - Create attendanceObserved",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "fiware-service",
-						"type": "text",
-						"value": "timeseries"
-					},
-					{
-						"key": "fiware-servicepath",
-						"type": "text",
-						"value": "/"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"id\": \"attendanceObservedSchool1\",\n    \"type\": \"SchoolAttendanceObserved\",\n    \"source\": {\n    \t\"value\": \"http://www.vklass.se\"\n    },\n    \"dateObserved\": {\n        \"type\": \"DateTime\",\n        \"value\": \"2020-02-05T00:00:00Z\"\n    },\n    \"enrolled\": {\n        \"type\": \"Integer\",\n        \"value\": 444\n    },\n    \"present\": {\n        \"type\": \"Integer\",\n        \"value\": 434\n    },\n    \"absent\": {\n    \t\"type\": \"Integer\",\n        \"value\": 10\n    },\n    \"absentList\": {\n        \"type\": \"Text\",\n        \"value\": [\"Adam Adamsson\", \"Bärta Beritsdotter\", \"Calle Carlsson\", \"Ditte Doo\", \"Emil Eskilsen\", \"Frida Kahlie\", \"Ghasaan Göransson\", \"Hadya Haddad\", \"Ingwar Igelsson\", \"Jenna Johansen\"]\n    },\n    \"refSchool\": {\n        \"type\": \"Reference\",\n        \"value\": \"school1\"\n    }\n}",
-					"options": {
-						"raw": {}
-					}
-				},
-				"url": {
-					"raw": "http://{{orion}}/v2/entities/",
-					"protocol": "http",
-					"host": [
-						"{{orion}}"
-					],
-					"path": [
-						"v2",
-						"entities",
-						""
-					]
-				},
-				"description": "## Creating Context Data\n\nAt its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a  new entity (a store in **Berlin**). Any entity must have a `id` and `type` attributes, additional attributes are optional and will depend on the system being described. Each additional attribute should also have a defined `type` and a `value` attribute."
-			},
-			"response": []
-		},
-		{
 			"name": "Orion - Create absenceReported batch",
 			"request": {
 				"method": "POST",
@@ -607,137 +564,6 @@
 						"v2",
 						"op",
 						"update"
-					]
-				},
-				"description": "## Creating Context Data\n\nAt its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a  new entity (a store in **Berlin**). Any entity must have a `id` and `type` attributes, additional attributes are optional and will depend on the system being described. Each additional attribute should also have a defined `type` and a `value` attribute."
-			},
-			"response": []
-		},
-		{
-			"name": "Orion - Update absenceReported1",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "fiware-service",
-						"type": "text",
-						"value": "timeseries"
-					},
-					{
-						"key": "fiware-servicepath",
-						"type": "text",
-						"value": "/"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"dateStart\": {\n        \"type\": \"DateTime\",\n        \"value\": \"2020-10-28T21:49:00\"\n    },\n    \"dateEnd\": {\n        \"type\": \"DateTime\",\n        \"value\": \"2020-11-03T23:00:00\"\n    },\n    \"dateUpdated\": {\n        \"type\": \"DateTime\",\n        \"value\": \"2020-03-18T21:50:27.877\"\n    },\n    \"refSchool\": {\n        \"type\": \"Reference\",\n        \"value\": \"school1\"\n    }\n}",
-					"options": {
-						"raw": {}
-					}
-				},
-				"url": {
-					"raw": "http://{{orion}}/v2/entities/absenceReported1/attrs",
-					"protocol": "http",
-					"host": [
-						"{{orion}}"
-					],
-					"path": [
-						"v2",
-						"entities",
-						"absenceReported1",
-						"attrs"
-					]
-				},
-				"description": "## Creating Context Data\n\nAt its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a  new entity (a store in **Berlin**). Any entity must have a `id` and `type` attributes, additional attributes are optional and will depend on the system being described. Each additional attribute should also have a defined `type` and a `value` attribute."
-			},
-			"response": []
-		},
-		{
-			"name": "Orion - Create absenceReported2",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "fiware-service",
-						"type": "text",
-						"value": "timeseries"
-					},
-					{
-						"key": "fiware-servicepath",
-						"type": "text",
-						"value": "/"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"id\": \"absenceReported2\",\n    \"type\": \"SchoolAbsenceReported\",\n    \"source\": {\n    \t\"value\": \"http://www.vklass.se\"\n    },\n    \"givenName\": {\n        \"type\": \"Text\",\n        \"value\": \"Alfred\"\n    },\n    \"familyName\": {\n    \t\"type\": \"Text\",\n        \"value\": \"Carlsoon\"\n    },\n    \"dateStart\": {\n        \"type\": \"DateTime\",\n        \"value\": \"2020-03-17T21:49:00\"\n    },\n    \"dateEnd\": {\n        \"type\": \"DateTime\",\n        \"value\": \"2020-03-31T23:00:00\"\n    },\n    \"dateUpdated\": {\n        \"type\": \"DateTime\",\n        \"value\": \"2020-03-18T21:50:27.91\"\n    },\n    \"refSchool\": {\n        \"type\": \"Reference\",\n        \"value\": \"school1\"\n    }\n}",
-					"options": {
-						"raw": {}
-					}
-				},
-				"url": {
-					"raw": "http://{{orion}}/v2/entities/",
-					"protocol": "http",
-					"host": [
-						"{{orion}}"
-					],
-					"path": [
-						"v2",
-						"entities",
-						""
-					]
-				},
-				"description": "## Creating Context Data\n\nAt its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a  new entity (a store in **Berlin**). Any entity must have a `id` and `type` attributes, additional attributes are optional and will depend on the system being described. Each additional attribute should also have a defined `type` and a `value` attribute."
-			},
-			"response": []
-		},
-		{
-			"name": "Orion - Update attendanceObserved",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "fiware-service",
-						"type": "text",
-						"value": "timeseries"
-					},
-					{
-						"key": "fiware-servicepath",
-						"type": "text",
-						"value": "/"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"dateObserved\": {\n        \"type\": \"DateTime\",\n        \"value\": \"2020-02-05T00:00:00Z\"\n    },\n    \"enrolled\": {\n        \"type\": \"Integer\",\n        \"value\": 444\n    },\n    \"present\": {\n        \"type\": \"Integer\",\n        \"value\": 434\n    },\n    \"absent\": {\n    \t\"type\": \"Integer\",\n        \"value\": 10\n    },\n    \"absentList\": {\n        \"type\": \"Text\",\n        \"value\": [\"Adam Adamsson\", \"Bärta Beritsdotter\", \"Calle Carlsson\", \"Ditte Doo\", \"Emil Eskilsen\", \"Frida Kahlie\", \"Ghasaan Göransson\", \"Hadya Haddad\", \"Ingwar Igelsson\", \"Jenna Johansen\"]\n    },\n    \"refSchool\": {\n        \"type\": \"Reference\",\n        \"value\": \"school1\"\n    }\n}",
-					"options": {
-						"raw": {}
-					}
-				},
-				"url": {
-					"raw": "http://{{orion}}/v2/entities/attendanceObservedSchool1/attrs",
-					"protocol": "http",
-					"host": [
-						"{{orion}}"
-					],
-					"path": [
-						"v2",
-						"entities",
-						"attendanceObservedSchool1",
-						"attrs"
 					]
 				},
 				"description": "## Creating Context Data\n\nAt its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a  new entity (a store in **Berlin**). Any entity must have a `id` and `type` attributes, additional attributes are optional and will depend on the system being described. Each additional attribute should also have a defined `type` and a `value` attribute."

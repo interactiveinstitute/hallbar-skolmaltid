@@ -19,13 +19,15 @@ import { mapGetters } from 'vuex';
 // import Graph from 'components/Graph.vue';
 import graphType1 from 'components/graphTypes/graphType1.vue';
 import GraphTypeSchoolAttendance from 'components/graphTypes/graphTypeSchoolAttendance.vue';
+import GraphTypeAbsenceCalendar from 'components/graphTypes/GraphTypeAbsenceCalendar.vue';
 
 export default {
   name: 'ComponentTemplate',
   components: {
     // Graph,
     graphType1,
-    GraphTypeSchoolAttendance
+    GraphTypeSchoolAttendance,
+    GraphTypeAbsenceCalendar
   },
   props: {
     board: Object

@@ -8,7 +8,7 @@
       </div>
 
       <div>
-        <h3>Frånvaro i dietgrupper</h3>
+        <h3>Frånvaro i dietgrupper:</h3>
 
         <div v-for="(dg, i) in dietGroups" :key="i">
           <h4>{{ dg.name }}</h4>
@@ -120,6 +120,14 @@ export default {
     this.initGraph();
   },
   methods: {
+    endpoints: function (attached) {
+      // Required method for all graph types
+      return [
+        attached[0],
+        '?type=SchoolAbsenceReported&q=refSchool==' + attached[0],
+        '?type=DietGroup&q=refSchool==' + attached[0]
+      ];
+    },
     initGraph: function () {
       const ctx = document
         .getElementById('myChart' + this._uid)
@@ -133,7 +141,10 @@ export default {
           labels: ['Närvarande', 'Frånvarande'],
           datasets: [
             {
-              data: [this.school.studentCount, this.absence.length],
+              data: [
+                this.school.studentCount - this.absence.length,
+                this.absence.length
+              ],
               backgroundColor: [
                 'rgba(99, 255, 132, 0.2)',
                 'rgba(255, 99, 132, 0.2)'

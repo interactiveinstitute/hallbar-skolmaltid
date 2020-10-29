@@ -5,7 +5,7 @@
       Det här en graftyp som är ganska intetsägande. Men den visar att det går
       att skapa olika typer av datapresentationer.
     </p>
-    <p>Användarens egeninlagda data: {{ graph.preparedData.values[0] }}</p>
+    <p>Användarens egeninlagda data: {{ graph.connectedData[0] }}</p>
 
     <form @submit.prevent="changeValue">
       <input name="value" type="text" placeholder="Ange nytt värde">
@@ -35,17 +35,16 @@ export default {
   computed: {},
   mounted: function () {},
   methods: {
+    endpoints: function (attached) {
+      // Required method for all graph types
+      return [];
+    },
     changeValue: function (event) {
       this.$store.commit('setValue', {
         object: this.graph.connectedData,
         index: 0,
         value: event.target.elements.value.value
       });
-      this.$store.commit('setValue', {
-        object: this.graph.preparedData.values,
-        index: 0,
-        value: event.target.elements.value.value
-      }); // This should be made reactive
       backendUtils.updateAttribute(
         this.graph.id,
         'connectedData',

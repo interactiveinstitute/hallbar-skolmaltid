@@ -2,7 +2,7 @@
   <div class="BoardThumb">
     <router-link :to="{ name: 'Board', params: { id: board.id } }">
       <div>
-        <h4>{{ board.name }}</h4>
+        <h1>{{ board.name }}</h1>
       </div>
     </router-link>
   </div>
