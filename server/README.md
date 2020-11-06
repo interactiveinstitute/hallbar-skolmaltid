@@ -5,8 +5,27 @@ This is the repository for the backend for the Hållbar Skolmåltid backend, sta
 The current setup encompasses
 * A mongo db
 * FIWARE Orion Context broker - the context data is accessed using the standardized [NGSIv2 REST API](https://telefonicaid.github.io/fiware-orion/api/v2/stable/).
-* FIWARE Comet - the historical context data component - [Comet docs](https://fiware-sth-comet.readthedocs.io/en/latest/)
+*  ~~*FIWARE Comet - the historical context data component - [Comet docs](https://fiware-sth-comet.readthedocs.io/)*~~
 * FIWARE Draco - basically an instance of [Apache NiFi](https://en.wikipedia.org/wiki/Apache_NiFi) - for automating the flow of data between systems. Potentially useful for shuffling (and transforming)  data from sources into the backend.
+* FIWARE Keyrock - Identity Management [Keyrock docs](https://fiware-idm.readthedocs.io/) - adds OAuth2-based authentication and authorization security to orion access
+
+<!-- language: lang-none -->
+
+     +-------+
+     | MySQL |
+     |  DB   |
+     +---+---+
+         |
+    +----+----+   +---------+
+    | Keyrock +---+ Postman |
+    |  IDM    |   |         |
+    +----+----+   +----+----+
+         |             |
+     +---+---+   +-----+-----+  +-------+  +-------+
+     | Front +---+   Wilma   +--+ Orion +--+ Mongo |
+     |  End  |   | PEP Proxy |  |       |  |  DB   |
+     +-------+   +-----------+  +-------+  +-------+
+
 
 ## Prerequisites
 
@@ -28,7 +47,9 @@ server/docker> docker-compose up
 
 The first startup takes a while, since all containers are downloaded/built.
 
-### Persistent data
+### Persistent orion data
+*(Keyrock data currently in a mysql volume)*
+
 **For empty database** - first time, or if mongo volume has been removed ... to initiate with some test data, either
 
 **import** *hallbar_skolmaltid_server_init* collection in [Postman](https://www.postman.com/) and run (locally, or change collection variables accordingly) collection using Postman 'Runner' feature.
@@ -68,16 +89,15 @@ The first startup takes a while, since all containers are downloaded/built.
 </details>
 
 ### Stopping
-    server/docker> docker-compose down
-
-### Removing databases (orion/comet/keyrock)
-If you don't need to keep _any_ of your local volumes, the simplest is to remove them all
+Stopping while keeping all data (orion/comet/keyrock data in volumes)
 
     server/docker> docker-compose down
-    server/docker> docker volume rm $(docker volume ls -f dangling=true -q)
-    server/docker> docker-compose down
 
-... or if you have other volumes you want to keep, just use _docker volume rm_ to delete one by one.
+... or if you don't need to keep _any_ of your local volumes, the simplest is to remove them all when stopping
+
+    server/docker> docker-compose down -y
+
+... or if you have other volumes you want to keep, just use _docker volume rm_ to delete one by one after stopping.
 
 ## Usage
 
@@ -109,12 +129,18 @@ Query orion for user1's related school1's schoolAttendanceObserved between dates
 
 ### Draco
 The web GUI is available at http://localhost:9090/nifi
+
 Currently the "flow" is saved/mapped from the server/docker/draco/conf directory.
+
+Draco normally updates flow files in *server/docker/draco/conf* while running. If you're not working with the draco configuration, try not to commit these new/changed files.
 
 ### Current demo scenario
 * As before, build/start according _Starting_ above
 * As before, load data using _hallbar_skolmaltid_server_init_ postman collection, see above (collection may have been updated!)
 * Use the _orion_via_pepproxy_ postman collection for usage ideas
-  - first use one of the _create_access_token_..._ calls to authenticate
-  - then use any of the other calls (which automatically sends the access_token along)
-Regarding users/authentication, it's using the same setup as [this tutorial](https://github.com/FIWARE/tutorials.PEP-Proxy#securing-the-orion-context-broker), look there if you're curious about keyrock/wilma.
+  - user1 login to keyrock: _USER1/Keyrock - create keyrock token_
+  - get user1's id: _USER1/Keyrock - get own user id_
+  - user1 get access token: _USER1/Keyrock - create access token_
+  - get user1's related data using user1's id ...
+
+Regarding users/authentication, it's using the same setup as [this tutorial](https://github.com/FIWARE/tutorials.PEP-Proxy#securing-the-orion-context-broker), look there for more info.
