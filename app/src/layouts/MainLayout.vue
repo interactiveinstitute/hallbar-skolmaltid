@@ -72,14 +72,19 @@ export default {
           routeName: 'Home'
         },
         {
-          title: 'Översikt',
-          caption: 'Se alla bräden',
+          title: 'Logga in (test)',
+          icon: 'settings',
+          routeName: 'Login'
+        },
+        {
+          title: 'Mina bräden',
+          // caption: 'Se alla bräden',
           icon: 'apps',
           routeName: 'Dashboard'
         },
         {
           title: 'Inställningar',
-          caption: 'Dina inställningar',
+          // caption: 'Se och ändra inställningar',
           icon: 'settings',
           routeName: 'Settings'
         }

@@ -1,5 +1,6 @@
 <template>
   <q-page class="">
+    <h1>Välkommen!</h1>
     <pre>
       {{ user }}
     </pre>

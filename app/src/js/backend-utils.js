@@ -1,10 +1,36 @@
 import axios from 'axios';
 
 const config = {
+  keyrock: 'http://localhost:3005/v1/',
+  keyrockHeaders: {
+    'Content-Type': 'application/json',
+    Accept: 'application/json'
+  },
   url: 'http://localhost:1026/v2/',
   headers: {
     'fiware-service': 'timeseries',
-    'fiware-servicepath': '/'
+    'fiware-servicepath': '/',
+    'Content-Type': 'application/json'
+  }
+};
+
+const createKeyrockToken = async (name, password) => {
+  console.log(name + ' ' + password);
+  try {
+    const response = await axios.post(
+      config.keyrock + 'auth/tokens',
+      {
+        name: name,
+        password: password
+      },
+      {
+        headers: config.keyrockHeaders
+      }
+    );
+    console.log(response);
+    return response.data;
+  } catch (err) {
+    throw new Error(err);
   }
 };
 
@@ -58,6 +84,7 @@ const updateAttribute = async (entity, attrName, value) => {
 };
 
 export default {
+  createKeyrockToken,
   getAllData,
   getEntity,
   updateAttribute
