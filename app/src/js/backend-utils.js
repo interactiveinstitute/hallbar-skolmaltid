@@ -1,11 +1,6 @@
 import axios from 'axios';
 
 const config = {
-  keyrock: 'http://localhost:3005/v1/',
-  keyrockHeaders: {
-    'Content-Type': 'application/json',
-    Accept: 'application/json'
-  },
   url: 'http://localhost:1026/v2/',
   headers: {
     'fiware-service': 'timeseries',
@@ -18,13 +13,16 @@ const createKeyrockToken = async (name, password) => {
   console.log(name + ' ' + password);
   try {
     const response = await axios.post(
-      config.keyrock + 'auth/tokens',
+      'http://localhost:3005/v1/auth/tokens',
       {
         name: name,
         password: password
       },
       {
-        headers: config.keyrockHeaders
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        }
       }
     );
     console.log(response);

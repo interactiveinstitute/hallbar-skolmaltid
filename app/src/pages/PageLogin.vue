@@ -36,8 +36,8 @@ export default {
   methods: {
     login: function (e) {
       backendUtils.createKeyrockToken(
-        event.target.elements.name.value,
-        event.target.elements.password.value
+        e.target.elements.name.value,
+        e.target.elements.password.value
       );
     }
   }

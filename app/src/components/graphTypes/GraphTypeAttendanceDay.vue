@@ -5,7 +5,7 @@
     </h2>
     <div class="info">
       <p>
-        Graferna visar anmäld frånvaro och beräknad närvaro för angivet datum.
+        Graferna visar beräknad närvaro och anmäld frånvaro för angivet datum.
       </p>
 
       <label>Datum: <input v-model="dateSelected" type="date"> </label>
