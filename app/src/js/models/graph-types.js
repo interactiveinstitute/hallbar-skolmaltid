@@ -1,20 +1,23 @@
 import Graph from './graph';
 
 import GraphType1 from 'components/graphTypes/graphType1.vue';
-import GraphTypeSchoolAttendance from 'components/graphTypes/graphTypeSchoolAttendance.vue';
+import GraphTypeAttendanceDay from 'components/graphTypes/GraphTypeAttendanceDay.vue';
 import GraphTypeAbsenceCalendar from 'components/graphTypes/GraphTypeAbsenceCalendar.vue';
+import GraphTypeAbsenceLines from 'components/graphTypes/GraphTypeAbsenceLines.vue';
+import GraphTypeAttendanceLongterm from 'components/graphTypes/GraphTypeAttendanceLongterm.vue';
 
 // Add graphs in the graphTypes object
 // Maps graph name to vue component
 const graphTypes = {
   graphType1: GraphType1,
-  graphTypeSchoolAttendance: GraphTypeSchoolAttendance,
-  graphTypeAbsenceCalendar: GraphTypeAbsenceCalendar
+  graphTypeAttendanceDay: GraphTypeAttendanceDay,
+  graphTypeAbsenceCalendar: GraphTypeAbsenceCalendar,
+  graphTypeAbsenceLines: GraphTypeAbsenceLines,
+  graphTypeAttendanceLongterm: GraphTypeAttendanceLongterm
 };
 
 export default function (type) {
   const graph = new Graph();
   graph.endpoints = graphTypes[type].methods.endpoints;
-  graph.type = type;
   return graph;
 }

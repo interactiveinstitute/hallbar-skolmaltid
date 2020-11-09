@@ -1,0 +1,24 @@
+.center {
+  text-align: center;
+}
+
+.flex-center-rows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.info {
+  background-color: dodgerblue;
+  padding: 10px;
+  color: white !important;
+}
+
+.border {
+  border: 1px solid dodgerblue;
+}
+
+.padding {
+  padding: 10px;
+}

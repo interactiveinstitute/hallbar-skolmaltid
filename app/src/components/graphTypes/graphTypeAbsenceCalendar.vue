@@ -61,7 +61,6 @@ export default {
   },
   created: function () {
     const today = QCal.parseTimestamp('2020-10-26');
-    console.log('today: ', today);
     const relativeDay = QCal.relativeDays(today, QCal.prevDay, 2, [
       1,
       2,

@@ -1,79 +1,35 @@
 <template>
-  <div class="GraphTypeSchoolAttendance">
+  <div class="GraphTypeAbsenceLines">
     <h2>Närvaro och frånvaro</h2>
     <div class="columns">
       <div>
         <h3>Total närvaro och frånvaro:</h3>
         <canvas :id="'myChart' + _uid" width="600" height="400" />
       </div>
+      <div class="columns">
+        <div>
+          <h3>Frånvaro i dietgrupper:</h3>
 
-      <div>
-        <h3>Frånvaro i dietgrupper:</h3>
+          <div v-for="(dg, i) in dietGroups" :key="i">
+            <h4>{{ dg.name }}</h4>
+            <ul>
+              <li v-for="(p, i) in absenceByDietGroup(dg)" :key="i">
+                {{ p.givenName }} {{ p.familyName }}
+              </li>
+            </ul>
+          </div>
+        </div>
 
-        <div v-for="(dg, i) in dietGroups" :key="i">
-          <h4>{{ dg.name }}</h4>
+        <div>
+          <h3>Samtliga frånvarande:</h3>
           <ul>
-            <li v-for="(p, i) in absenceByDietGroup(dg)" :key="i">
+            <li v-for="(p, i) in this.absence" :key="i">
               {{ p.givenName }} {{ p.familyName }}
             </li>
           </ul>
         </div>
       </div>
-
-      <div>
-        <h3>Samtliga frånvarande:</h3>
-        <ul>
-          <li v-for="(p, i) in this.absence" :key="i">
-            {{ p.givenName }} {{ p.familyName }}
-          </li>
-        </ul>
-      </div>
-
-      <!--div>
-        <h5>Viktiga frånvarande:</h5>
-
-        <ul>
-          <li v-for="p in highlighted" :key="p">
-            {{ p }}
-          </li>
-        </ul>
-      </div-->
     </div>
-
-    <!--hr-->
-
-    <!--div class="columns">
-      <div>
-        Samtliga frånvarande:
-        <ul>
-          <li v-for="(p, i) in this.absence" :key="i">
-            {{ p.givenName }} {{ p.familyName }}
-          </li>
-        </ul>
-      </div>
-      <div>
-        Lista som Viktig frånvarande:
-        <ul>
-          <li
-            v-for="(p, i) in this.highlightList"
-            :key="i"
-            class="remove"
-            @click="removeHighlight(i)"
-          >
-            {{ p }}
-          </li>
-        </ul>
-        <form @submit.prevent="addHighlight">
-          <input name="person" type="text">
-          <button type="submit">
-            Lägg till
-          </button>
-        </form>
-        <p class="small">
-          Klicka på ett namn för att ta bort från listan
-        </p>
-      </div>
-    </div-->
   </div>
 </template>
 
@@ -107,14 +63,60 @@ export default {
     absence: function () {
       return this.graph.endpointData.values[1];
     },
+    absenceDates: function () {
+      const students = {};
+      this.absence.forEach((s, i) => {
+        students[s.socialNumber] = this.getDates(s.dateStart, s.dateEnd);
+      });
+      return students;
+    },
     dietGroups: function () {
       return this.graph.endpointData.values[2];
+    },
+    chartLegends: function () {
+      const legends = [];
+      this.dietGroups.forEach((group, iGroup) => {
+        legends.push(group.name);
+      });
+      return legends;
+    },
+    chartLabels: function () {
+      return this.getDates('2020-10-15', '2020-11-15');
+    },
+    chartDatasets: function () {
+      const datasets = [];
+      this.dietGroups.forEach((group, iGroup) => {
+        const color =
+          'rgba(' +
+          Math.floor(Math.random() * 255) +
+          ',' +
+          Math.floor(Math.random() * 255) +
+          ',' +
+          Math.floor(Math.random() * 255) +
+          ')';
+        const dataset = {
+          data: [],
+          label: group.name,
+          backgroundColor: color,
+          borderColor: color,
+          borderWidth: 3,
+          fill: false,
+          lineTension: 0
+        };
+        const groupData = [];
+        this.chartLabels.forEach((date, iDate) => {
+          const absent = group.socialNumbers.filter(
+            sn =>
+              Object.prototype.hasOwnProperty.call(this.absenceDates, sn) &&
+              this.absenceDates[sn].indexOf(date) !== -1
+          ).length;
+          dataset.data.push(absent);
+        });
+        datasets.push(dataset);
+      });
+      console.log(datasets);
+      return datasets;
     }
-    /* highlighted: function () {
-      return this.absence.absentList.filter(value =>
-        this.highlightList.includes(value)
-      );
-    } */
   },
   mounted: function () {
     this.initGraph();
@@ -136,26 +138,29 @@ export default {
     },
     chartSettings: function (entity) {
       return {
-        type: 'bar',
+        type: 'line',
         data: {
-          labels: ['Närvarande', 'Frånvarande'],
-          datasets: [
+          labels: this.chartLabels,
+          datasets: this
+            .chartDatasets /* [
             {
-              data: [
-                this.school.studentCount - this.absence.length,
-                this.absence.length
-              ],
-              backgroundColor: [
-                'rgba(99, 255, 132, 0.2)',
-                'rgba(255, 99, 132, 0.2)'
-              ],
-              borderWidth: 1
+              data: [10, 15, 12],
+              backgroundColor: 'rgba(99, 255, 132)',
+              borderWidth: 2,
+              fill: false
+            },
+            {
+              data: [0, 20, 14],
+              backgroundColor: 'rgba(99, 0, 132)',
+              borderWidth: 2,
+              fill: false
             }
-          ]
+          ] */
         },
         options: {
           legend: {
-            display: false
+            display: true
+            // labels: this.legends
           },
           scales: {
             y: {
@@ -191,6 +196,21 @@ export default {
       return this.absence.filter(a =>
         dietGroup.socialNumbers.includes(a.socialNumber)
       );
+    },
+    getDates: function (start, end) {
+      var dateArray = [];
+      const dateStart = new Date(start);
+      const dateEnd = new Date(end);
+      const currentDate = new Date(start);
+      for (
+        let i = 0;
+        i < (dateEnd.getTime() - dateStart.getTime()) / (1000 * 3600 * 24);
+        i++
+      ) {
+        dateArray.push(new Date(currentDate).toLocaleDateString());
+        currentDate.setDate(currentDate.getDate() + 1);
+      }
+      return dateArray;
     }
   }
 };
@@ -202,8 +222,8 @@ export default {
 }
 
 canvas {
-  max-width: 400px;
-  max-height: 400px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .columns {

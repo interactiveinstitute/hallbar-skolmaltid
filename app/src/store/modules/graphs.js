@@ -14,7 +14,9 @@ export default {
   },
   getters: {
     getGraphsByBoardId: state => id => {
-      return state.graphs.filter(graph => graph.refBoard === id);
+      return state.graphs
+        .filter(graph => graph.refBoard === id)
+        .sort((a, b) => a.order - b.order);
     }
   },
   mutations: {

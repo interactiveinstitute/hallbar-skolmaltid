@@ -18,16 +18,20 @@
 import { mapGetters } from 'vuex';
 // import Graph from 'components/Graph.vue';
 import graphType1 from 'components/graphTypes/graphType1.vue';
-import GraphTypeSchoolAttendance from 'components/graphTypes/graphTypeSchoolAttendance.vue';
+import GraphTypeAttendanceDay from 'components/graphTypes/GraphTypeAttendanceDay.vue';
 import GraphTypeAbsenceCalendar from 'components/graphTypes/GraphTypeAbsenceCalendar.vue';
+import GraphTypeAbsenceLines from 'components/graphTypes/GraphTypeAbsenceLines.vue';
+import GraphTypeAttendanceLongterm from 'components/graphTypes/GraphTypeAttendanceLongterm.vue';
 
 export default {
   name: 'ComponentTemplate',
   components: {
     // Graph,
     graphType1,
-    GraphTypeSchoolAttendance,
-    GraphTypeAbsenceCalendar
+    GraphTypeAttendanceDay,
+    GraphTypeAbsenceCalendar,
+    GraphTypeAbsenceLines,
+    GraphTypeAttendanceLongterm
   },
   props: {
     board: Object
@@ -68,10 +72,13 @@ pre {
 
 .boards {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 
 .boards > div {
   flex: 1 0 50%;
+  border: 0px solid rgb(240, 240, 240);
+  margin-bottom: 10px;
 }
 </style>

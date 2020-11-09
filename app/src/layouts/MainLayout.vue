@@ -45,7 +45,7 @@
     </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <router-view class="q-page" />
     </q-page-container>
   </q-layout>
 </template>
@@ -91,3 +91,9 @@ export default {
   }
 };
 </script>
+
+<style scoped lang="scss">
+.q-page {
+  padding: 0 20px 0 20px;
+}
+</style>
