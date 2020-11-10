@@ -1,6 +1,6 @@
 <template>
   <div class="BoardThumb">
-    <router-link :to="{ name: 'Board', params: { id: board.id } }">
+    <router-link :to="{ name: 'AppBoard', params: { id: board.id } }">
       <div>
         <h1>{{ board.name }}</h1>
       </div>

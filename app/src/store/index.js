@@ -16,31 +16,31 @@ Vue.use(Vuex);
  * with the Store instance.
  */
 
-export default (function (/* { ssrContext } */) {
-  const Store = new Vuex.Store({
-    mutations: {
-      setValue: function (state, payload) {
-        Vue.set(payload.object, payload.index, payload.value);
-        // payload.object[payload.index] = payload.value;
-      },
-      addToArray: function (state, payload) {
-        payload.array.push(payload.value);
-      },
-      removeFromArray: function (state, payload) {
-        payload.array.splice(payload.index, 1);
-      }
+// export default (function (/* { ssrContext } */) {
+// const Store = new Vuex.Store({
+export default new Vuex.Store({
+  mutations: {
+    setValue: function (state, payload) {
+      Vue.set(payload.object, payload.index, payload.value);
+      // payload.object[payload.index] = payload.value;
     },
-
-    modules: {
-      user: user,
-      boards: boards,
-      graphs: graphs
+    addToArray: function (state, payload) {
+      payload.array.push(payload.value);
     },
+    removeFromArray: function (state, payload) {
+      payload.array.splice(payload.index, 1);
+    }
+  },
 
-    // enable strict mode (adds overhead!)
-    // for dev mode only
-    strict: process.env.DEV
-  });
+  modules: {
+    user: user,
+    boards: boards,
+    graphs: graphs
+  },
 
-  return Store;
+  // enable strict mode (adds overhead!)
+  // for dev mode only
+  strict: process.env.DEV
+
+  //  return Store;
 });

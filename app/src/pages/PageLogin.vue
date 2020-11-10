@@ -1,19 +1,35 @@
 <template>
-  <q-page class="">
-    <h2>Logga in</h2>
-    <p>
-      Denna sidan är endast för testsyfte. Givetvis ska ingen inloggningssida
-      finnas i huvudmenyn.
-    </p>
-    <form @submit.prevent="login">
-      E-post: <input type="text" name="name" value="user1@test.com">
-      <br>
-      Lösenord: <input type="text" name="password" value="test">
-      <br>
-      <button type="submit">
-        Logga in
-      </button>
-    </form>
+  <q-page class="PageLogin">
+    <div>
+      <h1>Logga in</h1>
+      <form @submit.prevent="login">
+        <p>
+          <label>
+            E-post
+            <br>
+            <input type="text" name="name" value="user1@test.com">
+          </label>
+        </p>
+        <p>
+          <label>
+            Lösenord
+            <br>
+            <input type="password" name="password" value="test">
+          </label>
+        </p>
+        <p>
+          <button type="submit">
+            Logga in
+          </button>
+        </p>
+      </form>
+      <!--pre>
+      {{ auth }}
+    </pre>
+    <pre>
+      {{ user }}
+    </pre-->
+    </div>
   </q-page>
 </template>
 
@@ -23,7 +39,7 @@ import backendUtils from '../js/backend-utils';
 import { mapState } from 'vuex';
 
 export default {
-  name: 'PageIndex',
+  name: 'PageLogin',
   components: {},
   data: function () {
     return {
@@ -31,15 +47,63 @@ export default {
     };
   },
   computed: {
-    ...mapState('user', ['user'])
+    ...mapState('user', ['auth', 'user'])
   },
   methods: {
     login: function (e) {
-      backendUtils.createKeyrockToken(
-        e.target.elements.name.value,
-        e.target.elements.password.value
-      );
+      const self = this;
+
+      backendUtils
+        .createKeyrockAccessToken(
+          // Create user access token
+          e.target.elements.name.value,
+          e.target.elements.password.value
+        )
+        // User access token received
+        .then(function (r) {
+          console.log(r);
+          self.$store.commit('user/setAuthKey', {
+            key: 'access',
+            value: r.data
+          });
+          backendUtils.setAxiosAuthToken(r.data.access_token); // Set Axios user access token
+          return (
+            backendUtils
+              .createKeyrockToken(
+                // Create user Keyrock token
+                e.target.elements.name.value,
+                e.target.elements.password.value
+              )
+              // User Keyrock token received
+              .then(function (r) {
+                console.log(r);
+                self.$store.commit('user/setAuthKey', {
+                  key: 'keyrock_token',
+                  value: r.headers['x-subject-token']
+                });
+                return backendUtils.getKeyrockUser(
+                  r.headers['x-subject-token']
+                ); // Get Keyrock user
+              })
+              // Keyrock user received
+              .then(function (r) {
+                console.log(r);
+                self.$store.commit('user/setAuthKey', {
+                  key: 'user',
+                  value: r.data.User
+                });
+                self.$router.push({ name: 'AppHome' });
+              })
+          );
+        });
     }
   }
 };
 </script>
+
+<style scoped lang="scss">
+.PageLogin {
+  display: flex;
+  justify-content: center;
+}
+</style>

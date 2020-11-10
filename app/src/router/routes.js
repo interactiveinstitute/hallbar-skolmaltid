@@ -1,30 +1,41 @@
 const routes = [
   {
     path: '/',
-    component: () => import('layouts/MainLayout.vue'),
+    component: () => import('layouts/HomeLayout.vue'),
     children: [
       {
         name: 'Home',
         path: '',
-        component: () => import('pages/PageIndex.vue')
-      },
-      {
-        name: 'Login',
-        path: 'loggain',
         component: () => import('pages/PageLogin.vue')
       },
       {
-        name: 'Dashboard',
+        name: 'Logout',
+        path: 'loggaut',
+        component: () => import('pages/PageLogout.vue')
+      }
+    ]
+  },
+  {
+    path: '/app',
+    component: () => import('layouts/AppLayout.vue'),
+    children: [
+      {
+        name: 'AppHome',
+        path: '',
+        component: () => import('pages/PageIndex.vue')
+      },
+      {
+        name: 'AppBoards',
         path: 'oversikt',
         component: () => import('pages/PageDashboard.vue')
       },
       {
-        name: 'Settings',
+        name: 'AppSettings',
         path: 'installningar',
         component: () => import('pages/PageSettings.vue')
       },
       {
-        name: 'Board',
+        name: 'AppBoard',
         path: 'brade/:id',
         component: () => import('pages/PageBoard.vue')
       },

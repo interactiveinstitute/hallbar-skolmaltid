@@ -8,9 +8,9 @@
 export default {
   name: 'App',
   mounted: function () {
-    this.$store.dispatch('user/setUserById', {
+    /* this.$store.dispatch('user/setUserById', {
       idUser: 'urn:ngsi-ld:Person:user1'
-    });
+    }); */
   }
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="hHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
         <q-btn
@@ -25,15 +25,13 @@
     >
       <q-list>
         <q-item-label header class="text-grey-8">
-          Inloggad som:
-          <strong>
-            <br>
-            {{ user.givenName }} {{ user.familyName }}
-            <br>
-            <div v-for="(school, i) in schools" :key="i">
-              {{ school.name }}
-            </div>
-          </strong>
+          <p>
+            <strong> {{ user.givenName }} {{ user.familyName }} </strong>
+          </p>
+
+          <div v-for="(school, i) in schools" :key="i">
+            {{ school.name }}
+          </div>
         </q-item-label>
 
         <EssentialLink
@@ -57,11 +55,9 @@ import EssentialLink from 'components/EssentialLink';
 
 export default {
   name: 'MainLayout',
-
   components: {
     EssentialLink
   },
-
   data () {
     return {
       leftDrawerOpen: false,
@@ -69,30 +65,39 @@ export default {
         {
           title: 'Hem',
           icon: 'home',
-          routeName: 'Home'
-        },
-        {
-          title: 'Logga in (test)',
-          icon: 'settings',
-          routeName: 'Login'
+          routeName: 'AppHome'
         },
         {
           title: 'Mina bräden',
           // caption: 'Se alla bräden',
           icon: 'apps',
-          routeName: 'Dashboard'
+          routeName: 'AppBoards'
         },
         {
           title: 'Inställningar',
           // caption: 'Se och ändra inställningar',
           icon: 'settings',
-          routeName: 'Settings'
+          routeName: 'AppSettings'
+        },
+        {
+          title: 'Logga ut',
+          // caption: 'Se och ändra inställningar',
+          icon: 'exit_to_app',
+          routeName: 'Logout'
         }
       ]
     };
   },
+  preFetch ({ store, redirect }) {
+    if (!store.getters['user/isLoggedIn']) {
+      redirect({ path: '/' });
+    }
+  },
   computed: {
     ...mapState('user', ['user', 'schools'])
+  },
+  created: function () {
+    this.$store.dispatch('user/initUserByAuth');
   }
 };
 </script>

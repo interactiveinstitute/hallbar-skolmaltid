@@ -44,7 +44,7 @@ services:
       - IDM_ADMIN_EMAIL=alice-the-admin@test.com
       - IDM_ADMIN_PASS=test
       - IDM_CORS_ENABLED=true
-      - IDM_CORS_ORIGIN=http://localhost:8080
+      - IDM_CORS_EXPOSED_HEADERS=X-Subject-Token
     secrets:
       - my_secret_data
     healthcheck:
