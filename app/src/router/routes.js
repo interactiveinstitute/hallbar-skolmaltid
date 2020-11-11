@@ -6,7 +6,7 @@ const routes = [
       {
         name: 'Home',
         path: '',
-        component: () => import('pages/PageLogin.vue')
+        component: () => import('pages/PageHome.vue')
       },
       {
         name: 'Logout',

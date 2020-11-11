@@ -167,7 +167,7 @@ export default {
               Object.prototype.hasOwnProperty.call(this.absenceDates, sn) &&
               this.absenceDates[sn].indexOf(date) !== -1
           ).length;
-          dataAbsence.push(absent);
+          dataAbsence.push(-absent);
         });
 
         const datasetPresence = this.generateDataset(

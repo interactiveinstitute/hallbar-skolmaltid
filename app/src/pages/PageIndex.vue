@@ -1,9 +1,6 @@
 <template>
   <q-page class="">
     <h1>Välkommen {{ user.givenName }}!</h1>
-    <!--pre>
-      {{ user }}
-    </pre-->
   </q-page>
 </template>
 

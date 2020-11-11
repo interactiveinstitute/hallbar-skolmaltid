@@ -46,7 +46,7 @@ const getKeyrockUser = async token => {
   }
 };
 
-const createKeyrockAccessToken = async (name, password) => {
+const createKeyrockUserAccessToken = async (name, password) => {
   try {
     const params = new URLSearchParams();
     params.append('username', name);
@@ -54,11 +54,6 @@ const createKeyrockAccessToken = async (name, password) => {
     params.append('grant_type', 'password');
     const response = await axios.post(
       config.urlKeyrock + 'oauth2/token',
-      /* {
-        username: name,
-        password: password,
-        grant_type: 'password'
-      }, */
       params,
       {
         headers: {
@@ -71,14 +66,17 @@ const createKeyrockAccessToken = async (name, password) => {
         }
       }
     );
-    return response;
+    return {
+      response: response,
+      loginDetails: { name: name, password: password }
+    };
   } catch (err) {
     throw new Error(err);
   }
 };
 
 const setAxiosAuthToken = token => {
-  // axios.defaults.headers.common.Authorization = token;
+  axios.defaults.headers.common.Authorization = 'Bearer ' + token;
 };
 
 const getAllData = async () => {
@@ -101,8 +99,7 @@ const getEntity = async entity => {
   // console.log(store.getters['user/getAuth'].access.access_token);
   const headers = config.headers;
   // headers['X-Auth-Token'] = 'Bearer ' + store.getters['user/getAuth'].token;
-  headers.Authorization =
-    'Bearer ' + store.getters['user/getAuth'].access.access_token;
+  // headers.Authorization = 'Bearer ' + store.getters['user/getAuth'].access.access_token;
   // console.log(headers);
   try {
     const response = await axios.get(
@@ -140,7 +137,7 @@ export default {
   createKeyrockToken,
   setAxiosAuthToken,
   getKeyrockUser,
-  createKeyrockAccessToken,
+  createKeyrockUserAccessToken,
   getAllData,
   getEntity,
   updateAttribute
