@@ -26,8 +26,8 @@ flowFile = session.write(flowFile,
                 'value' numEnrolled
             }
             'absent' {
-                'type' 'Integer'
-                'value' -1
+                'type' 'studentAbsence'
+                'value' []
             }
             'dateObserved' {
                 'type' 'DateTime'

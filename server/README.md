@@ -134,6 +134,12 @@ Currently the "flow" is saved/mapped from the server/docker/draco/conf directory
 
 Draco normally updates flow files in *server/docker/draco/conf* while running. If you're not working with the draco configuration, try not to commit these new/changed files.
 
+### Keyrock IDM
+The web GUI is so far available at http://localhost:3005/<br>
+For now there is an admin user - alice-the-admin@test.com / test
+
+See e.g. this [Securing Access](https://fiware-tutorials.readthedocs.io/en/latest/securing-access) tutorial for more info ...
+
 ### Current demo scenario
 * As before, build/start according _Starting_ above
 * As before, load data using _hallbar_skolmaltid_server_init_ postman collection, see above (collection may have been updated!)
