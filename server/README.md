@@ -39,10 +39,16 @@ If that is not the case, follow [Docker's installation instructions](https://doc
 ## Execution
 
 ### Starting
-To start the backend, do the following:
+To start the backend, without the vklass emulator, do the following:
 
 ```bash
 server/docker> docker-compose up
+```
+
+To start with the vklass emulator, do:
+
+```bash
+server/docker> docker-compose -f docker-compose.yml -f vklass_dummy.yml up
 ```
 
 The first startup takes a while, since all containers are downloaded/built.
@@ -89,15 +95,20 @@ The first startup takes a while, since all containers are downloaded/built.
 </details>
 
 ### Stopping
-Stopping while keeping all data (orion/comet/keyrock data in volumes)
+Stopping while keeping all data (orion/comet/keyrock data in volumes), without using the vklass emulator:
 
     server/docker> docker-compose down
 
 ... or if you don't need to keep _any_ of your local volumes, the simplest is to remove them all when stopping
 
-    server/docker> docker-compose down -y
+    server/docker> docker-compose down -v
 
 ... or if you have other volumes you want to keep, just use _docker volume rm_ to delete one by one after stopping.
+
+**If you're running the vklass emulator**, add the _-f docker-compose.yml -f vklass_dummy.yml_ arguments to the above commands:
+
+    server/docker> docker-compose -f docker-compose.yml -f vklass_dummy.yml down
+    server/docker> docker-compose -f docker-compose.yml -f vklass_dummy.yml down -v
 
 ## Usage
 
