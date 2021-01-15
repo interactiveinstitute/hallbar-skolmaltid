@@ -139,7 +139,7 @@ def index():
         </p>\
         <h2>Available endpoints:</h2>\
         <ul>\
-            <li><a href='/export_vklass_net/output'>/export_vklass_net/output</a></li>\
+            <li><a href='/export_vklass_net/absence'>/export_vklass_net/absence</a></li>\
             <li>/admin/config</li>\
             <ul>\
                 <li>params:</li>\
@@ -153,11 +153,15 @@ def index():
             <li><a href='/admin/reset_update_time'>/admin/reset_update_time</a></li>\
         </ul>"
 
-@app.route('/export_vklass_net/output')
-def export_vklass_net_output():
+@app.route('/export_vklass_net/absence')
+def export_vklass_net_absence():
     global todaysAbsence
     update_vklass_absences_today()
     return todaysAbsence, 200, {'Content-Type': 'application/json; charset=utf-8'}
+
+@app.route('/export_vklass_net/schoolinfo')
+def export_vklass_net_schoolinfo():
+    return {"schoolidCollection":[{"schoolid":4,"schoolname":"Vklass grundskola","schooltype":0,"studentcount":109,"personalcount":70}]}, 200, {'Content-Type': 'application/json; charset=utf-8'}
 
 @app.route('/admin/config')
 def admin_config():

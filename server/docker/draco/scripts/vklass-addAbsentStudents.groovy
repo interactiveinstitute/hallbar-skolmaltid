@@ -27,8 +27,8 @@ flowFile = session.write(flowFile,
             log.warn("****************************** " + it.enddate)
         }
 
-        def builder2 = new groovy.json.JsonBuilder()
-        builder2 {
+        def builder = new groovy.json.JsonBuilder()
+        builder {
             dateObserved(
                 type: 'DateTime',
                 value: nowISO8601
@@ -46,22 +46,9 @@ flowFile = session.write(flowFile,
                 }
             )
         }
-        log.warn("****************************** " + builder2.toPrettyString())
+        log.warn("****************************** " + builder.toPrettyString())
 
-        int numAbsences = obj.absenceidCollection.size()
-        def builder = new groovy.json.JsonBuilder()
-        builder.call {
-            'absent' {
-                'type' 'Integer'
-                'value' numAbsences
-            }
-            'dateObserved' {
-                'type' 'DateTime'
-                'value' nowISO8601
-            }
-        }
-
-        outputStream.write(builder2.toPrettyString().getBytes(StandardCharsets.UTF_8))
+        outputStream.write(builder.toPrettyString().getBytes(StandardCharsets.UTF_8))
     } as StreamCallback)
 flowFile = session.putAttribute(flowFile, "absenceId", absenceId)
 flowFile = session.putAttribute(flowFile, "filename", flowFile.getAttribute('filename').tokenize('.')[0]+'_translated.json')

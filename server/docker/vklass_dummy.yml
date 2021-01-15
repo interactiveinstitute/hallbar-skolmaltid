@@ -26,8 +26,8 @@ services:
     working_dir: /host_volume
     command: ./start.sh
 
-networks:
-  default:
-    ipam:
-      config:
-        - subnet: 172.18.1.0/24
+# networks:
+#   default:
+#     ipam:
+#       config:
+#         - subnet: 172.18.1.0/24
