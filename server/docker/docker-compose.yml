@@ -23,8 +23,8 @@ services:
         ipv4_address: 172.18.1.9
     expose:
       - "1026"
-    ports:
-      - "1026:1026"
+    # ports:
+    #   - "1026:1026"
     command: -dbhost mongo-db -logLevel DEBUG -corsOrigin __ALL
     healthcheck:
       test: curl --fail -s http://orion:1026/version || exit 1
@@ -39,14 +39,14 @@ services:
         ipv4_address: 172.18.1.5
     depends_on:
       - mysql-db
-    ports:
-      - "3005:3005" # localhost:3005
+    # ports:
+    #   - "3005:3005" # localhost:3005
     environment:
       - DEBUG=idm:*
       - IDM_DB_HOST=mysql-db
       - IDM_DB_PASS_FILE=/run/secrets/my_secret_data
       - IDM_DB_USER=root
-      - IDM_HOST=http://localhost:3005
+      - IDM_HOST=http://keyrock:3005
       - IDM_PORT=3005
       - IDM_HTTPS_ENABLED=false
       - IDM_HTTPS_PORT=3443
@@ -58,7 +58,7 @@ services:
     secrets:
       - my_secret_data
     healthcheck:
-      test: curl --fail -s http://localhost:3005/version || exit 1
+      test: curl --fail -s http://keyrock:3005/version || exit 1
 
   # PEP Proxy for Orion
   orion-proxy:
@@ -73,8 +73,8 @@ services:
     deploy:
       restart_policy:
         condition: on-failure
-    ports:
-      - "1027:1027" # localhost:1027
+    # ports:
+    #   - "1027:1027" # localhost:1027
     expose:
       - "1027"
     environment:
@@ -128,8 +128,8 @@ services:
     deploy:
       restart_policy:
         condition: on-failure
-    ports:
-      - "1028:1028" # localhost:1028
+    # ports:
+    #   - "1028:1028" # localhost:1028
     expose:
       - "1028"
     environment:
@@ -164,9 +164,9 @@ services:
     expose:
       - "5050"
       - "9090"
-    ports:
-      - "9090:9090"
-      - "5050:5050"
+    # ports:
+    #   - "9090:9090"
+    #   - "5050:5050"
     healthcheck:
       test: curl --fail -s http://draco:9090/nifi-api/system-diagnostics || exit 1
       start_period: 1m
@@ -183,8 +183,8 @@ services:
     container_name: db-mongo
     expose:
       - "27017"
-    ports:
-      - "27017:27017"
+    # ports:
+    #   - "27017:27017"
     networks:
       - default
     command: --bind_ip_all
@@ -203,8 +203,8 @@ services:
     container_name: db-mysql
     expose:
       - "3306"
-    ports:
-      - "3306:3306" # localhost:3306
+    # ports:
+    #   - "3306:3306" # localhost:3306
     networks:
       default:
         ipv4_address: 172.18.1.6
