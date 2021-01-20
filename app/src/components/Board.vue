@@ -17,7 +17,7 @@
 <script>
 import { mapGetters } from 'vuex';
 // import Graph from 'components/Graph.vue';
-import graphType1 from 'components/graphTypes/graphType1.vue';
+import graphType1 from 'components/graphTypes/GraphType1.vue';
 import GraphTypeAttendanceDay from 'components/graphTypes/GraphTypeAttendanceDay.vue';
 import GraphTypeAbsenceCalendar from 'components/graphTypes/GraphTypeAbsenceCalendar.vue';
 import GraphTypeAbsenceLines from 'components/graphTypes/GraphTypeAbsenceLines.vue';
