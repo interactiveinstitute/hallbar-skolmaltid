@@ -3,9 +3,9 @@
 </template>
 
 <script>
-import backendUtils from '../js/backend-utils';
+// import backendUtils from '../js/backend-utils';
 
-import { mapState } from 'vuex';
+// import { mapState } from 'vuex';
 
 export default {
   name: 'PageLogout',

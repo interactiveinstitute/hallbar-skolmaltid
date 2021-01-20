@@ -103,7 +103,7 @@ export default {
           fill: false,
           lineTension: 0
         };
-        const groupData = [];
+        // const groupData = [];
         this.chartLabels.forEach((date, iDate) => {
           const absent = group.socialNumbers.filter(
             sn =>

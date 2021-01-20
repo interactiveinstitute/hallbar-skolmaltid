@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import backendUtils from '../js/backend-utils';
+// import backendUtils from '../js/backend-utils';
 
 export default {
   name: 'PageHome',

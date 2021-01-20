@@ -2,8 +2,8 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 import backendUtils from '../../js/backend-utils'; // path needs to be fixed
-import User from '../../js/models/user'; // path needs to be fixed
-import School from '../../js/models/school'; // path needs to be fixed
+// import User from '../../js/models/user'; // path needs to be fixed
+// import School from '../../js/models/school'; // path needs to be fixed
 
 Vue.use(Vuex);
 
