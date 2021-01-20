@@ -1,6 +1,16 @@
 version: "3.5"
 
 services:
+  caddy:
+    build: ../caddy
+    ports:
+      - "80:80"
+      - "443:443"
+    # depends_on:
+    volumes:
+      - ~/docker-persistence/caddy:/data
+      - ../caddy/Caddyfile:/etc/caddy/Caddyfile
+      - ../../app/dist:/dist
   # Orion is the context broker
   orion:
     image: fiware/orion:2.4.0
