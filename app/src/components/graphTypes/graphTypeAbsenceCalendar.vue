@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import backendUtils from '../../js/backend-utils';
+// import backendUtils from '../../js/backend-utils';
 import QCal from '@quasar/quasar-ui-qcalendar';
 
 export default {
@@ -60,14 +60,14 @@ export default {
     }
   },
   created: function () {
-    const today = QCal.parseTimestamp('2020-10-26');
-    const relativeDay = QCal.relativeDays(today, QCal.prevDay, 2, [
-      1,
-      2,
-      3,
-      4,
-      5
-    ]);
+    // const today = QCal.parseTimestamp('2020-10-26');
+    // const relativeDay = QCal.relativeDays(today, QCal.prevDay, 2, [
+    //   1,
+    //   2,
+    //   3,
+    //   4,
+    //   5
+    // ]);
   },
   methods: {
     endpoints: function (attached) {
