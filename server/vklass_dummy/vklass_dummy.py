@@ -33,6 +33,24 @@ app = Flask(__name__)
 max_daily_added_absences = int(os.environ['MAX_DAILY_ADDED_ABSENCES']) if 'MAX_DAILY_ADDED_ABSENCES' in os.environ else 50
 morning_update_hour      = int(os.environ['MORNING_UPDATE_HOUR']) if 'MORNING_UPDATE_HOUR' in os.environ else 8
 late_morning_update_hour = int(os.environ['LATE_MORNING_UPDATE_HOUR']) if 'LATE_MORNING_UPDATE_HOUR' in os.environ else 8
+schools = {
+    "schoolidCollection":[
+        {
+            "schoolid":1,
+            "schoolname":"Söderskolan",
+            "schooltype":0,
+            "studentcount":500,
+            "personalcount":50
+        },
+        {
+            "schoolid":2,
+            "schoolname":"Västerskolan",
+            "schooltype":0,
+            "studentcount":1000,
+            "personalcount":100
+        }
+    ]
+}
 todaysAbsence = {'absenceidCollection':[]}
 last_call = datetime.now() - timedelta(days=1)
 # names from Swedish baby name top list 2019:
@@ -69,7 +87,7 @@ def remove_absence_before_today():
     todaysAbsence['absenceidCollection'] = [a for a in todaysAbsence['absenceidCollection'] if not (a['enddate'] < past_midnight_str)]
     logger.debug("   " + str(len(todaysAbsence['absenceidCollection'])) + " absences left from previous day")
 
-def add_absences_today(portion_now=1.0):
+def add_absences_today(portion_now, ):
     global todaysAbsence
     global max_daily_added_absences
     for ix in range(random.randint(0, int(portion_now*max_daily_added_absences))):
@@ -121,7 +139,7 @@ def update_vklass_absences_today():
         remove_absence_before_today()
     if last_call < morning_update and datetime.now() >= morning_update:
         logger.debug("MORNING UPDATE!")
-        add_absences_today()
+        add_absences_today(0.9)
         last_call = datetime.now()
     if last_call < late_morning_update and datetime.now() >= late_morning_update:
         logger.debug("LATE MORNING UPDATE!")
@@ -156,12 +174,18 @@ def index():
 @app.route('/export_vklass_net/absence')
 def export_vklass_net_absence():
     global todaysAbsence
+    xp = flask_request.headers.get('x-password')
+    uid = flask_request.args.get('UID')
+    logger.debug("xp: " + str(xp) + ", uid: " + str(uid))
     update_vklass_absences_today()
     return todaysAbsence, 200, {'Content-Type': 'application/json; charset=utf-8'}
 
 @app.route('/export_vklass_net/schoolinfo')
 def export_vklass_net_schoolinfo():
-    return {"schoolidCollection":[{"schoolid":4,"schoolname":"Vklass grundskola","schooltype":0,"studentcount":109,"personalcount":70}]}, 200, {'Content-Type': 'application/json; charset=utf-8'}
+    global schools
+    uid = flask_request.args.get('UID')
+    logger.debug(str(schools))
+    return schools, 200, {'Content-Type': 'application/json; charset=utf-8'}
 
 @app.route('/admin/config')
 def admin_config():

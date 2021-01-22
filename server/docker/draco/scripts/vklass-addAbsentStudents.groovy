@@ -1,3 +1,4 @@
+// vklass-addAbsentStudents
 import org.apache.commons.io.IOUtils
 import java.nio.charset.*
 
@@ -7,7 +8,12 @@ if (flowFile == null) {
 }
 
 String nowISO8601 = (new Date()).format("yyyy-MM-dd'T'HH:mm:ss")
-String absenceId = "vklass_absence_" + (new Date()).format("yyyy-MM-dd")
+// String sId = flowFile.schoolId
+String sId = flowFile.getAttribute("schoolId")
+
+log.warn("sId: " + sId)
+
+String absenceId = "vklass_absence_" + sId + "_" + (new Date()).format("yyyy-MM-dd")
 
 def slurper = new groovy.json.JsonSlurper()
 

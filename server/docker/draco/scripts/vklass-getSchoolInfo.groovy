@@ -1,4 +1,4 @@
-// vklass-getDailyEnrolledCount
+// vklass-getSchoolInfo
 import org.apache.commons.io.IOUtils
 import java.nio.charset.*
 
@@ -7,41 +7,43 @@ if (flowFile == null) {
     return;
 }
 
-String nowISO8601 = (new Date()).format("yyyy-MM-dd'T'HH:mm:ss")
-// String absenceId = "vklass_absence_" + (new Date()).format("yyyy-MM-dd")
-
 def slurper = new groovy.json.JsonSlurper()
 
 flowFile = session.write(flowFile,
     { inputStream, outputStream ->
         def text = IOUtils.toString(inputStream, StandardCharsets.UTF_8)
         def obj = slurper.parseText(text)
-        String absenceId = "vklass_absence_" + obj.schoolid.toString() + "_" + (new Date()).format("yyyy-MM-dd")
         String schoolId = "vklass_school_" + obj.schoolid.toString()
-        int numEnrolled = obj.studentcount
+        String schoolName = obj.schoolname
+        int numStudents = obj.studentcount
+        int numStaff = obj.personalcount
+        // log.warn("****************************** " + numStaff.toString())
         def builder = new groovy.json.JsonBuilder()
         builder.call {
-            'id' absenceId
-            'type' 'SchoolAttendanceObserved'
-            'enrolled' {
-                'type' 'Integer'
-                'value' numEnrolled
+            'id' schoolId
+            'type' 'School'
+            'source' {
+                'value' 'http://www.vklass.se'
             }
-            'absent' {
-                'type' 'studentAbsence'
-                'value' []
+            'name' {
+                'type' 'Text'
+                'value' schoolName
             }
-            'dateObserved' {
-                'type' 'DateTime'
-                'value' nowISO8601
+            'logo' {
+                'type' 'URL'
+                'value' 'https://vignette.wikia.nocookie.net/harrypotter/images/a/ae/Hogwartscrest.png'
             }
-            'refSchool' {
-                'type' 'Reference'
-	    	    'value' schoolId
+            'identifier' {
+                'type' 'Text'
+	    	    'value' '112233-4455'
         	}
-	        'source' {
-		        'type' 'Text'
-		        'value' 'http://www.vklass.se'
+            'studentCount' {
+                'type' 'Integer'
+	    	    'value' numStudents
+        	}
+	        'staffCount' {
+		        'type' 'Integer'
+		        'value' numStaff
         	}
         }
         outputStream.write(builder.toPrettyString().getBytes(StandardCharsets.UTF_8))
