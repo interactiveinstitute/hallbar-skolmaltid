@@ -23,8 +23,8 @@ services:
         ipv4_address: 172.18.1.9
     expose:
       - "1026"
-    # ports:
-    #   - "1026:1026"
+    ports:          # TODO: Make dev setup work without open
+      - "1026:1026" # TODO: Make dev setup work without open
     command: -dbhost mongo-db -logLevel DEBUG -corsOrigin __ALL
     healthcheck:
       test: curl --fail -s http://orion:1026/version || exit 1
@@ -39,8 +39,8 @@ services:
         ipv4_address: 172.18.1.5
     depends_on:
       - mysql-db
-    # ports:
-    #   - "3005:3005" # localhost:3005
+    ports:          # TODO: Make dev setup work without open
+      - "3005:3005" # TODO: Make dev setup work without open
     environment:
       - DEBUG=idm:*
       - IDM_DB_HOST=mysql-db
@@ -73,8 +73,8 @@ services:
     deploy:
       restart_policy:
         condition: on-failure
-    # ports:
-    #   - "1027:1027" # localhost:1027
+    ports:          # TODO: Make dev setup work without open
+      - "1027:1027" # TODO: Make dev setup work without open
     expose:
       - "1027"
     environment:
@@ -164,8 +164,8 @@ services:
     expose:
       - "5050"
       - "9090"
-    # ports:
-    #   - "9090:9090"
+    ports:          # TODO: Make dev setup work without open
+      - "9090:9090" # TODO: Make dev setup work without open
     #   - "5050:5050"
     healthcheck:
       test: curl --fail -s http://draco:9090/nifi-api/system-diagnostics || exit 1
