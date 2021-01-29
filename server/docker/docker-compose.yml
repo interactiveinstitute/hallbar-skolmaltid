@@ -1,6 +1,7 @@
 version: "3.5"
 
 services:
+  # Internet-connected reverse proxing web server
   caddy:
     build: ../caddy
     ports:
@@ -11,6 +12,7 @@ services:
       - ~/docker-persistence/caddy:/data
       - ../caddy/Caddyfile:/etc/caddy/Caddyfile
       - ../../app/dist:/dist
+
   # Orion is the context broker
   orion:
     image: fiware/orion:2.4.0
@@ -159,6 +161,8 @@ services:
     networks:
       default:
         ipv4_address: 172.18.1.15
+    depends_on:
+      - orion
     environment:
       - NIFI_WEB_HTTP_PORT=9090
     expose:
@@ -166,6 +170,7 @@ services:
       - "9090"
     ports:          # TODO: Make dev setup work without open
       - "9090:9090" # TODO: Make dev setup work without open
+      - "9091:9091" # TODO: Make dev setup work without open
     #   - "5050:5050"
     healthcheck:
       test: curl --fail -s http://draco:9090/nifi-api/system-diagnostics || exit 1
