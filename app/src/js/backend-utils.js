@@ -46,6 +46,7 @@ const getKeyrockUser = async token => {
   }
 };
 
+// TODO: @Martin Törnros. Kan du fixa så den failar även när responsen är http code 200 eller så. Nog bra om den failar always utom när den faktiskt får en token.
 const createKeyrockUserAccessToken = async (name, password) => {
   try {
     const params = new URLSearchParams();
