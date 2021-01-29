@@ -2,14 +2,21 @@ skolmat.testyta.se {
   # Important to use the route directive so that the reverse_proxy is matched first
   # (default is try_files before reverse_proxy)
   route {
-    reverse_proxy /api/* orion-proxy:1027
-    reverse_proxy /keyrock/* keyrock:3005
+    route /api* {
+      uri strip_prefix /api
+      reverse_proxy orion-proxy:1027
+    }
+
+    route /keyrock* {
+      uri strip_prefix /keyrock
+      reverse_proxy keyrock:3005
+    }
     root * /dist/spa
     try_files {path} /index.html #rewrite request to index if no file matches
     file_server {
       root /dist/spa
     }
   }
-  
+
   log
 }

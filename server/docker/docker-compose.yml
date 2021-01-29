@@ -11,6 +11,7 @@ services:
       - ~/docker-persistence/caddy:/data
       - ../caddy/Caddyfile:/etc/caddy/Caddyfile
       - ../../app/dist:/dist
+      - ../caddy/test:/test
   # Orion is the context broker
   orion:
     image: fiware/orion:2.4.0
