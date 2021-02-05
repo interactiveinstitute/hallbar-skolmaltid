@@ -2,8 +2,8 @@ import axios from 'axios';
 // import store from '../store';
 
 const config = {
-  urlKeyrock: 'http://localhost:3005/',
-  url: 'http://localhost:1027/v2/',
+  urlKeyrock: process.env.KEYROCK_URL,
+  url: process.env.API_URL,
   headers: {
     'fiware-service': 'timeseries',
     'fiware-servicepath': '/',
