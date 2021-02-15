@@ -158,7 +158,8 @@ export default {
   },
   watch: {
     dateSelected: function () {
-      this.initGraphs();
+      // this.initGraphs();
+      this.updateGraphData();
     }
   },
   mounted: function () {
@@ -184,17 +185,6 @@ export default {
         .getElementById('chartAll' + this._uid)
         .getContext('2d');
       this.chartTotal = new Chart(ctxAll, this.chartSettingsAll());
-
-      // Chart diets
-      /* this.dietGroups.forEach((g, i) => {
-        const ctxDiet = document
-          .getElementById('chartDiet' + i + '_' + this._uid)
-          .getContext('2d');
-        this.chartTotal = new Chart(
-          ctxDiet,
-          this.chartSettingsDiet(this.absence)
-        );
-      }); */
     },
     chartSettingsAll: function () {
       return {
@@ -227,35 +217,18 @@ export default {
         }
       };
     },
-    chartSettingsDiet: function () {
-      return {
-        type: 'horizontalBar',
-        data: {
-          labels: ['Närvarande', 'Frånvarande'],
-          datasets: [
-            {
-              data: [
-                this.school.studentCount - this.absenceDate.length,
-                this.absenceDate.length
-              ],
-              backgroundColor: ['rgb(0, 200, 0)', 'rgb(200, 0, 0)'],
-              borderWidth: 0
-            }
-          ]
-        },
-        options: {
-          legend: {
-            display: false
-          },
-          scales: {
-            xAxes: [{ stacked: true }],
-            yAxes: [{ stacked: true }],
-            y: {
-              beginAtZero: true
-            }
-          }
+    updateGraphData: function () {
+      this.chartTotal.data.datasets = [
+        {
+          data: [
+            this.school.studentCount - this.absenceDate.length,
+            this.absenceDate.length
+          ],
+          backgroundColor: ['rgb(0, 200, 0)', 'rgb(200, 0, 0)'],
+          borderWidth: 0
         }
-      };
+      ];
+      this.chartTotal.update();
     },
     addHighlight: function (event) {
       this.$store.commit('addToArray', {
