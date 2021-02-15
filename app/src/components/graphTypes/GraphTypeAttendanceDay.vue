@@ -3,6 +3,7 @@
     <h2>
       Elevnärvaro, dagsvy
     </h2>
+
     <div class="info">
       <p>
         Graferna visar beräknad närvaro och anmäld frånvaro för angivet datum.
@@ -112,7 +113,7 @@ export default {
       return this.graph.endpointData.values[0];
     },
     absence: function () {
-      return this.graph.endpointData.values[1];
+      return this.graph.endpointData.values[1][0].absent;
     },
     dietGroups: function () {
       return this.graph.endpointData.values[2];
@@ -171,7 +172,8 @@ export default {
       // Required method for all graph types
       return [
         attached[0],
-        '?type=SchoolAbsenceReported&q=refSchool==' + attached[0],
+        // '?type=SchoolAbsenceReported&q=refSchool==' + attached[0],
+        '?type=SchoolAttendanceObserved&q=refSchool==' + attached[0],
         '?type=DietGroup&q=refSchool==' + attached[0]
       ];
     },
