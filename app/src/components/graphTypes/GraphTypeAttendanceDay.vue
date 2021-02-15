@@ -4,9 +4,13 @@
       Elevnärvaro, dagsvy
     </h2>
 
+    <!--pre>
+      {{ graph }}
+    </pre-->
+
     <div class="info">
       <p>
-        Graferna visar beräknad närvaro och anmäld frånvaro för angivet datum.
+        Graferna visar beräknad närvaro och anmäld frånvaro för {{ graph.endpointData.values[0].name }} ({{ graph.endpointData.values[0].studentCount }} elever) angivet datum.
       </p>
 
       <label>Datum: <input v-model="dateSelected" type="date"> </label>

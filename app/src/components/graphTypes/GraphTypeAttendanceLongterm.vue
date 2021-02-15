@@ -5,7 +5,7 @@
     </h2>
     <div class="info">
       <p>
-        Graferna visar beräknad närvaro och anmäld frånvaro mellan angivna
+        Graferna visar beräknad närvaro och anmäld frånvaro för {{ graph.endpointData.values[0].name }} ({{ graph.endpointData.values[0].studentCount }} elever) mellan angivna
         datum.
       </p>
       <label> Startdatum: <input v-model="dateStart" type="date"> </label>
