@@ -18,8 +18,8 @@
         <div class="flex-center-rows">
           <canvas :id="'chartAll' + _uid" />
           <div class="large">
-            <strong>{{ school.studentCount - absence.length }}</strong> ({{
-              absence.length
+            <strong>{{ school.studentCount - absenceDate.length }}</strong> ({{
+              absenceDate.length
             }})
           </div>
         </div>
@@ -178,11 +178,12 @@ export default {
       ];
     },
     initGraphs: function () {
+      console.log('Init graphs');
       // Chart all
       const ctxAll = document
         .getElementById('chartAll' + this._uid)
         .getContext('2d');
-      this.chartTotal = new Chart(ctxAll, this.chartSettingsAll(this.absence));
+      this.chartTotal = new Chart(ctxAll, this.chartSettingsAll());
 
       // Chart diets
       /* this.dietGroups.forEach((g, i) => {
@@ -195,7 +196,7 @@ export default {
         );
       }); */
     },
-    chartSettingsAll: function (entity) {
+    chartSettingsAll: function () {
       return {
         type: 'pie',
         data: {
@@ -203,8 +204,8 @@ export default {
           datasets: [
             {
               data: [
-                this.school.studentCount - this.absence.length,
-                this.absence.length
+                this.school.studentCount - this.absenceDate.length,
+                this.absenceDate.length
               ],
               backgroundColor: ['rgb(0, 200, 0)', 'rgb(200, 0, 0)'],
               borderWidth: 0
@@ -226,7 +227,7 @@ export default {
         }
       };
     },
-    chartSettingsDiet: function (entity) {
+    chartSettingsDiet: function () {
       return {
         type: 'horizontalBar',
         data: {
@@ -234,8 +235,8 @@ export default {
           datasets: [
             {
               data: [
-                this.school.studentCount - this.absence.length,
-                this.absence.length
+                this.school.studentCount - this.absenceDate.length,
+                this.absenceDate.length
               ],
               backgroundColor: ['rgb(0, 200, 0)', 'rgb(200, 0, 0)'],
               borderWidth: 0

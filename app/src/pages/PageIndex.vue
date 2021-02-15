@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import backendUtils from '../js/backend-utils';
 import { mapState } from 'vuex';
 
 export default {
@@ -22,6 +23,9 @@ export default {
   }, */
   computed: {
     ...mapState('user', ['user'])
+  },
+  mounted: function () {
+    backendUtils.getAllData();
   }
 };
 </script>
