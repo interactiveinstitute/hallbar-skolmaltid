@@ -18,8 +18,8 @@
         <canvas :id="'chartAll' + _uid" />
       </div>
       <div class="padding">
-        <h3>Elever med specialkost</h3>
-        <canvas :id="'chartPresence' + _uid" />
+        <!--h3>Elever med specialkost</h3>
+        <canvas :id="'chartPresence' + _uid" /-->
       </div>
     </div>
   </div>

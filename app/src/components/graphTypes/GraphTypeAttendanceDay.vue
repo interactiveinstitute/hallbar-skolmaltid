@@ -4,10 +4,6 @@
       Elevnärvaro, dagsvy
     </h2>
 
-    <!--pre>
-      {{ graph }}
-    </pre-->
-
     <div class="info">
       <p>
         Graferna visar beräknad närvaro och anmäld frånvaro för {{ graph.endpointData.values[0].name }} ({{ graph.endpointData.values[0].studentCount }} elever) angivet datum.
@@ -30,9 +26,13 @@
       </div>
 
       <div class="padding">
-        <h3>Elever med specialkost</h3>
+        <h3>Frånvarande elever med specialkost ({{ absenceDiet.length }})</h3>
 
-        <table>
+        <div v-for="(student,i) in absenceDiet" :key="i">
+          {{ student.givenName }} {{ student.familyName }}
+        </div>
+
+        <!--table>
           <tr>
             <td>
               Kostgrupp
@@ -72,7 +72,7 @@
               </div>
             </td>
           </tr>
-        </table>
+        </table-->
 
         <!--div v-for="(dg, i) in dietGroups" :key="i">
           <h4>{{ dg.name }}</h4>
@@ -118,6 +118,9 @@ export default {
     },
     absence: function () {
       return this.graph.endpointData.values[1][0].absent;
+    },
+    absenceDiet: function () {
+      return this.absence.filter(s => parseInt(s.socialNumber.substr(9, 2)) < 90);
     },
     dietGroups: function () {
       return this.graph.endpointData.values[2];
