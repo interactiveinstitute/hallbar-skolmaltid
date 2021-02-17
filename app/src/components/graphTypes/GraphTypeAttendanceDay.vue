@@ -120,7 +120,7 @@ export default {
       return this.graph.endpointData.values[1][0].absent;
     },
     absenceDiet: function () {
-      return this.absence.filter(s => parseInt(s.socialNumber.substr(9, 2)) < 90);
+      return this.absence.filter(s => parseInt(s.socialNumber.substr(9, 2)) < 15);
     },
     dietGroups: function () {
       return this.graph.endpointData.values[2];
