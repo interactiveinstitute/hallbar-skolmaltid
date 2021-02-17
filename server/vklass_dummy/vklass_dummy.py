@@ -4,7 +4,7 @@
 # Currently built to be called every day, where if it's after a certain
 # time in the morning, absence is added
 # Will use environment variables if found:
-#    - MAX_DAILY_ADDED_ABSENCES
+#    - MAX_PERCENT_DAILY_ADDED_ABSENCES
 #    - MORNING_UPDATE_HOUR
 #    - LATE_MORNING_UPDATE_HOUR
 # Otherwise, these can be changed dynamically through a config endpoint
@@ -30,32 +30,65 @@ handler.setFormatter(formatter)
 logger.addHandler(handler)
 
 app = Flask(__name__)
-max_daily_added_absences = int(os.environ['MAX_DAILY_ADDED_ABSENCES']) if 'MAX_DAILY_ADDED_ABSENCES' in os.environ else 50
+MAX_PERCENT_DAILY_ADDED_ABSENCES = int(os.environ['MAX_PERCENT_DAILY_ADDED_ABSENCES']) if 'MAX_PERCENT_DAILY_ADDED_ABSENCES' in os.environ else 20
 morning_update_hour      = int(os.environ['MORNING_UPDATE_HOUR']) if 'MORNING_UPDATE_HOUR' in os.environ else 8
 late_morning_update_hour = int(os.environ['LATE_MORNING_UPDATE_HOUR']) if 'LATE_MORNING_UPDATE_HOUR' in os.environ else 8
-schools = {
+uid_to_schoolid = {
+    "8de0d630-209d-41d6-bef2-87e3a2fd24c3": 1,
+    "piw7egza-4b44-hbgw-ipxw-nqmnvkuyr77c": 2,
+    "idd6rswo-xva3-jjvd-6w77-vcf0k0se0lr2": 3,
+    "5tc1hrjr-e22p-yvhl-9vsb-5o0edwrpzmaj": 4,
+    "sxsy9ep3-6mrk-wnxw-0nvn-uhir126pi5ll": 5
+}
+schools = { # correct vklass format
     "schoolidCollection":[
         {
             "schoolid":1,
-            "schoolname":"Söderskolan",
+            "schoolname":"Gripenskolan F-9",
             "schooltype":0,
-            "studentcount":500,
-            "personalcount":50
+            "studentcount":800,
+            "personalcount":40
         },
         {
             "schoolid":2,
-            "schoolname":"Västerskolan",
+            "schoolname":"FS Paletten",
             "schooltype":0,
-            "studentcount":1000,
-            "personalcount":100
+            "studentcount":40,
+            "personalcount":4
+        },
+        {
+            "schoolid":3,
+            "schoolname":"FS Blåklockan",
+            "schooltype":0,
+            "studentcount":50,
+            "personalcount":5
+        },
+        {
+            "schoolid":4,
+            "schoolname":"FS Humlan",
+            "schooltype":0,
+            "studentcount":45,
+            "personalcount":4
+        },
+        {
+            "schoolid":5,
+            "schoolname":"FS Vargtass",
+            "schooltype":0,
+            "studentcount":30,
+            "personalcount":3
         }
     ]
 }
-todaysAbsence = {'absenceidCollection':[]}
+todaysAbsence = {} # absenceidCollection in correct vklass format
+studentCount = {}
+for s in schools["schoolidCollection"]:
+    todaysAbsence[s["schoolid"]] = {'absenceidCollection':[]}
+    studentCount[s["schoolid"]] = s["studentcount"]
+
 last_call = datetime.now() - timedelta(days=1)
 # names from Swedish baby name top list 2019:
 first_names = ["Lucas", "Liam", "William", "Elias", "Noah", "Hugo", "Oliver", "Oscar", "Adam", "Matteo", "Walter", "Alexander", "Leo", "Nils", "Alfred", "Ludvig", "Adrian", "Theo", "Leon", "Elliot", "Arvid", "Vincent", "Theodor", "Filip", "Axel", "Harry", "Frans", "Charlie", "Mohamed", "Gabriel", "Isak", "August", "Loui", "Benjamin", "Sam", "Josef", "Ebbe", "Melvin", "Love", "Olle", "Albin", "Henry", "Edvin", "Elton", "Emil", "Malte", "Vidar", "Gustav", "Jack", "Frank", "Viggo", "Noel", "Sixten", "Viktor", "Melker", "Jacob", "Casper", "Erik", "Tage", "Aron", "Loke", "Otto", "Wilmer", "Colin", "Milo", "Sigge", "Alvin", "Carl", "Milton", "Wilhelm", "Anton", "Ivar", "Kian", "Julian", "Max", "Elis", "Levi", "Nicholas", "Elvin", "Felix", "Vilgot", "Ali", "Omar", "Hjalmar", "Ture", "Samuel", "David", "Kevin", "Joel", "Vide", "Amir", "Ville", "Dante", "John", "Daniel", "Algot", "Folke", "Alve", "Ibrahim", "Thor",\
-"Alice", "Olivia", "Astrid", "Maja", "Vera", "Ebba", "Ella", "Wilma", "Alma", "Lilly", "Elsa", "Agnes", "Freja", "Saga", "Ellie", "Clara", "Signe", "Alva", "Alicia", "20 Selma", "Ester", "Stella", "Julia", "Ines", "Leah", "Ellen", "Molly", "Iris", "Sara", "Luna", "Isabelle", "Nora", "Nova", "Hedda", "Mila", "Nellie", "Sofia", "Lova", "Juni", "Elvira", "Linnéa", "Emilia", "Sigrid", "Celine", "Elise", "Edith", "Emma", "Lykke", "Liv", "Lo", "Thea", "Mejas", "Livia", "Tuva", "Isabella", "Sally", "Majken", "Maria", "Leia", "Hailey", "Tyra", "Elin", "Amelia", "Lovisa", "Märta", "Rut", "Ida", "Ingrid", "Bianca", "Hanna", "Ronja", "Jasmine", "Stina", "Svea", "Cleo", "Melissa", "Hilma", "Filippa", "Hedvig", "Julie", "Tilde", "Lovis", "Siri", "Felicia", "Cornelia", "Elina", "Elsie", "Joline", "Hilda", "Mira", "Moa", "Melina", "Bonnie", "Mariam", "Matilda", "Wilda", "Bella", "Millie", "My", "Amanda"]
+"Alice", "Olivia", "Astrid", "Maja", "Vera", "Ebba", "Ella", "Wilma", "Alma", "Lilly", "Elsa", "Agnes", "Freja", "Saga", "Ellie", "Clara", "Signe", "Alva", "Alicia", "Selma", "Ester", "Stella", "Julia", "Ines", "Leah", "Ellen", "Molly", "Iris", "Sara", "Luna", "Isabelle", "Nora", "Nova", "Hedda", "Mila", "Nellie", "Sofia", "Lova", "Juni", "Elvira", "Linnéa", "Emilia", "Sigrid", "Celine", "Elise", "Edith", "Emma", "Lykke", "Liv", "Lo", "Thea", "Mejas", "Livia", "Tuva", "Isabella", "Sally", "Majken", "Maria", "Leia", "Hailey", "Tyra", "Elin", "Amelia", "Lovisa", "Märta", "Rut", "Ida", "Ingrid", "Bianca", "Hanna", "Ronja", "Jasmine", "Stina", "Svea", "Cleo", "Melissa", "Hilma", "Filippa", "Hedvig", "Julie", "Tilde", "Lovis", "Siri", "Felicia", "Cornelia", "Elina", "Elsie", "Joline", "Hilda", "Mira", "Moa", "Melina", "Bonnie", "Mariam", "Matilda", "Wilda", "Bella", "Millie", "My", "Amanda"]
 last_names = ["Andersson", "Johansson", "Karlsson", "Nilsson", "Eriksson", "Larsson", "Olsson", "Persson", "Svensson", "Gustafsson", "Pettersson", "Jonsson", "Jansson", "Hansson", "Bengtsson", "Jönsson", "Lindberg", "Jakobsson", "Magnusson", "Olofsson", "Lindström", "Lindqvist", "Lindgren", "Axelsson", "Berg", "Bergström", "Lundberg", "Lind", "Lundgren", "Lundqvist", "Mattsson", "Berglund", "Fredriksson", "Sandberg", "Henriksson", "Forsberg", "Sjöberg", "Wallin", "Ali", "Engström", "Mohamed", "Eklund", "Danielsson", "Lundin", "Håkansson", "Björk", "Bergman", "Gunnarsson", "Holm", "Wikström", "Samuelsson", "Isaksson", "Fransson", "Bergqvist", "Nyström", "Holmberg", "Arvidsson", "Löfgren", "Söderberg", "Nyberg", "Blomqvist", "Claesson", "Nordström", "Mårtensson", "Lundström", "Ahmed", "Viklund", "Björklund", "Eliasson", "Pålsson", "Hassan", "Berggren", "Sandström", "Lund", "Nordin", "Ström", "Åberg", "Hermansson", "Ekström", "Falk", "Holmgren", "Dahlberg", "Hellström", "Hedlund", "Sundberg", "Sjögren", "Ek", "Blom", "Abrahamsson", "Martinsson", "Öberg", "Andreasson", "Strömberg", "Månsson", "Åkesson", "Hansen", "Norberg", "Lindholm", "Dahl", "Jonasson"]
 
 
@@ -84,51 +117,53 @@ last_names = ["Andersson", "Johansson", "Karlsson", "Nilsson", "Eriksson", "Lars
 def remove_absence_before_today():
     global todaysAbsence
     past_midnight_str = datetime.now().strftime("%Y-%m-%dT00:00:00")
-    todaysAbsence['absenceidCollection'] = [a for a in todaysAbsence['absenceidCollection'] if not (a['enddate'] < past_midnight_str)]
-    logger.debug("   " + str(len(todaysAbsence['absenceidCollection'])) + " absences left from previous day")
+    for sid in todaysAbsence.keys():
+        todaysAbsence[sid]['absenceidCollection'] = [a for a in todaysAbsence[sid]['absenceidCollection'] if not (a['enddate'] < past_midnight_str)]
+        logger.debug("   school " + str(sid) + ": " + str(len(todaysAbsence[sid]['absenceidCollection'])) + " absences left from previous day")
 
 def add_absences_today(portion_now, ):
     global todaysAbsence
-    global max_daily_added_absences
-    for ix in range(random.randint(0, int(portion_now*max_daily_added_absences))):
-        absence = {}
-        absence["absenceid"]        = str(random.randrange(100000, 100000000))
-        absence["usersocialnumber"] = str(random.randrange(100000, 1000000)) + "-" + str(random.randrange(1000, 10000))
-        absence["userfirstname"] = first_names[random.randrange(len(first_names))]
-        absence["userlastname"]  =  last_names[random.randrange(len(last_names))]
-        absence["created"] = str(datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3])
-        absence["updated"] = absence["created"]
-        length_rand = random.random()
-        if length_rand < 0.03:
-            # 1 week
-            absence["startdate"] = datetime.now().replace(hour=0, minute=0, second=0).strftime("%Y-%m-%dT%H:%M:%S")
-            absence["enddate"]   = (datetime.now() + timedelta(days=6)).replace(hour=23, minute=59, second=59).strftime("%Y-%m-%dT%H:%M:%S")
-            logger.debug("add absence #" + str(ix) + ": 7 days")
-        elif length_rand < 0.10:
-            # 3 days
-            absence["startdate"] = datetime.now().replace(hour=0, minute=0, second=0).strftime("%Y-%m-%dT%H:%M:%S")
-            absence["enddate"]   = (datetime.now() + timedelta(days=2)).replace(hour=23, minute=59, second=59).strftime("%Y-%m-%dT%H:%M:%S")
-            logger.debug("add absence #" + str(ix) + ": 3 days")
-        else:
-            # few hours
-            hours_rand = random.random()
-            if hours_rand < 0.07:
-                num_hours = 4
-            elif hours_rand < 0.21:
-                num_hours = 3
-            elif hours_rand < 0.49:
-                num_hours = 2
+    global MAX_PERCENT_DAILY_ADDED_ABSENCES
+    for sid in todaysAbsence.keys():
+        logger.debug("adding absences for school " + str(sid) + " rand(" + str(portion_now) + " * " + str(MAX_PERCENT_DAILY_ADDED_ABSENCES/100) + " * " + str(studentCount[sid]) + ")")
+        for ix in range(random.randint(0, int(portion_now*(MAX_PERCENT_DAILY_ADDED_ABSENCES/100)*studentCount[sid]))):
+            absence = {}
+            absence["absenceid"]        = str(random.randrange(100000, 100000000))
+            absence["usersocialnumber"] = str(random.randrange(100000, 1000000)) + "-" + str(random.randrange(1000, 10000))
+            absence["userfirstname"] = first_names[random.randrange(len(first_names))]
+            absence["userlastname"]  =  last_names[random.randrange(len(last_names))]
+            absence["created"] = str(datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3])
+            absence["updated"] = absence["created"]
+            length_rand = random.random()
+            if length_rand < 0.03:
+                # 1 week
+                absence["startdate"] = datetime.now().replace(hour=0, minute=0, second=0).strftime("%Y-%m-%dT%H:%M:%S")
+                absence["enddate"]   = (datetime.now() + timedelta(days=6)).replace(hour=23, minute=59, second=59).strftime("%Y-%m-%dT%H:%M:%S")
+                logger.debug("add absence #" + str(ix) + ": 7 days")
+            elif length_rand < 0.10:
+                # 3 days
+                absence["startdate"] = datetime.now().replace(hour=0, minute=0, second=0).strftime("%Y-%m-%dT%H:%M:%S")
+                absence["enddate"]   = (datetime.now() + timedelta(days=2)).replace(hour=23, minute=59, second=59).strftime("%Y-%m-%dT%H:%M:%S")
+                logger.debug("add absence #" + str(ix) + ": 3 days")
             else:
-                num_hours = 1
-            start_hour = random.randint(8, 16-num_hours)
-            absence["startdate"] = datetime.now().replace(hour=start_hour,   minute=0, second=0).strftime("%Y-%m-%dT%H:%M:%S")
-            absence["enddate"]   = datetime.now().replace(hour=start_hour+num_hours, minute=0, second=0).strftime("%Y-%m-%dT%H:%M:%S")
-            logger.debug("add absence #" + str(ix) + ": " + str(num_hours) + " hour")
-        
-        todaysAbsence['absenceidCollection'].append(absence)
+                # few hours
+                hours_rand = random.random()
+                if hours_rand < 0.07:
+                    num_hours = 4
+                elif hours_rand < 0.21:
+                    num_hours = 3
+                elif hours_rand < 0.49:
+                    num_hours = 2
+                else:
+                    num_hours = 1
+                start_hour = random.randint(8, 16-num_hours)
+                absence["startdate"] = datetime.now().replace(hour=start_hour,   minute=0, second=0).strftime("%Y-%m-%dT%H:%M:%S")
+                absence["enddate"]   = datetime.now().replace(hour=start_hour+num_hours, minute=0, second=0).strftime("%Y-%m-%dT%H:%M:%S")
+                logger.debug("add absence #" + str(ix) + ": " + str(num_hours) + " hour")
+            
+            todaysAbsence[sid]['absenceidCollection'].append(absence)
 
 def update_vklass_absences_today():
-    global todaysAbsence
     global last_call
     global morning_update_hour
     global late_morning_update_hour
@@ -162,23 +197,24 @@ def index():
             <ul>\
                 <li>params:</li>\
                 <ul>\
-                    <li>max_daily_added_absences</li>\
+                    <li>MAX_PERCENT_DAILY_ADDED_ABSENCES</li>\
                     <li>morning_update_hour</li>\
                     <li>late_morning_update_hour</li>\
                 </ul>\
-                <li>example: /admin/config?max_daily_added_absences=50&morning_update_hour=9&late_morning_update_hour=11</li>\
+                <li>example: /admin/config?MAX_PERCENT_DAILY_ADDED_ABSENCES=50&morning_update_hour=9&late_morning_update_hour=11</li>\
             </ul>\
             <li><a href='/admin/reset_update_time'>/admin/reset_update_time</a></li>\
         </ul>"
 
 @app.route('/export_vklass_net/absence')
 def export_vklass_net_absence():
+    global uid_to_schoolid
     global todaysAbsence
     xp = flask_request.headers.get('x-password')
     uid = flask_request.args.get('UID')
-    logger.debug("xp: " + str(xp) + ", uid: " + str(uid))
+    logger.debug("xp: " + str(xp) + ", uid: " + str(uid) + ", sid: " + str(uid_to_schoolid[uid]))
     update_vklass_absences_today()
-    return todaysAbsence, 200, {'Content-Type': 'application/json; charset=utf-8'}
+    return todaysAbsence[uid_to_schoolid[uid]], 200, {'Content-Type': 'application/json; charset=utf-8'}
 
 @app.route('/export_vklass_net/schoolinfo')
 def export_vklass_net_schoolinfo():
@@ -189,13 +225,13 @@ def export_vklass_net_schoolinfo():
 
 @app.route('/admin/config')
 def admin_config():
-    global max_daily_added_absences
+    global MAX_PERCENT_DAILY_ADDED_ABSENCES
     global morning_update_hour
     global late_morning_update_hour
-    m_abs = flask_request.args.get('max_daily_added_absences')
+    m_abs = flask_request.args.get('MAX_PERCENT_DAILY_ADDED_ABSENCES')
     if m_abs is not None:
-        max_daily_added_absences = int(m_abs)
-        logger.debug("max_daily_added_absences updated to " + m_abs)
+        MAX_PERCENT_DAILY_ADDED_ABSENCES = int(m_abs)
+        logger.debug("MAX_PERCENT_DAILY_ADDED_ABSENCES updated to " + m_abs)
     u_hr = flask_request.args.get('morning_update_hour')
     if u_hr is not None:
         morning_update_hour = int(u_hr)

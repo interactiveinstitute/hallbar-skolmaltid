@@ -22,7 +22,7 @@ services:
       - FLASK_ENV=development
       - MORNING_UPDATE_HOUR=8
       - LATE_MORNING_UPDATE_HOUR=10
-      - MAX_DAILY_ADDED_ABSENCES=50
+      - MAX_PERCENT_DAILY_ADDED_ABSENCES=20
     working_dir: /host_volume
     command: ./start.sh
 
