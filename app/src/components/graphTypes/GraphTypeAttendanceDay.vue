@@ -117,7 +117,8 @@ export default {
       return this.graph.endpointData.values[0];
     },
     absence: function () {
-      return this.graph.endpointData.values[1][0].absent;
+      const absence = this.graph.endpointData.values[1][0].absent;
+      return absence || [];
     },
     absenceDiet: function () {
       return this.absence.filter(s => parseInt(s.socialNumber.substr(9, 2)) < 15);

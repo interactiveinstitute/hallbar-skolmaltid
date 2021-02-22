@@ -58,7 +58,8 @@ export default {
       return this.graph.endpointData.values[0];
     },
     absence: function () {
-      return this.graph.endpointData.values[1][0].absent;
+      const absence = this.graph.endpointData.values[1][0].absent;
+      return absence || [];
     },
     absenceNoDiet: function () {
       return this.absence.filter(a => !this.hasDiet(a.socialNumber));
@@ -230,13 +231,13 @@ export default {
       this.chartAll = new Chart(ctxAll, this.chartSettingsAll());
 
       // Chart diet
-      if (this.myChart) {
+      /* if (this.myChart) {
         this.myChart.destroy();
       }
       const ctxPresence = document
         .getElementById('chartPresence' + this._uid)
         .getContext('2d');
-      this.myChart = new Chart(ctxPresence, this.chartSettings());
+      this.myChart = new Chart(ctxPresence, this.chartSettings()); */
     },
     chartSettingsAll: function () {
       return {
