@@ -29,7 +29,7 @@
         <h3>Frånvarande elever med specialkost ({{ absenceDiet.length }})</h3>
 
         <div v-for="(student,i) in absenceDiet" :key="i">
-          {{ student.givenName }} {{ student.familyName }}
+          {{ student.givenName }} {{ student.familyName }} ({{ dateRange(student.dateStart, student.dateEnd) }})
         </div>
 
         <!--table>
@@ -117,7 +117,8 @@ export default {
       return this.graph.endpointData.values[0];
     },
     absence: function () {
-      return this.graph.endpointData.values[1][0].absent;
+      const absence = this.graph.endpointData.values[1][0].absent;
+      return absence || [];
     },
     absenceDiet: function () {
       return this.absence.filter(s => parseInt(s.socialNumber.substr(9, 2)) < 15);
@@ -263,6 +264,11 @@ export default {
       return this.absence.filter(a =>
         dietGroup.socialNumbers.includes(a.socialNumber)
       );
+    },
+    dateRange: function (start, end) {
+      const dS = new Date(start).toLocaleDateString();
+      const dE = new Date(start).toLocaleDateString();
+      return dS === dE ? dS : dS + ' - ' + dE;
     }
   }
 };
