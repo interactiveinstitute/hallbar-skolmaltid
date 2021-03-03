@@ -57,9 +57,19 @@ export default {
     school: function () {
       return this.graph.endpointData.values[0];
     },
+    absenceArray: function () {
+      return this.graph.endpointData.values[1];
+    },
     absence: function () {
-      const absence = this.graph.endpointData.values[1][0].absent;
-      return absence || [];
+      // const absence = this.graph.endpointData.values[1][0].absent;
+      // return absence || [];
+
+      const absences = this.graph.endpointData.values[1];
+      const foundAbsence = absences.find(absenceObj => {
+        return absenceObj.dateObserved.includes(this.dateSelected);
+      });
+      console.log('absence: ', foundAbsence);
+      return foundAbsence ? foundAbsence.absent || [] : [];
     },
     absenceNoDiet: function () {
       return this.absence.filter(a => !this.hasDiet(a.socialNumber));
@@ -95,15 +105,31 @@ export default {
       const dataPresence = [];
       const dataAbsence = [];
       this.chartDates.forEach((date, iDate) => {
-        const present =
-          this.school.studentCount -
-          this.absence.filter(a =>
-            this.absenceDates[a.socialNumber].includes(date)
-          ).length;
+        const totalStudents = this.school.studentCount;
+        // const present =
+        //   this.school.studentCount -
+        //   this.absence.filter(a =>
+        //     this.absenceDates[a.socialNumber].includes(date)
+        //   ).length;
+
+        // console.log('this.absenceArray :>> ', this.absenceArray);
+        const absenceObjThisDay = this.absenceArray.find(absenceObj => {
+          // console.log('absenceObj.dateObserved :>> ', absenceObj.dateObserved);
+          // console.log('date :>> ', date);
+          const wasMatch = absenceObj.dateObserved.includes(date);
+          // console.log('wasMatch :>> ', wasMatch);
+          return wasMatch;
+        });
+        let absentThisDay = 0;
+        if (absenceObjThisDay) {
+          absentThisDay = absenceObjThisDay.absent.length;
+        };
+        const absent = absentThisDay;
+        const present = totalStudents - absent;
         dataPresence.push(present);
-        const absent = this.absence.filter(a =>
-          this.absenceDates[a.socialNumber].includes(date)
-        ).length;
+        // const absent = this.absence.filter(a =>
+        //   this.absenceDates[a.socialNumber].includes(date)
+        // ).length;
         dataAbsence.push(absent);
       });
       const datasetPresence = this.generateDataset(

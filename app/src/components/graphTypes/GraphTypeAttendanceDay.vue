@@ -117,8 +117,19 @@ export default {
       return this.graph.endpointData.values[0];
     },
     absence: function () {
-      const absence = this.graph.endpointData.values[1][0].absent;
-      return absence || [];
+      const absences = this.graph.endpointData.values[1];
+      // console.log('endpoints 1 data:', data);
+      // TODO: Actually compare dates ina reliable manner
+      const foundAbsence = absences.find(absenceObj => {
+        // const selectedDate = new Date(this.dateSelected).toDateString();
+        // console.log('selectedDate :>> ', selectedDate);
+        // const testDate = new Date(absenceObj.dateObserved).toDateString();
+        // console.log('testDate :>> ', testDate);
+        // return testDate === selectedDate;
+        return absenceObj.dateObserved.includes(this.dateSelected);
+      });
+      console.log('absence: ', foundAbsence);
+      return foundAbsence.absent || [];
     },
     absenceDiet: function () {
       return this.absence.filter(s => parseInt(s.socialNumber.substr(9, 2)) < 15);
@@ -265,9 +276,10 @@ export default {
         dietGroup.socialNumbers.includes(a.socialNumber)
       );
     },
+    // TODO: fix ranges. Seems localeDateString returns one day off because of times zones
     dateRange: function (start, end) {
       const dS = new Date(start).toLocaleDateString();
-      const dE = new Date(start).toLocaleDateString();
+      const dE = new Date(end).toLocaleDateString();
       return dS === dE ? dS : dS + ' - ' + dE;
     }
   }
