@@ -29,7 +29,7 @@
         <h3>Frånvarande elever med specialkost ({{ absenceDiet.length }})</h3>
 
         <div v-for="(student,i) in absenceDiet" :key="i">
-          {{ student.givenName }} {{ student.familyName }} ({{ dateRange(student.dateStart, student.dateEnd) }})
+          {{ student.givenName }} {{ student.familyName }} {{ dateRange(student.dateStart, student.dateEnd) }}
         </div>
 
         <!--table>
@@ -278,9 +278,16 @@ export default {
     },
     // TODO: fix ranges. Seems localeDateString returns one day off because of times zones
     dateRange: function (start, end) {
-      const dS = new Date(start).toLocaleDateString();
-      const dE = new Date(end).toLocaleDateString();
-      return dS === dE ? dS : dS + ' - ' + dE;
+      // const dS = new Date(start).toLocaleDateString();
+      // const dE = new Date(end).toLocaleDateString();
+      // return dS === dE ? dS : dS + ' - ' + dE;
+      const startString = start.substring(0, 10);
+      const endString = end.substring(0, 10);
+      if (startString === endString) {
+        return '';
+      } else {
+        return `(${startString} - ${endString})`;
+      }
     }
   }
 };
