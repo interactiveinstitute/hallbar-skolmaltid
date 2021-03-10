@@ -2,8 +2,7 @@
   <div class="GraphType1">
     <h4>Vad skulle du vilja se här?</h4>
     <p>
-      Här är det än så länge tomt. Men vi visar härmed att det går
-      att skapa olika bräden med olika typ av information.
+      Här är det än så länge tomt.
     </p>
     <p>
       Vad skulle du vilja visades här? Data om matsvinn, klimatavtryck eller något helt annat?
