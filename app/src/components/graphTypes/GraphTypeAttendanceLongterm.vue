@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import { format, addDays } from 'date-fns';
 import utils from '../../js/utils';
 import backendUtils from '../../js/backend-utils';
 import Chart from 'chart.js'; // NOTE! npm package Chart.js
@@ -230,10 +231,11 @@ export default {
   },
   mounted: function () {
     const date = new Date();
-    this.dateStart = date.toLocaleDateString();
-    date.setDate(date.getDate() + 13);
-    this.dateEnd = date.toLocaleDateString();
-    // this.dates.end.setDate(this.dates.start.getDate() + 7);
+    // this.dateStart = date.toLocaleDateString();
+    // date.setDate(date.getDate() + 13);
+    // this.dateEnd = date.toLocaleDateString();
+    this.dateStart = format(date, 'yyyy-MM-dd');
+    this.dateEnd = format(addDays(date, 13), 'yyyy-MM-dd');
     this.initGraphs();
   },
   methods: {

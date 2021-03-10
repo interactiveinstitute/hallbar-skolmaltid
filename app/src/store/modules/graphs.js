@@ -22,6 +22,9 @@ export default {
   mutations: {
     addGraph: function (state, payload) {
       state.graphs.push(payload.graph);
+    },
+    logout: function (state) {
+      Vue.set(state, 'graphs', []);
     }
   },
   actions: {

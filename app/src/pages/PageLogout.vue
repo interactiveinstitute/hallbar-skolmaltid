@@ -10,7 +10,7 @@
 export default {
   name: 'PageLogout',
   created: function () {
-    this.$store.commit('user/logout');
+    this.$store.dispatch('user/logout');
     this.$router.push({ name: 'Home' });
   }
 };
