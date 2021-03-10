@@ -17,7 +17,8 @@
 
         <div class="flex-center-rows">
           <canvas :id="'chartAll' + _uid" />
-          <div class="large">
+          <br>
+          <div class="text-h3">
             <strong>{{ school.studentCount - absence.length }}</strong> ({{
               absence.length
             }})

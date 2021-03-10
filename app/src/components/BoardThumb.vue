@@ -2,7 +2,9 @@
   <div class="BoardThumb">
     <router-link :to="{ name: 'AppBoard', params: { id: board.id } }">
       <div>
-        <h1>{{ board.name }}</h1>
+        <h2 class="text-white">
+          {{ board.name }}
+        </h2>
       </div>
     </router-link>
   </div>
@@ -32,7 +34,12 @@ export default {
 <style scoped lang="scss">
 .BoardThumb {
   display: flex;
-  background: lightgray;
+  background: $primary;
   padding: 10px;
 }
+
+.BoardThumb:hover{
+  background: $blue-7;
+}
+
 </style>

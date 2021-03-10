@@ -1,18 +1,20 @@
 <template>
   <div class="GraphType1">
-    <h4>Graftyp 1</h4>
+    <h4>Vad skulle du vilja se här?</h4>
     <p>
-      Det här en graftyp som är ganska intetsägande. Men den visar att det går
-      att skapa olika typer av datapresentationer.
+      Här är det än så länge tomt. Men vi visar härmed att det går
+      att skapa olika bräden med olika typ av information.
     </p>
-    <p>Användarens egeninlagda data: {{ graph.connectedData[0] }}</p>
+    <p>
+      Vad skulle du vilja visades här? Data om matsvinn, klimatavtryck eller något helt annat?
+    </p>
 
-    <form @submit.prevent="changeValue">
+    <!--form @submit.prevent="changeValue">
       <input name="value" type="text" placeholder="Ange nytt värde">
       <button type="submit">
         Uppdatera värde
       </button>
-    </form>
+    </form-->
   </div>
 </template>
 
