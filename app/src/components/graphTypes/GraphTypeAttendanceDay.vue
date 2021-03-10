@@ -89,7 +89,7 @@
 
 <script>
 import { format } from 'date-fns';
-import utils from '../../js/utils';
+// import utils from '../../js/utils';
 import backendUtils from '../../js/backend-utils';
 import Chart from 'chart.js'; // NOTE! npm package Chart.js
 
