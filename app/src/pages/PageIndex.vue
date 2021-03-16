@@ -9,7 +9,7 @@
       anmält frånvaro och ifall dessa äter specialkost.
     </p>
     <p>
-      Du kan se anmäld frånvaro och beräknad närvaro för dagens såväl som
+      Se anmäld frånvaro och beräknad närvaro för dagens såväl som
       framtida datum.
     </p>
     <img src="~assets/graphics/Scenario_Attendance.png">

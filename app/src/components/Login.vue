@@ -14,7 +14,7 @@
         <label>
           Lösenord
           <br>
-          <input type="password" name="password" value="test">
+          <input type="password" name="password" value="skolmat">
         </label>
       </p>
       <p>
