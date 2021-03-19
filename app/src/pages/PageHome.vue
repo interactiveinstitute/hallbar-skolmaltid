@@ -1,7 +1,7 @@
 <template>
   <q-page class="PageHome">
     <div class="padding">
-      <h2>Synliggör elevnärvaro i skolköket</h2>
+      <h2>Gör elevnärvaron synlig i skolköket</h2>
       <p>
         I denna portal kan du som arbetar i skolkök se vilka elever som har
         anmält frånvaro och ifall dessa äter specialkost.

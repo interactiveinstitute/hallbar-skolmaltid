@@ -1,10 +1,16 @@
 <template>
   <q-page class="">
     <div>
-      <h2>Översikt</h2>
+      <h2>Mina bräden</h2>
 
       <p>
-        Här är alla dina bräden för skolkök, lärare, elever och föräldrar.
+        Här är alla dina bräden, kopplade till din användare.
+      </p>
+      <p>
+        Ett bräde är en samling grafer eller annan typ av information.
+      </p>
+      <p>
+        Du själv kan strukturera brädena och innehållet efter dina egna önskemål och behov, t.ex. för att visa flera grafer på en och samma skärm i skolköket - utan att behöva klicka runt.
       </p>
 
       <div class="boards">

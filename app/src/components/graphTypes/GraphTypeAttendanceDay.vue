@@ -17,9 +17,10 @@
 
         <div class="flex-center-rows">
           <canvas :id="'chartAll' + _uid" />
-          <div class="large">
-            <strong>{{ school.studentCount - absenceDate.length }}</strong> ({{
-              absenceDate.length
+          <br>
+          <div class="text-h3">
+            <strong>{{ school.studentCount - absence.length }}</strong> ({{
+              absence.length
             }})
           </div>
         </div>
@@ -29,7 +30,7 @@
         <h3>Frånvarande elever med specialkost ({{ absenceDiet.length }})</h3>
 
         <div v-for="(student,i) in absenceDiet" :key="i">
-          {{ student.givenName }} {{ student.familyName }} ({{ dateRange(student.dateStart, student.dateEnd) }})
+          {{ student.givenName }} {{ student.familyName }} <!--{{ dateRange(student.dateStart, student.dateEnd) }}-->
         </div>
 
         <!--table>
@@ -88,7 +89,8 @@
 </template>
 
 <script>
-import utils from '../../js/utils';
+import { format } from 'date-fns';
+// import utils from '../../js/utils';
 import backendUtils from '../../js/backend-utils';
 import Chart from 'chart.js'; // NOTE! npm package Chart.js
 
@@ -117,16 +119,26 @@ export default {
       return this.graph.endpointData.values[0];
     },
     absence: function () {
-      const absence = this.graph.endpointData.values[1][0].absent;
-      return absence || [];
+      const absences = this.graph.endpointData.values[1];
+      // console.log('endpoints 1 data:', data);
+      // TODO: Actually compare dates ina reliable manner
+      const foundAbsence = absences.find(absenceObj => {
+        // const selectedDate = new Date(this.dateSelected).toDateString();
+        // console.log('selectedDate :>> ', selectedDate);
+        // const testDate = new Date(absenceObj.dateObserved).toDateString();
+        // console.log('testDate :>> ', testDate);
+        // return testDate === selectedDate;
+        return absenceObj.dateObserved.includes(this.dateSelected);
+      });
+      return foundAbsence ? foundAbsence.absent || [] : [];
     },
     absenceDiet: function () {
       return this.absence.filter(s => parseInt(s.socialNumber.substr(9, 2)) < 15);
     },
     dietGroups: function () {
       return this.graph.endpointData.values[2];
-    },
-    absenceDate: function () {
+    }
+    /* absenceDate: function () {
       const absent = [];
       this.absence.forEach((s, i) => {
         if (
@@ -138,8 +150,8 @@ export default {
         }
       });
       return absent;
-    },
-    dietGroupsAttendance: function () {
+    }, */
+    /* dietGroupsAttendance: function () {
       const groups = {};
       this.dietGroups.forEach((dg, i) => {
         const snAttending = dg.socialNumbers.filter(
@@ -157,7 +169,7 @@ export default {
         // let snAbsent = absenceDate.filter(a => dg.socialNumbers.includes(a));
       });
       return groups;
-    }
+    } */
     /* highlighted: function () {
       return this.absence.absentList.filter(value =>
         this.highlightList.includes(value)
@@ -172,7 +184,8 @@ export default {
   },
   mounted: function () {
     const date = new Date();
-    this.dateSelected = date.toLocaleDateString();
+    // this.dateSelected = date.toLocaleDateString();
+    this.dateSelected = format(date, 'yyyy-MM-dd');
 
     this.initGraphs();
   },
@@ -201,10 +214,10 @@ export default {
           labels: ['Närvarande', 'Frånvarande'],
           datasets: [
             {
-              data: [
-                this.school.studentCount - this.absenceDate.length,
-                this.absenceDate.length
-              ],
+              /* data: [
+                this.school.studentCount - this.absence.length,
+                this.absence.length
+              ], */
               backgroundColor: ['rgb(0, 200, 0)', 'rgb(200, 0, 0)'],
               borderWidth: 0
             }
@@ -229,8 +242,8 @@ export default {
       this.chartTotal.data.datasets = [
         {
           data: [
-            this.school.studentCount - this.absenceDate.length,
-            this.absenceDate.length
+            this.school.studentCount - this.absence.length,
+            this.absence.length
           ],
           backgroundColor: ['rgb(0, 200, 0)', 'rgb(200, 0, 0)'],
           borderWidth: 0
@@ -265,10 +278,18 @@ export default {
         dietGroup.socialNumbers.includes(a.socialNumber)
       );
     },
+    // TODO: fix ranges. Seems localeDateString returns one day off because of times zones
     dateRange: function (start, end) {
-      const dS = new Date(start).toLocaleDateString();
-      const dE = new Date(start).toLocaleDateString();
-      return dS === dE ? dS : dS + ' - ' + dE;
+      // const dS = new Date(start).toLocaleDateString();
+      // const dE = new Date(end).toLocaleDateString();
+      // return dS === dE ? dS : dS + ' - ' + dE;
+      const startString = start.substring(0, 10);
+      const endString = end.substring(0, 10);
+      if (startString === endString) {
+        return '';
+      } else {
+        return `(${startString} - ${endString})`;
+      }
     }
   }
 };

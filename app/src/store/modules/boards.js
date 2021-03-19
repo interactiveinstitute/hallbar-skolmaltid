@@ -18,10 +18,14 @@ export default {
   },
   mutations: {
     setBoards: function (state, payload) {
+      console.log(payload.boards);
       state.boards = payload.boards;
     },
     addBoard: function (state, payload) {
       state.boards.push(payload.board);
+    },
+    logout: function (state) {
+      Vue.set(state, 'boards', []);
     }
   },
   actions: {

@@ -25,8 +25,8 @@ services:
         ipv4_address: 172.18.1.9
     expose:
       - "1026"
-    ports:          # TODO: Make dev setup work without open
-      - "1026:1026" # TODO: Make dev setup work without open
+    # ports:          # TODO: Make dev setup work without open
+    #   - "1026:1026" # TODO: Make dev setup work without open
     command: -dbhost mongo-db -logLevel DEBUG -corsOrigin __ALL
     healthcheck:
       test: curl --fail -s http://orion:1026/version || exit 1
@@ -41,8 +41,10 @@ services:
         ipv4_address: 172.18.1.5
     depends_on:
       - mysql-db
-    ports:          # TODO: Make dev setup work without open
-      - "3005:3005" # TODO: Make dev setup work without open
+    expose:
+      - "3005"
+    # ports:          # TODO: Make dev setup work without open
+    #   - "3005:3005" # TODO: Make dev setup work without open
     environment:
       - DEBUG=idm:*
       - IDM_DB_HOST=mysql-db
@@ -75,10 +77,10 @@ services:
     deploy:
       restart_policy:
         condition: on-failure
-    ports:          # TODO: Make dev setup work without open
-      - "1027:1027" # TODO: Make dev setup work without open
     expose:
       - "1027"
+    # ports:          # TODO: Make dev setup work without open
+    #   - "1027:1027" # TODO: Make dev setup work without open
     environment:
       - PEP_PROXY_APP_HOST=orion
       - PEP_PROXY_APP_PORT=1026
@@ -130,10 +132,10 @@ services:
     deploy:
       restart_policy:
         condition: on-failure
-    # ports:
-    #   - "1028:1028" # localhost:1028
     expose:
       - "1028"
+    # ports:
+    #   - "1028:1028" # localhost:1028
     environment:
       - PEP_PROXY_APP_HOST=draco
       - PEP_PROXY_APP_PORT=9090
@@ -171,7 +173,7 @@ services:
     ports:          # TODO: Make dev setup work without open
       - "9090:9090" # TODO: Make dev setup work without open
       - "9091:9091" # TODO: Make dev setup work without open
-    #   - "5050:5050"
+      - "5050:5050"
     healthcheck:
       test: curl --fail -s http://draco:9090/nifi-api/system-diagnostics || exit 1
       start_period: 1m

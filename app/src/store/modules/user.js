@@ -69,6 +69,11 @@ export default {
         console.log(state.auth.auth);
         resolve(state.auth.auth);
       });
+    },
+    logout: function ({ commit }) {
+      commit('logout');
+      commit('boards/logout', null, { root: true });
+      commit('graphs/logout', null, { root: true });
     }
   }
 };
