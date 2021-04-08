@@ -8,8 +8,8 @@
         Graferna visar beräknad närvaro och anmäld frånvaro för {{ graph.endpointData.values[0].name }} ({{ graph.endpointData.values[0].studentCount }} elever) mellan angivna
         datum.
       </p>
-      <label> Startdatum: <q-input v-model="dateStart" type="date" /> </label>
-      <label> Slutdatum: <q-input v-model="dateEnd" type="date" /> </label>
+      <label> Startdatum: <input v-model="dateStart" type="date"> </label>
+      <label> Slutdatum: <input v-model="dateEnd" type="date"> </label>
     </div>
 
     <div class="columns border">
