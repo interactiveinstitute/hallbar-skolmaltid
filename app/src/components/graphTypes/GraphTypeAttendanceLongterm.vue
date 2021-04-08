@@ -8,8 +8,8 @@
         Graferna visar beräknad närvaro och anmäld frånvaro för {{ graph.endpointData.values[0].name }} ({{ graph.endpointData.values[0].studentCount }} elever) mellan angivna
         datum.
       </p>
-      <label> Startdatum: <input v-model="dateStart" type="date"> </label>
-      <label> Slutdatum: <input v-model="dateEnd" type="date"> </label>
+      <label> Startdatum: <q-input v-model="dateStart" type="date" /> </label>
+      <label> Slutdatum: <q-input v-model="dateEnd" type="date" /> </label>
     </div>
 
     <div class="columns border">
@@ -52,15 +52,19 @@ export default {
     };
   },
   computed: {
+    /** @returns {any} */
     highlightList: function () {
       return this.graph.connectedData[0];
     },
+    /** @returns {any} */
     school: function () {
       return this.graph.endpointData.values[0];
     },
+    /** @returns {any} */
     absenceArray: function () {
       return this.graph.endpointData.values[1];
     },
+    /** @returns {any} */
     absence: function () {
       // const absence = this.graph.endpointData.values[1][0].absent;
       // return absence || [];
@@ -72,9 +76,11 @@ export default {
       console.log('absence: ', foundAbsence);
       return foundAbsence ? foundAbsence.absent || [] : [];
     },
+    /** @returns {any} */
     absenceNoDiet: function () {
       return this.absence.filter(a => !this.hasDiet(a.socialNumber));
     },
+    /** @returns {any} */
     absenceDates: function () {
       const students = {};
       this.absence.forEach((s, i) => {
@@ -89,9 +95,11 @@ export default {
       });
       return students;
     },
+    /** @returns {any} */
     dietGroups: function () {
       return this.graph.endpointData.values[2];
     },
+    /** @returns {any} */
     chartLegends: function () {
       const legends = [];
       this.dietGroups.forEach((group, iGroup) => {
@@ -99,9 +107,11 @@ export default {
       });
       return legends;
     },
+    /** @returns {any} */
     chartDates: function () {
       return utils.weekdays(utils.getDatesArray(this.dateStart, this.dateEnd));
     },
+    /** @returns {any} */
     chartDatasetAll () {
       const dataPresence = [];
       const dataAbsence = [];
@@ -146,6 +156,7 @@ export default {
 
       return { presence: datasetPresence, absence: datasetAbsence };
     },
+    /** @returns {any} */
     chartDatasetNoDiet () {
       const dataPresence = [];
       const dataAbsence = [];
@@ -174,6 +185,7 @@ export default {
 
       return { presence: datasetPresence, absence: datasetAbsence };
     },
+    /** @returns {any} */
     chartDatasetsDietGroups: function () {
       const datasets = [];
       this.dietGroups.forEach((group, iGroup) => {
@@ -217,6 +229,7 @@ export default {
 
       return datasets;
     },
+    /** @returns {any} */
     chartDatasets: function () {
       return this.chartDatasetsDietGroups;
     }

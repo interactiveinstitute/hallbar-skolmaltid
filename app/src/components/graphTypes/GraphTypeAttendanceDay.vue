@@ -9,7 +9,7 @@
         Graferna visar beräknad närvaro och anmäld frånvaro för {{ graph.endpointData.values[0].name }} ({{ graph.endpointData.values[0].studentCount }} elever) angivet datum.
       </p>
 
-      <label>Datum: <input v-model="dateSelected" type="date"> </label>
+      <label>Datum: <q-input v-model="dateSelected" type="date" /> </label>
     </div>
     <div class="columns border">
       <div class="padding">
@@ -112,12 +112,15 @@ export default {
     };
   },
   computed: {
+    /** @returns {any} */
     highlightList: function () {
       return this.graph.connectedData[0];
     },
+    /** @returns {any} */
     school: function () {
       return this.graph.endpointData.values[0];
     },
+    /** @returns {any} */
     absence: function () {
       const absences = this.graph.endpointData.values[1];
       // console.log('endpoints 1 data:', data);
@@ -132,9 +135,11 @@ export default {
       });
       return foundAbsence ? foundAbsence.absent || [] : [];
     },
+    /** @returns {any} */
     absenceDiet: function () {
       return this.absence.filter(s => parseInt(s.socialNumber.substr(9, 2)) < 15);
     },
+    /** @returns {any} */
     dietGroups: function () {
       return this.graph.endpointData.values[2];
     }
