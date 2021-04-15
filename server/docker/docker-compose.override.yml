@@ -1,0 +1,14 @@
+version: "3.5"
+
+services:
+  keyrock:
+    ports:
+      - "3005:3005" # no caddy for dev setup
+
+  orion-proxy:
+    ports:
+      - "1027:1027" # no caddy for dev setup
+
+  vklass-dummy:
+    ports:
+      - "12345:12345"

@@ -1,18 +1,6 @@
 version: "3.5"
 
 services:
-  # Internet-connected reverse proxing web server
-  caddy:
-    build: ../caddy
-    ports:
-      - "80:80"
-      - "443:443"
-    # depends_on:
-    volumes:
-      - ~/docker-persistence/caddy:/data
-      - ../caddy/Caddyfile:/etc/caddy/Caddyfile
-      - ../../app/dist:/dist
-      - ../caddy/test:/test
   # Orion is the context broker
   orion:
     image: fiware/orion:2.4.0
@@ -182,6 +170,30 @@ services:
         source: ./draco/conf
         target: /opt/nifi/nifi-current/conf
       # - draco/conf:/opt/nifi/nifi-current/conf
+
+  vklass-dummy:
+    image: python:3.9-slim-buster
+    hostname: vklass-dummy
+    container_name: vklass-dummy
+    networks:
+      default:
+        ipv4_address: 172.18.1.20
+    expose:
+      - "12345"
+    ports:
+      - "12345:12345"
+    volumes:
+      - type: bind
+        source: ./../vklass_dummy
+        target: /host_volume
+    environment:
+      - FLASK_ENV=development
+      - MORNING_UPDATE_HOUR=8
+      - LATE_MORNING_UPDATE_HOUR=10
+      - MAX_PERCENT_DAILY_ADDED_ABSENCES=20
+      - NUM_DAYS_HISTORY=14
+    working_dir: /host_volume
+    command: ./start.sh
 
   # Database for orion/comet
   mongo-db:
