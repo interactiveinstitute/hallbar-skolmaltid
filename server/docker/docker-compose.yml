@@ -196,7 +196,9 @@ services:
       - default
     command: --bind_ip_all
     volumes:
-      - mongo-db:/data
+      # - mongo-db:/data
+      # - mongo-db-persistence:/data
+      - ~/mongo-data:/data
     healthcheck:
       test: |
         host=`hostname --ip-address || echo '127.0.0.1'`;
@@ -219,7 +221,9 @@ services:
       - "MYSQL_ROOT_PASSWORD_FILE=/run/secrets/my_secret_data"
       - "MYSQL_ROOT_HOST=172.18.1.5" # Allow Keyrock to access this database
     volumes:
-      - mysql-db:/var/lib/mysql
+      # - mysql-db:/var/lib/mysql
+      # - mysql-db-persistence:/var/lib/mysql
+      - ~/mysql-data:/var/lib/mysql
       - ../mysql-data:/docker-entrypoint-initdb.d/:ro
     secrets:
       - my_secret_data
@@ -230,9 +234,21 @@ networks:
       config:
         - subnet: 172.18.1.0/24
 
-volumes:
-  mysql-db: ~
-  mongo-db: ~
+# volumes:
+  # mysql-db: ~/mysql-data
+  # mongo-db: ~/mongo-data
+  # mysql-db-persistence:
+  #   driver: local
+  #   driver_opts:
+  #     type: 'none'
+  #     o: 'bind'
+  #     device: '~/mysql-data'
+  # mongo-db-persistence:
+  #   driver: local
+  #   driver_opts:
+  #     type: 'none'
+  #     o: 'bind'
+  #     device: '~/mongo-data'
 
 secrets:
   my_secret_data:
