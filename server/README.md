@@ -2,6 +2,11 @@
 
 This is the repository for the backend for the Hållbar Skolmåltid backend, started June 2020. The backend provides aggregated school data, for the project's frontend apps as well as direct api access.
 
+The initial idea was to provide open data for school attendance statistics, with daily data retreived from various school data services (currently only vklass). Thus, fiware seemed a good choice for its open standardised api/datamodels used in other public sector open data activities (see DIGG's guidelines), in combination with draco/nifi for funneling and transcoding data. Also, this was seen as a good fiware learning occassion.  
+However, with conditions changing during the project, vklass data access got stuck in municipal agreements, hence a dummy server was created to emulate a vklass server answering the calls we need with some data, and with time the requirements for that data grew. Skipping the vklass compatibility requirement would make that code easier.  
+Also, after a while, with the added requirement of handling sensitive data, authentication/authorization was needed, which was more complicated for the fiware generic enablers as opposed to just using a regular application server.
+
+
 The current setup encompasses
 * A mongo db
 * FIWARE Orion Context broker - the context data is accessed using the standardized [NGSIv2 REST API](https://telefonicaid.github.io/fiware-orion/api/v2/stable/).
@@ -39,16 +44,16 @@ If that is not the case, follow [Docker's installation instructions](https://doc
 ## Execution
 
 ### Starting
-To start the backend, without the vklass emulator, do the following:
+To start the backend for **local development** (with vklass emuator):
 
 ```bash
 server/docker> docker-compose up
 ```
 
-To start with the vklass emulator, do:
+To start the backend **on production server** (with vklass emuator):
 
 ```bash
-server/docker> docker-compose -f docker-compose.yml -f vklass_dummy.yml up
+server/docker> docker-compose -f docker-compose.yml -f docker-compose.server.yml up
 ```
 
 The first startup takes a while, since all containers are downloaded/built.
@@ -95,20 +100,8 @@ The first startup takes a while, since all containers are downloaded/built.
 </details>
 
 ### Stopping
-Stopping while keeping all data (orion/comet/keyrock data in volumes), without using the vklass emulator:
-
-    server/docker> docker-compose down
-
-... or if you don't need to keep _any_ of your local volumes, the simplest is to remove them all when stopping
-
-    server/docker> docker-compose down -v
-
-... or if you have other volumes you want to keep, just use _docker volume rm_ to delete one by one after stopping.
-
-**If you're running the vklass emulator**, add the _-f docker-compose.yml -f vklass_dummy.yml_ arguments to the above commands:
-
-    server/docker> docker-compose -f docker-compose.yml -f vklass_dummy.yml down
-    server/docker> docker-compose -f docker-compose.yml -f vklass_dummy.yml down -v
+To stop while keeping all data (orion/comet/keyrock data in volumes), for your docker-compose command exchange _up_ for _down_.
+If you don't need to keep _any_ of your local volumes, for your docker-compose command exchange _up_ for _down -v_.
 
 ## Usage
 
