@@ -456,7 +456,7 @@
 		},
 		{
 			"key": "draco-franvaro-init",
-			"value": "https://skolmat.testyta.se:9091",
+			"value": "http://skolmat.testyta.se:9091",
 			"disabled": true
 		},
 		{
@@ -466,7 +466,8 @@
 		},
 		{
 			"key": "keyrock",
-			"value": "https://skolmat.testyta.se/keyrock"
+			"value": "https://skolmat.testyta.se/keyrock",
+			"disabled": true
 		},
 		{
 			"key": "keyrock",
