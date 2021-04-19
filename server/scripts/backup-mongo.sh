@@ -12,3 +12,7 @@ cd ../docker/
 
 echo "Gonna backup to file: ~/mongodumps/$DATE.dump"
 docker-compose exec -T mongo-db sh -c 'mongodump --archive' >  ~/mongodumps/$DATE.dump
+
+echo "Only keep 50 dumps. Removing any older dumps than that"
+cd ~/mongodumps/
+ls | sort -r | tail -n +51 | xargs rm -v
