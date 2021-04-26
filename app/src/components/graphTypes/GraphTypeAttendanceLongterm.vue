@@ -257,7 +257,7 @@ export default {
       return [
         attached[0],
         // '?type=SchoolAbsenceReported&q=refSchool==' + attached[0],
-        '?type=SchoolAttendanceObserved&q=refSchool==' + attached[0],
+        '?type=SchoolAttendanceObserved&q=refSchool==' + attached[0] + '&limit=1000',
         '?type=DietGroup&q=refSchool==' + attached[0]
       ];
     },
