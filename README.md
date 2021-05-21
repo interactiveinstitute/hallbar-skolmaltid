@@ -15,7 +15,7 @@ External dependencies, such as libraries and/or software frameworks in this repo
 
 ```
 Hållbar skolmåltid. Web application for aggregating, vizualising and handling school data
-Copyright (c) 2021-present All contributors to the repo.
+Copyright (c) 2021-present. Contributors to the repo.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
