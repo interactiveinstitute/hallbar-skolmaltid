@@ -63,7 +63,7 @@ The first startup takes a while, since all containers are downloaded/built.
 
 **For empty database** - first time, or if mongo volume has been removed ... to initiate with some test data, either
 
-**import** *hallbar_skolmaltid_server_init* collection in [Postman](https://www.postman.com/) and run (locally, or change collection variables accordingly) collection using Postman 'Runner' feature.
+**import** *hallbar_skolmaltid_server_init* collection in [Postman](https://www.postman.com/) and run (locally, or change collection variables accordingly) collection using Postman Runner/Run feature (**NOTE for running on server**: 210604 we had issues with the 'Trigger dailyinit' call to go through server firewalls, so we executed it locally on the server using 'curl -X POST localhost:9091/dailyinit' when fiware-draco had started up).
 
 **OR**
 
