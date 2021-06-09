@@ -275,7 +275,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"actionType\": \"append\",\n    \"entities\":[\n        {\n            \"id\": \"graph1\",\n            \"type\": \"Graph\",\n            \"source\": {\n                \"value\": \"user\"\n            },\n            \"refBoard\": {\n                \"type\": \"Reference\",\n                \"value\": \"board2\"\n            },\n            \"refGraphType\": {\n                \"type\": \"Reference\",\n                \"value\": \"graphType1\"\n            },\n            \"connectedData\": {\n                \"type\": \"Text\",\n                \"value\": [\"some cool data\"]\n            }\n        },\n        {\n            \"id\": \"graph2\",\n            \"type\": \"Graph\",\n            \"source\": {\n                \"value\": \"user\"\n            },\n            \"refBoard\": {\n                \"type\": \"Reference\",\n                \"value\": \"board1\"\n            },\n            \"order\": {\n                \"type\": \"Integer\",\n                \"value\": \"0\"\n            },\n            \"refGraphType\": {\n                \"type\": \"Reference\",\n                \"value\": \"graphTypeAttendanceDay\"\n            },\n            \"connectedData\": {\n                \"type\": \"Text\",\n                \"value\": [\"vklass_school_1\"]\n            }\n        },\n        {\n            \"id\": \"graph3\",\n            \"type\": \"Graph\",\n            \"source\": {\n                \"value\": \"user\"\n            },\n            \"refBoard\": {\n                \"type\": \"Reference\",\n                \"value\": \"board2\"\n            },\n            \"order\": {\n                \"type\": \"Integer\",\n                \"value\": \"2\"\n            },\n            \"refGraphType\": {\n                \"type\": \"Reference\",\n                \"value\": \"graphTypeAbsenceCalendar\"\n            },\n            \"connectedData\": {\n                \"type\": \"Text\",\n                \"value\": [\"vklass_school_1\"]\n            }\n        },\n        {\n            \"id\": \"graph4\",\n            \"type\": \"Graph\",\n            \"source\": {\n                \"value\": \"user\"\n            },\n            \"refBoard\": {\n                \"type\": \"Reference\",\n                \"value\": \"board2\"\n            },\n            \"order\": {\n                \"type\": \"Integer\",\n                \"value\": \"3\"\n            },\n            \"refGraphType\": {\n                \"type\": \"Reference\",\n                \"value\": \"graphTypeAbsenceLines\"\n            },\n            \"connectedData\": {\n                \"type\": \"Text\",\n                \"value\": [\"vklass_school_1\"]\n            }\n        },\n        {\n            \"id\": \"graph5\",\n            \"type\": \"Graph\",\n            \"source\": {\n                \"value\": \"user\"\n            },\n            \"refBoard\": {\n                \"type\": \"Reference\",\n                \"value\": \"board1\"\n            },\n            \"order\": {\n                \"type\": \"Integer\",\n                \"value\": \"1\"\n            },\n            \"refGraphType\": {\n                \"type\": \"Reference\",\n                \"value\": \"graphTypeAttendanceLongterm\"\n            },\n            \"connectedData\": {\n                \"value\": [\"vklass_school_1\"]\n            }\n        }\n    ]\n} "
+					"raw": "{\n    \"actionType\": \"append\",\n    \"entities\":[\n        {\n            \"id\": \"graph1\",\n            \"type\": \"Graph\",\n            \"source\": {\n                \"value\": \"user\"\n            },\n            \"refBoard\": {\n                \"type\": \"Reference\",\n                \"value\": \"board2\"\n            },\n            \"refGraphType\": {\n                \"type\": \"Reference\",\n                \"value\": \"graphType1\"\n            },\n            \"connectedData\": {\n                \"type\": \"Text\",\n                \"value\": [\"some cool data\"]\n            }\n        },\n        {\n            \"id\": \"graph2\",\n            \"type\": \"Graph\",\n            \"source\": {\n                \"value\": \"user\"\n            },\n            \"refBoard\": {\n                \"type\": \"Reference\",\n                \"value\": \"board1\"\n            },\n            \"order\": {\n                \"type\": \"Integer\",\n                \"value\": \"0\"\n            },\n            \"refGraphType\": {\n                \"type\": \"Reference\",\n                \"value\": \"graphTypeAttendanceDay\"\n            },\n            \"connectedData\": {\n                \"type\": \"Text\",\n                \"value\": [\"vklass_school_1\"]\n            }\n        },        \n        {\n            \"id\": \"graph5\",\n            \"type\": \"Graph\",\n            \"source\": {\n                \"value\": \"user\"\n            },\n            \"refBoard\": {\n                \"type\": \"Reference\",\n                \"value\": \"board1\"\n            },\n            \"order\": {\n                \"type\": \"Integer\",\n                \"value\": \"1\"\n            },\n            \"refGraphType\": {\n                \"type\": \"Reference\",\n                \"value\": \"graphTypeAttendanceLongterm\"\n            },\n            \"connectedData\": {\n                \"value\": [\"vklass_school_1\"]\n            }\n        }\n    ]\n} "
 				},
 				"url": {
 					"raw": "{{orion}}/v2/op/update",
@@ -447,8 +447,7 @@
 		},
 		{
 			"key": "orion",
-			"value": "https://skolmat.testyta.se/api",
-			"disabled": true
+			"value": "https://skolmat.testyta.se/api"
 		},
 		{
 			"key": "draco-franvaro-init",
@@ -456,18 +455,15 @@
 		},
 		{
 			"key": "draco-franvaro-init",
-			"value": "http://skolmat.testyta.se:9091",
-			"disabled": true
+			"value": "http://skolmat.testyta.se:9091"
 		},
 		{
 			"key": "sth-comet",
-			"value": "localhost:8666",
-			"disabled": true
+			"value": "localhost:8666"
 		},
 		{
 			"key": "keyrock",
-			"value": "https://skolmat.testyta.se/keyrock",
-			"disabled": true
+			"value": "https://skolmat.testyta.se/keyrock"
 		},
 		{
 			"key": "keyrock",
