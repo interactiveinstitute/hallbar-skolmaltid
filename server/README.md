@@ -2,16 +2,25 @@
 
 This is the repository for the backend for the Hållbar Skolmåltid backend, started June 2020. The backend provides aggregated school data, for the project's frontend apps as well as direct api access.
 
-The initial idea was to provide open data for school attendance statistics, with daily data retreived from various school data services (currently only vklass). Thus, fiware seemed a good choice for its open standardised api/datamodels used in other public sector open data activities (see DIGG's guidelines), in combination with draco/nifi for funneling and transcoding data. Also, this was seen as a good fiware learning occassion.  
+## Future considerations
+- Because of shifting goals from the initial statistics data focus, using fiware components and data models could be made more efficient with a regular application server.
+- Because of shifting goals regarding vklass involvement, making the attendance data handling switchable between fetching live and generating dummy data has been unecessaary complicated. Hence, the later additions of meal and waste data was made very simple.
+- Because of the solution becoming more of a concept, and only (barely) having one source of every type of data, using Draco/NiFi is not motivated
+
+## Attendance data
+The initial idea was to only provide open data for school attendance statistics, with daily data retreived from various school data services (currently only vklass). Thus, fiware seemed a good choice for its open standardised api/datamodels used in other public sector open data activities (see DIGG's guidelines), in combination with draco/nifi for funneling and transcoding data. Also, this was seen as a good fiware learning occassion.  
 However, with conditions changing during the project, vklass data access got stuck in municipal agreements, hence a dummy server was created to emulate a vklass server answering the calls we need with some data, and with time the requirements for that data grew. Skipping the vklass compatibility requirement would make that code easier.  
 Also, after a while, with the added requirement of handling sensitive data, authentication/authorization was needed, which was more complicated for the fiware generic enablers as opposed to just using a regular application server.
 
+## Meal data
+Concerns daily school food data, currently only from partner Mashie. Since the prototype has turned into a concept prototype, and there was (temporary?) very limited fake data from Mashie, no continous fetching of data was deemed necessary - one month's worth of data for one distributor was downloaded and rotated.
 
+## System setup
 The current setup encompasses
 * A mongo db
 * FIWARE Orion Context broker - the context data is accessed using the standardized [NGSIv2 REST API](https://telefonicaid.github.io/fiware-orion/api/v2/stable/).
 *  ~~*FIWARE Comet - the historical context data component - [Comet docs](https://fiware-sth-comet.readthedocs.io/)*~~
-* FIWARE Draco - basically an instance of [Apache NiFi](https://en.wikipedia.org/wiki/Apache_NiFi) - for automating the flow of data between systems. Potentially useful for shuffling (and transforming)  data from sources into the backend.
+* FIWARE Draco - basically an instance of [Apache NiFi](https://en.wikipedia.org/wiki/Apache_NiFi) - for automating the flow of data between systems. Potentially useful for shuffling (and transforming)  data from multiple sources into the backend.
 * FIWARE Keyrock - Identity Management [Keyrock docs](https://fiware-idm.readthedocs.io/) - adds OAuth2-based authentication and authorization security to orion access
 
 <!-- language: lang-none -->
@@ -21,15 +30,25 @@ The current setup encompasses
      |  DB   |
      +---+---+
          |
-    +----+----+   +---------+
-    | Keyrock +---+ Postman |
-    |  IDM    |   |         |
-    +----+----+   +----+----+
-         |             |
-     +---+---+   +-----+-----+  +-------+  +-------+
-     | Front +---+   Wilma   +--+ Orion +--+ Mongo |
-     |  End  |   | PEP Proxy |  |       |  |  DB   |
-     +-------+   +-----------+  +-------+  +-------+
+    +----+----+                              +-------+
+    | Keyrock |                              | Mongo |
+    |  IDM    |                              |  DB   |
+    +----+----+                              +-------+
+         |                                  /
+     +---+---+   +-----+-----+   +--------+
+     | Front +---+   Wilma   +---+ Orion  |
+     |  End  |   | PEP Proxy |   |        |
+     +-------+   +-----------+   +---+----+             vklass server
+                               /     |      \          /
+                    +--------+   +---+----+   +-------+
+                    | mashie |   | waste  |   | Draco |
+                    | dummy  |   | dummy  |   |  NiFi |
+                    +--------+   +--------+   +-------+
+                                                        \
+                                                          +--------+
+                                                          | vklass |
+                                                          | dummy  |
+                                                          +--------+
 
 
 ## Prerequisites
