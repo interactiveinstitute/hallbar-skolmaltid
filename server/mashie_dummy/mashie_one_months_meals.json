@@ -1,0 +1,3731 @@
+{
+	"meals": [{
+		"name": "Lunch 1",
+		"date": "2021-10-01",
+		"lang": "sv",
+		"courses": [{
+			"name": "Köttfärslåda med potatis och curry",
+			"ingredientsLabel": "Nötfärs 10 %, GratängOST 28%, Ketchup tomat, Potatis strimlad, Lök rå tärnad , Salt, Ostcreme stark 15%, Curry, MellanMJÖLK 1,5% 10L  EKO",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1424.52,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 340.77,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 11.96,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 6.55,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 3.98,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 0.52,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 39.07,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 18.47,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 2.09,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.85,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.20,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 20.55,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 2.41,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 145.0,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 756.25,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 1.55
+		}]
+	}, {
+		"name": "Lunch 2",
+		"date": "2021-10-01",
+		"lang": "sv",
+		"courses": [{
+			"name": "Quornfärslåda med potatis och curry",
+			"ingredientsLabel": "GratängOST 28%, Ketchup tomat, Potatis strimlad, Lök rå tärnad , Salt, Quornfärs, Ostcreme stark 15%, Curry, MellanMJÖLK 1,5% 10L  EKO",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1213.72,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 290.22,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 8.31,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 4.32,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 1.91,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 1.39,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 39.37,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 13.72,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 3.59,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.75,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.15,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 20.55,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 3.69,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 188.10,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 780.90,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.24
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-02",
+		"lang": "sv",
+		"courses": [{
+			"name": "Lasagnette med nötfärs",
+			"ingredientsLabel": "Nötfärs 10 %, GratängOST 28%, Toppredning, Lök rå tärnad , Lasagnette, Salt, Tomater krossade, Vitlök granulerad 650g, Vitpeppar, Köttbuljong, Timjan torkad, Ostcreme stark 15%, Oregano, MellanMJÖLK 1,5% 10L  EKO",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1393.36,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 333.47,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 11.40,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 5.95,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 3.87,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 0.58,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 35.18,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 21.14,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 1.85,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 2.09,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.54,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 8.33,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 1.93,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 210.39,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 848.79,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 1.62
+		}]
+	}, {
+		"name": "Lunch 2",
+		"date": "2021-10-02",
+		"lang": "sv",
+		"courses": [{
+			"name": "Klimatsmart grönsakslasagnette",
+			"ingredientsLabel": "Svartpeppar grovmalen, GratängOST 28%, Toppredning, Lasagnette, Chilisås, Salt, Kranvatten, Timjan torkad, Oregano, Vitlök tärnad, Tomatpuré, Grönsaksfärs  (Grönsaksbas), MellanMJÖLK 1,5% 10L  EKO, Morot strimlad",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1106.19,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 264.70,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 6.29,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 3.75,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 1.40,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 0.42,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 37.44,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 13.22,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 3.66,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 0.88,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.43,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 11.22,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 1.24,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 250.20,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 385.00,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.23
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-03",
+		"lang": "sv",
+		"courses": [{
+			"name": "Hamburgare m bröd, klyftpotatis, dressing",
+			"ingredientsLabel": "Paprikapulver, Klyftpotatis med skal, MF Majonnäs lätt fett 35 % ÄGGfri, Hamburgerbröd, Chilisås, Salt, Hamburgare Nöt fri från, Vitpeppar, GRÄDDfil, FilMJÖLK 3%  EKO, Hultbergs senap mild 5,5kg",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 2275.54,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 543.70,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 27.99,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 11.07,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 2.12,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 1.85,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 48.55,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 22.54,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 3.41,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 2.47,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.15,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 15.95,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 0.73,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 55.29,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 434.92,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 2.90
+		}]
+	}, {
+		"name": "Lunch 2",
+		"date": "2021-10-03",
+		"lang": "sv",
+		"courses": [{
+			"name": "Falafelburgare m bröd, klyftpotatis, dressing",
+			"ingredientsLabel": "Paprikapulver, Klyftpotatis med skal, MF Majonnäs lätt fett 35 % ÄGGfri, Hamburgerbröd, Chilisås, Salt, Vitpeppar, GRÄDDfil, FilMJÖLK 3%  EKO, Falafel burger Ekologisk, Hultbergs senap mild 5,5kg",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1975.54,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 472.71,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 14.69,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 4.72,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 2.12,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 1.85,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 66.35,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 15.34,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 3.41,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 2.50,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.15,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 15.95,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 0.73,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 55.29,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 434.92,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.17
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-04",
+		"lang": "sv",
+		"courses": [{
+			"name": "Falafelburgare m bröd, klyftpotatis, dressing",
+			"ingredientsLabel": "Paprikapulver, Klyftpotatis med skal, MF Majonnäs lätt fett 35 % ÄGGfri, Hamburgerbröd, Chilisås, Salt, Vitpeppar, GRÄDDfil, FilMJÖLK 3%  EKO, Falafel burger Ekologisk, Hultbergs senap mild 5,5kg",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1975.54,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 472.71,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 14.69,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 4.72,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 2.12,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 1.85,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 66.35,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 15.34,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 3.41,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 2.50,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.15,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 15.95,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 0.73,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 55.29,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 434.92,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.17
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-05",
+		"lang": "sv",
+		"courses": [{
+			"name": "Spagetti, köttfärssås",
+			"ingredientsLabel": "Nötfärs 10 %, Toppredning, Ketchup tomat, Rapsolja  5L, Spagetti kort  EKO, Lök rå tärnad , Salt, Tomater krossade, Vitlök granulerad 650g, Kranvatten, Vitpeppar, Köttbuljong, Oregano",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1792.67,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 428.60,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 8.59,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 3.01,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 3.57,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 1.13,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 64.71,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 20.52,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 3.27,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.55,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.12,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 8.33,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 2.66,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 41.42,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 628.74,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 1.69
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-06",
+		"lang": "sv",
+		"courses": [{
+			"name": "Spagetti, köttfärssås",
+			"ingredientsLabel": "Nötfärs 10 %, Toppredning, Ketchup tomat, Rapsolja  5L, Spagetti kort  EKO, Lök rå tärnad , Salt, Tomater krossade, Vitlök granulerad 650g, Kranvatten, Vitpeppar, Köttbuljong, Oregano",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1792.67,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 428.60,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 8.59,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 3.01,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 3.57,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 1.13,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 64.71,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 20.52,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 3.27,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.55,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.12,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 8.33,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 2.66,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 41.42,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 628.74,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 1.69
+		}]
+	}, {
+		"name": "Lunch 2",
+		"date": "2021-10-06",
+		"lang": "sv",
+		"courses": [{
+			"name": "Spagetti, veg ost- och broccoli",
+			"ingredientsLabel": "Purjolök finskuren, Toppredning, Rapsolja  5L, Spagetti kort  EKO, Grönsaksbuljong pulver, Salt, Mjölkfritt flytande margarin, Persilja fryst, Kranvatten, Ostcreme stark 15%, Svartpeppar mald, MellanMJÖLK 1,5% 10L  EKO, Basilika, Broccoli buketter EKO",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1717.06,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 411.12,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 7.81,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 3.49,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 2.11,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 1.40,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 66.84,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 15.31,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 3.47,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.54,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.78,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 19.21,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 1.53,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 179.81,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 631.29,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.28
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-07",
+		"lang": "sv",
+		"courses": [{
+			"name": "Ugnsstekt fisk, kryddgrön citronsås, potatis",
+			"ingredientsLabel": "Dill fryst, Toppredning, MF Ströbröd, Körvel, Grönsaksbuljong pulver, Dragon, Salt, Mjölkfritt flytande margarin, Persilja fryst, Kranvatten, Vitpeppar, Potatis skalad, MellanMJÖLK 1,5% 10L  EKO, Citron pressad konc., SEJfilé MSC",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1312.83,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 313.60,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 3.65,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 1.19,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 0.93,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 1.24,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 42.54,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 26.04,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 2.02,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 2.40,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.76,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 17.90,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 1.73,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 94.33,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 1058.64,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.25
+		}]
+	}, {
+		"name": "Lunch 2",
+		"date": "2021-10-07",
+		"lang": "sv",
+		"courses": [{
+			"name": "Linsgryta, kokt potatis",
+			"ingredientsLabel": "Ingefära malen, Rapsolja  5L, Lök rå tärnad , Grönsaksbuljong pulver, Tomater krossade, Persilja fryst, Kranvatten, Linser röda Ekologiska, Potatis skalad, Curry, Vitlök tärnad, CREME FRAICHE 32%, Rotfruktsmix KRAV 2,5 kg",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1942.86,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 463.91,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 17.72,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 6.44,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 6.90,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 3.00,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 59.11,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 14.22,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 7.83,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.77,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.66,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 40.81,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 4.35,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 91.65,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 868.34,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.27
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-08",
+		"lang": "sv",
+		"courses": [{
+			"name": "Grönsaksbiff caribbean, tzatziki, ugnsrostad potatis",
+			"ingredientsLabel": "Borstad potatis kokt, Rapsolja  5L, MatlagningsYOGHURT 10% Turkisk 5kg, Salt, Gurka, Vitlök granulerad 650g, Timjan torkad, Oregano, Rosmarin torkad, Svartpeppar mald, Grönsaksbiff Caribbean",
+			"possibleAllergens": ["Selleri"],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 2019.85,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 483.30,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 20.21,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 1.71,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 5.03,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 2.87,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 62.23,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 10.68,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 5.82,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 2.03,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.38,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 20.59,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 1.32,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 58.24,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 233.95,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.24
+		}]
+	}, {
+		"name": "Lunch 2",
+		"date": "2021-10-08",
+		"lang": "sv",
+		"courses": [{
+			"name": "Grönsaksbiff caribbean, tzatziki, ugnsrostad potatis",
+			"ingredientsLabel": "Borstad potatis kokt, Rapsolja  5L, MatlagningsYOGHURT 10% Turkisk 5kg, Salt, Gurka, Vitlök granulerad 650g, Timjan torkad, Oregano, Rosmarin torkad, Svartpeppar mald, Grönsaksbiff Caribbean",
+			"possibleAllergens": ["Selleri"],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 2019.85,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 483.30,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 20.21,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 1.71,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 5.03,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 2.87,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 62.23,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 10.68,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 5.82,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 2.03,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.38,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 20.59,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 1.32,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 58.24,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 233.95,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.24
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-09",
+		"lang": "sv",
+		"courses": [{
+			"name": "Fransk pastagratäng med kyckling",
+			"ingredientsLabel": "Kycklingfond , GratängOST 28%, Lasagnette, Salt, SENAP Dijon, VispGRÄDDE, Pastakyckling, Paprika röd strimlad, Svartpeppar mald, MellanMJÖLK 1,5% 10L  EKO",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1958.69,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 468.86,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 24.06,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 13.54,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 6.73,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 1.18,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 36.45,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 25.72,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 1.58,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 0.85,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 1.40,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 17.75,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 1.54,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 372.21,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 544.33,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.58
+		}]
+	}, {
+		"name": "Lunch 2",
+		"date": "2021-10-09",
+		"lang": "sv",
+		"courses": [{
+			"name": "Pastagratäng med ratatouille",
+			"ingredientsLabel": "Purjolök finskuren, GratängOST 28%, Toppredning, Ratatouille grönsaker, Penne Rigate Mini 5kg, Grönsaksbuljong pulver, Salt, VispGRÄDDE, Kranvatten, Ostcreme stark 15%, Hultbergs senap mild 5,5kg, Svartpeppar mald, MellanMJÖLK 1,5% 10L  EKO",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1396.06,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 334.41,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 12.12,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 7.54,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 2.86,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 0.49,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 39.70,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 14.78,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 2.89,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.77,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.53,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 47.02,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 0.95,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 282.01,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 698.15,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.34
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-10",
+		"lang": "sv",
+		"courses": [{
+			"name": "Biff Stroganoff, kokt ris",
+			"ingredientsLabel": "Nötkött strimlat, Paprikapulver, Toppredning, Ris långkornigt, Lök rå tärnad , Salt, Mjölkfritt flytande margarin, VispGRÄDDE, Kranvatten, Vitpeppar, Köttbuljong, Tomatpuré, MellanMJÖLK 1,5% 10L  EKO",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1642.88,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 392.47,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 11.70,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 6.53,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 2.98,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 1.17,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 45.94,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 23.82,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 0.90,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 2.33,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.48,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 4.3,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 2.86,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 47.60,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 955.2,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 2.48
+		}]
+	}, {
+		"name": "Lunch 2",
+		"date": "2021-10-10",
+		"lang": "sv",
+		"courses": [{
+			"name": "Lins Stroganoff, kokt ris",
+			"ingredientsLabel": "Paprikapulver, Toppredning, Rapsolja  5L, Ris långkornigt, Lök rå tärnad , Grönsaksbuljong pulver, Salt, Soltorkade tomater, VispGRÄDDE, Gröna linser, Kranvatten, Morot färska, Tomatpuré, Svartpeppar mald",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 2150.10,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 513.55,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 18.53,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 8.60,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 5.97,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 2.44,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 67.41,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 15.16,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 8.00,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.84,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.38,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 7.61,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 3.77,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 88.69,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 723.21,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.31
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-11",
+		"lang": "sv",
+		"courses": [{
+			"name": "Vegetarisk pytt med rotfrukter",
+			"ingredientsLabel": "Vegetarisk Pytt med rotfrukter",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 900.0,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 216.0,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 6.53,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 3.15,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 31.5,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 3.38,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.12,
+				"unit": "g"
+			}],
+			"co2Equivalents": 0.07
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-12",
+		"lang": "sv",
+		"courses": [{
+			"name": "Fiskpanett, kall sås med dill, kokt potatis",
+			"ingredientsLabel": "Dill fryst, Paprikapulver, MF Majonnäs lätt fett 35 % ÄGGfri, Salt, Torskfiskett, MSC, förstekt, GRÄDDfil, FilMJÖLK 3%  EKO, Potatis skalad, Svartpeppar mald",
+			"possibleAllergens": ["Fisk", "Vete"],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 2079.46,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 498.58,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 21.21,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 3.61,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 1.97,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 4.25,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 53.85,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 22.08,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 1.78,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.92,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.02,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 15.58,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 1.30,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 69.10,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 640.78,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.35
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-13",
+		"lang": "sv",
+		"courses": [{
+			"name": "Pytt i panna",
+			"ingredientsLabel": "Eko Lunchpytt Ox",
+			"possibleAllergens": ["Selleri"],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1199.25,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 285.75,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 12.38,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 2.92,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 31.5,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 11.03,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.80,
+				"unit": "g"
+			}],
+			"co2Equivalents": 0.56
+		}]
+	}, {
+		"name": "Lunch 2",
+		"date": "2021-10-13",
+		"lang": "sv",
+		"courses": [{
+			"name": "Vegetarisk pytt med rotfrukter",
+			"ingredientsLabel": "Vegetarisk Pytt med rotfrukter",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 900.0,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 216.0,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 6.53,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 3.15,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 31.5,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 3.38,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.12,
+				"unit": "g"
+			}],
+			"co2Equivalents": 0.07
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-14",
+		"lang": "sv",
+		"courses": [{
+			"name": "Fiskpanett, kall sås med dill, kokt potatis",
+			"ingredientsLabel": "Dill fryst, Paprikapulver, MF Majonnäs lätt fett 35 % ÄGGfri, Salt, Torskfiskett, MSC, förstekt, GRÄDDfil, FilMJÖLK 3%  EKO, Potatis skalad, Svartpeppar mald",
+			"possibleAllergens": ["Fisk", "Vete"],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 2079.46,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 498.58,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 21.21,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 3.61,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 1.97,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 4.25,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 53.85,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 22.08,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 1.78,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.92,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.02,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 15.58,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 1.30,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 69.10,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 640.78,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.35
+		}]
+	}, {
+		"name": "Lunch 2",
+		"date": "2021-10-14",
+		"lang": "sv",
+		"courses": [{
+			"name": "Grönsaksbiff, kall sås med dill, kokt potatis",
+			"ingredientsLabel": "Dill fryst, Paprikapulver, MF Majonnäs lätt fett 35 % ÄGGfri, Salt, GRÄDDfil, FilMJÖLK 3%  EKO, Potatis skalad, Svartpeppar mald, Grönsaksbiff Caribbean",
+			"possibleAllergens": ["Selleri"],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 2071.71,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 495.88,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 20.83,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 3.73,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 1.97,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 4.25,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 63.50,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 11.06,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 5.85,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 2.84,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.02,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 15.58,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 1.30,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 69.10,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 640.78,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.22
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-15",
+		"lang": "sv",
+		"courses": [{
+			"name": "Köttfärslåda med potatis och curry",
+			"ingredientsLabel": "Nötfärs 10 %, GratängOST 28%, Ketchup tomat, Potatis strimlad, Lök rå tärnad , Salt, Ostcreme stark 15%, Curry, MellanMJÖLK 1,5% 10L  EKO",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1424.52,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 340.77,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 11.96,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 6.55,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 3.98,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 0.52,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 39.07,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 18.47,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 2.09,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.85,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.20,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 20.55,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 2.41,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 145.0,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 756.25,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 1.55
+		}]
+	}, {
+		"name": "Lunch 2",
+		"date": "2021-10-15",
+		"lang": "sv",
+		"courses": [{
+			"name": "Quornfärslåda med potatis och curry",
+			"ingredientsLabel": "GratängOST 28%, Ketchup tomat, Potatis strimlad, Lök rå tärnad , Salt, Quornfärs, Ostcreme stark 15%, Curry, MellanMJÖLK 1,5% 10L  EKO",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1213.72,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 290.22,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 8.31,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 4.32,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 1.91,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 1.39,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 39.37,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 13.72,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 3.59,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.75,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.15,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 20.55,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 3.69,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 188.10,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 780.90,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.24
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-16",
+		"lang": "sv",
+		"courses": [{
+			"name": "Lasagnette med nötfärs",
+			"ingredientsLabel": "Nötfärs 10 %, GratängOST 28%, Toppredning, Lök rå tärnad , Lasagnette, Salt, Tomater krossade, Vitlök granulerad 650g, Vitpeppar, Köttbuljong, Timjan torkad, Ostcreme stark 15%, Oregano, MellanMJÖLK 1,5% 10L  EKO",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1393.36,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 333.47,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 11.40,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 5.95,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 3.87,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 0.58,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 35.18,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 21.14,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 1.85,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 2.09,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.54,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 8.33,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 1.93,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 210.39,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 848.79,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 1.62
+		}]
+	}, {
+		"name": "Lunch 2",
+		"date": "2021-10-16",
+		"lang": "sv",
+		"courses": [{
+			"name": "Klimatsmart grönsakslasagnette",
+			"ingredientsLabel": "Svartpeppar grovmalen, GratängOST 28%, Toppredning, Lasagnette, Chilisås, Salt, Kranvatten, Timjan torkad, Oregano, Vitlök tärnad, Tomatpuré, Grönsaksfärs  (Grönsaksbas), MellanMJÖLK 1,5% 10L  EKO, Morot strimlad",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1106.19,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 264.70,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 6.29,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 3.75,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 1.40,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 0.42,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 37.44,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 13.22,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 3.66,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 0.88,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.43,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 11.22,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 1.24,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 250.20,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 385.00,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.23
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-17",
+		"lang": "sv",
+		"courses": [{
+			"name": "Hamburgare m bröd, klyftpotatis, dressing",
+			"ingredientsLabel": "Paprikapulver, Klyftpotatis med skal, MF Majonnäs lätt fett 35 % ÄGGfri, Hamburgerbröd, Chilisås, Salt, Hamburgare Nöt fri från, Vitpeppar, GRÄDDfil, FilMJÖLK 3%  EKO, Hultbergs senap mild 5,5kg",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 2275.54,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 543.70,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 27.99,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 11.07,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 2.12,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 1.85,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 48.55,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 22.54,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 3.41,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 2.47,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.15,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 15.95,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 0.73,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 55.29,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 434.92,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 2.90
+		}]
+	}, {
+		"name": "Lunch 2",
+		"date": "2021-10-17",
+		"lang": "sv",
+		"courses": [{
+			"name": "Falafelburgare m bröd, klyftpotatis, dressing",
+			"ingredientsLabel": "Paprikapulver, Klyftpotatis med skal, MF Majonnäs lätt fett 35 % ÄGGfri, Hamburgerbröd, Chilisås, Salt, Vitpeppar, GRÄDDfil, FilMJÖLK 3%  EKO, Falafel burger Ekologisk, Hultbergs senap mild 5,5kg",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1975.54,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 472.71,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 14.69,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 4.72,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 2.12,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 1.85,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 66.35,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 15.34,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 3.41,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 2.50,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.15,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 15.95,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 0.73,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 55.29,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 434.92,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.17
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-18",
+		"lang": "sv",
+		"courses": [{
+			"name": "Klimatsmart grönsakslasagnette",
+			"ingredientsLabel": "Svartpeppar grovmalen, GratängOST 28%, Toppredning, Lasagnette, Chilisås, Salt, Kranvatten, Timjan torkad, Oregano, Vitlök tärnad, Tomatpuré, Grönsaksfärs  (Grönsaksbas), MellanMJÖLK 1,5% 10L  EKO, Morot strimlad",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1106.19,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 264.70,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 6.29,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 3.75,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 1.40,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 0.42,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 37.44,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 13.22,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 3.66,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 0.88,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.43,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 11.22,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 1.24,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 250.20,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 385.00,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.23
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-19",
+		"lang": "sv",
+		"courses": [{
+			"name": "Hamburgare m bröd, klyftpotatis, dressing",
+			"ingredientsLabel": "Paprikapulver, Klyftpotatis med skal, MF Majonnäs lätt fett 35 % ÄGGfri, Hamburgerbröd, Chilisås, Salt, Hamburgare Nöt fri från, Vitpeppar, GRÄDDfil, FilMJÖLK 3%  EKO, Hultbergs senap mild 5,5kg",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 2275.54,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 543.70,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 27.99,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 11.07,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 2.12,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 1.85,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 48.55,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 22.54,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 3.41,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 2.47,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.15,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 15.95,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 0.73,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 55.29,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 434.92,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 2.90
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-20",
+		"lang": "sv",
+		"courses": [{
+			"name": "Spagetti, köttfärssås",
+			"ingredientsLabel": "Nötfärs 10 %, Toppredning, Ketchup tomat, Rapsolja  5L, Spagetti kort  EKO, Lök rå tärnad , Salt, Tomater krossade, Vitlök granulerad 650g, Kranvatten, Vitpeppar, Köttbuljong, Oregano",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1792.67,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 428.60,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 8.59,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 3.01,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 3.57,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 1.13,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 64.71,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 20.52,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 3.27,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.55,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.12,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 8.33,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 2.66,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 41.42,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 628.74,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 1.69
+		}]
+	}, {
+		"name": "Lunch 2",
+		"date": "2021-10-20",
+		"lang": "sv",
+		"courses": [{
+			"name": "Spagetti, veg ost- och broccoli",
+			"ingredientsLabel": "Purjolök finskuren, Toppredning, Rapsolja  5L, Spagetti kort  EKO, Grönsaksbuljong pulver, Salt, Mjölkfritt flytande margarin, Persilja fryst, Kranvatten, Ostcreme stark 15%, Svartpeppar mald, MellanMJÖLK 1,5% 10L  EKO, Basilika, Broccoli buketter EKO",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1717.06,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 411.12,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 7.81,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 3.49,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 2.11,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 1.40,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 66.84,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 15.31,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 3.47,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.54,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.78,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 19.21,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 1.53,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 179.81,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 631.29,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.28
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-21",
+		"lang": "sv",
+		"courses": [{
+			"name": "Ugnsstekt fisk, kryddgrön citronsås, potatis",
+			"ingredientsLabel": "Dill fryst, Toppredning, MF Ströbröd, Körvel, Grönsaksbuljong pulver, Dragon, Salt, Mjölkfritt flytande margarin, Persilja fryst, Kranvatten, Vitpeppar, Potatis skalad, MellanMJÖLK 1,5% 10L  EKO, Citron pressad konc., SEJfilé MSC",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1312.83,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 313.60,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 3.65,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 1.19,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 0.93,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 1.24,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 42.54,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 26.04,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 2.02,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 2.40,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.76,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 17.90,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 1.73,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 94.33,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 1058.64,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.25
+		}]
+	}, {
+		"name": "Lunch 2",
+		"date": "2021-10-21",
+		"lang": "sv",
+		"courses": [{
+			"name": "Linsgryta, kokt potatis",
+			"ingredientsLabel": "Ingefära malen, Rapsolja  5L, Lök rå tärnad , Grönsaksbuljong pulver, Tomater krossade, Persilja fryst, Kranvatten, Linser röda Ekologiska, Potatis skalad, Curry, Vitlök tärnad, CREME FRAICHE 32%, Rotfruktsmix KRAV 2,5 kg",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1942.86,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 463.91,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 17.72,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 6.44,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 6.90,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 3.00,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 59.11,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 14.22,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 7.83,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.77,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.66,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 40.81,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 4.35,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 91.65,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 868.34,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.27
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-22",
+		"lang": "sv",
+		"courses": [{
+			"name": "Grönsaksbiff caribbean, tzatziki, ugnsrostad potatis",
+			"ingredientsLabel": "Borstad potatis kokt, Rapsolja  5L, MatlagningsYOGHURT 10% Turkisk 5kg, Salt, Gurka, Vitlök granulerad 650g, Timjan torkad, Oregano, Rosmarin torkad, Svartpeppar mald, Grönsaksbiff Caribbean",
+			"possibleAllergens": ["Selleri"],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 2019.85,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 483.30,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 20.21,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 1.71,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 5.03,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 2.87,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 62.23,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 10.68,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 5.82,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 2.03,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.38,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 20.59,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 1.32,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 58.24,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 233.95,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.24
+		}]
+	}, {
+		"name": "Lunch 2",
+		"date": "2021-10-22",
+		"lang": "sv",
+		"courses": [{
+			"name": "Grönsaksbiff caribbean, tzatziki, ugnsrostad potatis",
+			"ingredientsLabel": "Borstad potatis kokt, Rapsolja  5L, MatlagningsYOGHURT 10% Turkisk 5kg, Salt, Gurka, Vitlök granulerad 650g, Timjan torkad, Oregano, Rosmarin torkad, Svartpeppar mald, Grönsaksbiff Caribbean",
+			"possibleAllergens": ["Selleri"],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 2019.85,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 483.30,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 20.21,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 1.71,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 5.03,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 2.87,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 62.23,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 10.68,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 5.82,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 2.03,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.38,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 20.59,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 1.32,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 58.24,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 233.95,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.24
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-23",
+		"lang": "sv",
+		"courses": [{
+			"name": "Fransk pastagratäng med kyckling",
+			"ingredientsLabel": "Kycklingfond , GratängOST 28%, Lasagnette, Salt, SENAP Dijon, VispGRÄDDE, Pastakyckling, Paprika röd strimlad, Svartpeppar mald, MellanMJÖLK 1,5% 10L  EKO",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1958.69,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 468.86,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 24.06,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 13.54,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 6.73,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 1.18,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 36.45,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 25.72,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 1.58,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 0.85,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 1.40,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 17.75,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 1.54,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 372.21,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 544.33,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.58
+		}]
+	}, {
+		"name": "Lunch 2",
+		"date": "2021-10-23",
+		"lang": "sv",
+		"courses": [{
+			"name": "Pastagratäng med ratatouille",
+			"ingredientsLabel": "Purjolök finskuren, GratängOST 28%, Toppredning, Ratatouille grönsaker, Penne Rigate Mini 5kg, Grönsaksbuljong pulver, Salt, VispGRÄDDE, Kranvatten, Ostcreme stark 15%, Hultbergs senap mild 5,5kg, Svartpeppar mald, MellanMJÖLK 1,5% 10L  EKO",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1396.06,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 334.41,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 12.12,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 7.54,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 2.86,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 0.49,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 39.70,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 14.78,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 2.89,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.77,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.53,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 47.02,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 0.95,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 282.01,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 698.15,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.34
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-24",
+		"lang": "sv",
+		"courses": [{
+			"name": "Biff Stroganoff, kokt ris",
+			"ingredientsLabel": "Nötkött strimlat, Paprikapulver, Toppredning, Ris långkornigt, Lök rå tärnad , Salt, Mjölkfritt flytande margarin, VispGRÄDDE, Kranvatten, Vitpeppar, Köttbuljong, Tomatpuré, MellanMJÖLK 1,5% 10L  EKO",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1642.88,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 392.47,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 11.70,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 6.53,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 2.98,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 1.17,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 45.94,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 23.82,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 0.90,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 2.33,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.48,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 4.3,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 2.86,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 47.60,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 955.2,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 2.48
+		}]
+	}, {
+		"name": "Lunch 2",
+		"date": "2021-10-24",
+		"lang": "sv",
+		"courses": [{
+			"name": "Lins Stroganoff, kokt ris",
+			"ingredientsLabel": "Paprikapulver, Toppredning, Rapsolja  5L, Ris långkornigt, Lök rå tärnad , Grönsaksbuljong pulver, Salt, Soltorkade tomater, VispGRÄDDE, Gröna linser, Kranvatten, Morot färska, Tomatpuré, Svartpeppar mald",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 2150.10,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 513.55,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 18.53,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 8.60,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 5.97,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 2.44,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 67.41,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 15.16,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 8.00,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.84,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.38,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 7.61,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 3.77,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 88.69,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 723.21,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.31
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-25",
+		"lang": "sv",
+		"courses": [{
+			"name": "Pastagratäng med ratatouille",
+			"ingredientsLabel": "Purjolök finskuren, GratängOST 28%, Toppredning, Ratatouille grönsaker, Penne Rigate Mini 5kg, Grönsaksbuljong pulver, Salt, VispGRÄDDE, Kranvatten, Ostcreme stark 15%, Hultbergs senap mild 5,5kg, Svartpeppar mald, MellanMJÖLK 1,5% 10L  EKO",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1396.06,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 334.41,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 12.12,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 7.54,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 2.86,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 0.49,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 39.70,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 14.78,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 2.89,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.77,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.53,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 47.02,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 0.95,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 282.01,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 698.15,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.34
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-26",
+		"lang": "sv",
+		"courses": [{
+			"name": "Biff Stroganoff, kokt ris",
+			"ingredientsLabel": "Nötkött strimlat, Paprikapulver, Toppredning, Ris långkornigt, Lök rå tärnad , Salt, Mjölkfritt flytande margarin, VispGRÄDDE, Kranvatten, Vitpeppar, Köttbuljong, Tomatpuré, MellanMJÖLK 1,5% 10L  EKO",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1642.88,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 392.47,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 11.70,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 6.53,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 2.98,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 1.17,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 45.94,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 23.82,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 0.90,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 2.33,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.48,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 4.3,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 2.86,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 47.60,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 955.2,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 2.48
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-27",
+		"lang": "sv",
+		"courses": [{
+			"name": "Pytt i panna",
+			"ingredientsLabel": "Eko Lunchpytt Ox",
+			"possibleAllergens": ["Selleri"],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1199.25,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 285.75,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 12.38,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 2.92,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 31.5,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 11.03,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.80,
+				"unit": "g"
+			}],
+			"co2Equivalents": 0.56
+		}]
+	}, {
+		"name": "Lunch 2",
+		"date": "2021-10-27",
+		"lang": "sv",
+		"courses": [{
+			"name": "Vegetarisk pytt med rotfrukter",
+			"ingredientsLabel": "Vegetarisk Pytt med rotfrukter",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 900.0,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 216.0,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 6.53,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 3.15,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 31.5,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 3.38,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.12,
+				"unit": "g"
+			}],
+			"co2Equivalents": 0.07
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-28",
+		"lang": "sv",
+		"courses": [{
+			"name": "Fiskpanett, kall sås med dill, kokt potatis",
+			"ingredientsLabel": "Dill fryst, Paprikapulver, MF Majonnäs lätt fett 35 % ÄGGfri, Salt, Torskfiskett, MSC, förstekt, GRÄDDfil, FilMJÖLK 3%  EKO, Potatis skalad, Svartpeppar mald",
+			"possibleAllergens": ["Fisk", "Vete"],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 2079.46,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 498.58,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 21.21,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 3.61,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 1.97,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 4.25,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 53.85,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 22.08,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 1.78,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.92,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.02,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 15.58,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 1.30,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 69.10,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 640.78,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.35
+		}]
+	}, {
+		"name": "Lunch 2",
+		"date": "2021-10-28",
+		"lang": "sv",
+		"courses": [{
+			"name": "Grönsaksbiff, kall sås med dill, kokt potatis",
+			"ingredientsLabel": "Dill fryst, Paprikapulver, MF Majonnäs lätt fett 35 % ÄGGfri, Salt, GRÄDDfil, FilMJÖLK 3%  EKO, Potatis skalad, Svartpeppar mald, Grönsaksbiff Caribbean",
+			"possibleAllergens": ["Selleri"],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 2071.71,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 495.88,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 20.83,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 3.73,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 1.97,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 4.25,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 63.50,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 11.06,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 5.85,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 2.84,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.02,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 15.58,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 1.30,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 69.10,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 640.78,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.22
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-29",
+		"lang": "sv",
+		"courses": [{
+			"name": "Köttfärslåda med potatis och curry",
+			"ingredientsLabel": "Nötfärs 10 %, GratängOST 28%, Ketchup tomat, Potatis strimlad, Lök rå tärnad , Salt, Ostcreme stark 15%, Curry, MellanMJÖLK 1,5% 10L  EKO",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1424.52,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 340.77,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 11.96,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 6.55,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 3.98,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 0.52,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 39.07,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 18.47,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 2.09,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.85,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.20,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 20.55,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 2.41,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 145.0,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 756.25,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 1.55
+		}]
+	}, {
+		"name": "Lunch 2",
+		"date": "2021-10-29",
+		"lang": "sv",
+		"courses": [{
+			"name": "Quornfärslåda med potatis och curry",
+			"ingredientsLabel": "GratängOST 28%, Ketchup tomat, Potatis strimlad, Lök rå tärnad , Salt, Quornfärs, Ostcreme stark 15%, Curry, MellanMJÖLK 1,5% 10L  EKO",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1213.72,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 290.22,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 8.31,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 4.32,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 1.91,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 1.39,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 39.37,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 13.72,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 3.59,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 1.75,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.15,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 20.55,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 3.69,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 188.10,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 780.90,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.24
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-30",
+		"lang": "sv",
+		"courses": [{
+			"name": "Lasagnette med nötfärs",
+			"ingredientsLabel": "Nötfärs 10 %, GratängOST 28%, Toppredning, Lök rå tärnad , Lasagnette, Salt, Tomater krossade, Vitlök granulerad 650g, Vitpeppar, Köttbuljong, Timjan torkad, Ostcreme stark 15%, Oregano, MellanMJÖLK 1,5% 10L  EKO",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1393.36,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 333.47,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 11.40,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 5.95,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 3.87,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 0.58,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 35.18,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 21.14,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 1.85,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 2.09,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.54,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 8.33,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 1.93,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 210.39,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 848.79,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 1.62
+		}]
+	}, {
+		"name": "Lunch 2",
+		"date": "2021-10-30",
+		"lang": "sv",
+		"courses": [{
+			"name": "Klimatsmart grönsakslasagnette",
+			"ingredientsLabel": "Svartpeppar grovmalen, GratängOST 28%, Toppredning, Lasagnette, Chilisås, Salt, Kranvatten, Timjan torkad, Oregano, Vitlök tärnad, Tomatpuré, Grönsaksfärs  (Grönsaksbas), MellanMJÖLK 1,5% 10L  EKO, Morot strimlad",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1106.19,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 264.70,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 6.29,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 3.75,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 1.40,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 0.42,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 37.44,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 13.22,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 3.66,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 0.88,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.43,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 11.22,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 1.24,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 250.20,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 385.00,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.23
+		}]
+	}, {
+		"name": "Lunch 1",
+		"date": "2021-10-31",
+		"lang": "sv",
+		"courses": [{
+			"name": "Hamburgare m bröd, klyftpotatis, dressing",
+			"ingredientsLabel": "Paprikapulver, Klyftpotatis med skal, MF Majonnäs lätt fett 35 % ÄGGfri, Hamburgerbröd, Chilisås, Salt, Hamburgare Nöt fri från, Vitpeppar, GRÄDDfil, FilMJÖLK 3%  EKO, Hultbergs senap mild 5,5kg",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 2275.54,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 543.70,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 27.99,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 11.07,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 2.12,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 1.85,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 48.55,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 22.54,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 3.41,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 2.47,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.15,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 15.95,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 0.73,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 55.29,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 434.92,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 2.90
+		}]
+	}, {
+		"name": "Lunch 2",
+		"date": "2021-10-31",
+		"lang": "sv",
+		"courses": [{
+			"name": "Falafelburgare m bröd, klyftpotatis, dressing",
+			"ingredientsLabel": "Paprikapulver, Klyftpotatis med skal, MF Majonnäs lätt fett 35 % ÄGGfri, Hamburgerbröd, Chilisås, Salt, Vitpeppar, GRÄDDfil, FilMJÖLK 3%  EKO, Falafel burger Ekologisk, Hultbergs senap mild 5,5kg",
+			"possibleAllergens": [],
+			"preferences": [],
+			"nutrients": [{
+				"name": "Energi",
+				"amount": 1975.54,
+				"unit": "kJ"
+			}, {
+				"name": "Energi",
+				"amount": 472.71,
+				"unit": "kcal"
+			}, {
+				"name": "Fett",
+				"amount": 14.69,
+				"unit": "g"
+			}, {
+				"name": "varav mättade fettsyror",
+				"amount": 4.72,
+				"unit": "g"
+			}, {
+				"name": "Enkelomättade fettsyror",
+				"amount": 2.12,
+				"unit": "g"
+			}, {
+				"name": "Fleromättade fettsyror",
+				"amount": 1.85,
+				"unit": "g"
+			}, {
+				"name": "Kolhydrater",
+				"amount": 66.35,
+				"unit": "g"
+			}, {
+				"name": "Protein",
+				"amount": 15.34,
+				"unit": "g"
+			}, {
+				"name": "Fibrer",
+				"amount": 3.41,
+				"unit": "g"
+			}, {
+				"name": "Salt",
+				"amount": 2.50,
+				"unit": "g"
+			}, {
+				"name": "Vitamin D",
+				"amount": 0.15,
+				"unit": "µg"
+			}, {
+				"name": "Vitamin C",
+				"amount": 15.95,
+				"unit": "mg"
+			}, {
+				"name": "Järn",
+				"amount": 0.73,
+				"unit": "mg"
+			}, {
+				"name": "Kalcium",
+				"amount": 55.29,
+				"unit": "mg"
+			}, {
+				"name": "Natrium",
+				"amount": 434.92,
+				"unit": "mg"
+			}],
+			"co2Equivalents": 0.17
+		}]
+	}]
+}
