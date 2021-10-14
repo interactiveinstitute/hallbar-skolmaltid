@@ -15,7 +15,7 @@ services:
       - "1026"
     # ports:          # TODO: Make dev setup work without open
     #   - "1026:1026" # TODO: Make dev setup work without open
-    command: -dbhost mongo-db -logLevel DEBUG -corsOrigin __ALL
+    command: -dbhost mongo-db -logLevel WARN -corsOrigin __ALL
     healthcheck:
       test: curl --fail -s http://orion:1026/version || exit 1
 
@@ -171,6 +171,7 @@ services:
         target: /opt/nifi/nifi-current/conf
       # - draco/conf:/opt/nifi/nifi-current/conf
 
+  # vklass absence generator
   vklass-dummy:
     image: python:3.9-slim-buster
     hostname: vklass-dummy
@@ -178,6 +179,8 @@ services:
     networks:
       default:
         ipv4_address: 172.18.1.20
+    depends_on:
+      - orion
     expose:
       - "12345"
     ports:
@@ -191,6 +194,44 @@ services:
       - MORNING_UPDATE_HOUR=8
       - LATE_MORNING_UPDATE_HOUR=10
       - MAX_PERCENT_DAILY_ADDED_ABSENCES=20
+      - NUM_DAYS_HISTORY=60
+    working_dir: /host_volume
+    command: ./start.sh
+
+  # Mashie meals generator
+  mashie-dummy:
+    image: python:3.9-slim-buster
+    hostname: mashie-dummy
+    container_name: mashie-dummy
+    networks:
+      default:
+        ipv4_address: 172.18.1.21
+    depends_on:
+      - orion
+    volumes:
+      - type: bind
+        source: ./../mashie_dummy
+        target: /host_volume
+    environment:
+      - NUM_DAYS_HISTORY=60
+    working_dir: /host_volume
+    command: ./start.sh
+  
+  # Waste data generator
+  waste-dummy:
+    image: python:3.9-slim-buster
+    hostname: waste-dummy
+    container_name: waste-dummy
+    networks:
+      default:
+        ipv4_address: 172.18.1.22
+    depends_on:
+      - orion
+    volumes:
+      - type: bind
+        source: ./../waste_dummy
+        target: /host_volume
+    environment:
       - NUM_DAYS_HISTORY=60
     working_dir: /host_volume
     command: ./start.sh
