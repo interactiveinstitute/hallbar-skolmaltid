@@ -6,7 +6,7 @@
 		"courses": [{
 			"name": "Köttfärslåda med potatis och curry",
 			"ingredientsLabel": "Nötfärs 10 %, GratängOST 28%, Ketchup tomat, Potatis strimlad, Lök rå tärnad , Salt, Ostcreme stark 15%, Curry, MellanMJÖLK 1,5% 10L  EKO",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -78,7 +78,7 @@
 		"courses": [{
 			"name": "Quornfärslåda med potatis och curry",
 			"ingredientsLabel": "GratängOST 28%, Ketchup tomat, Potatis strimlad, Lök rå tärnad , Salt, Quornfärs, Ostcreme stark 15%, Curry, MellanMJÖLK 1,5% 10L  EKO",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -150,7 +150,7 @@
 		"courses": [{
 			"name": "Lasagnette med nötfärs",
 			"ingredientsLabel": "Nötfärs 10 %, GratängOST 28%, Toppredning, Lök rå tärnad , Lasagnette, Salt, Tomater krossade, Vitlök granulerad 650g, Vitpeppar, Köttbuljong, Timjan torkad, Ostcreme stark 15%, Oregano, MellanMJÖLK 1,5% 10L  EKO",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter", "spannmål"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -222,7 +222,7 @@
 		"courses": [{
 			"name": "Klimatsmart grönsakslasagnette",
 			"ingredientsLabel": "Svartpeppar grovmalen, GratängOST 28%, Toppredning, Lasagnette, Chilisås, Salt, Kranvatten, Timjan torkad, Oregano, Vitlök tärnad, Tomatpuré, Grönsaksfärs  (Grönsaksbas), MellanMJÖLK 1,5% 10L  EKO, Morot strimlad",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter", "spannmål"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -294,7 +294,7 @@
 		"courses": [{
 			"name": "Hamburgare m bröd, klyftpotatis, dressing",
 			"ingredientsLabel": "Paprikapulver, Klyftpotatis med skal, MF Majonnäs lätt fett 35 % ÄGGfri, Hamburgerbröd, Chilisås, Salt, Hamburgare Nöt fri från, Vitpeppar, GRÄDDfil, FilMJÖLK 3%  EKO, Hultbergs senap mild 5,5kg",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter", "spannmål", "senap"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -366,7 +366,7 @@
 		"courses": [{
 			"name": "Falafelburgare m bröd, klyftpotatis, dressing",
 			"ingredientsLabel": "Paprikapulver, Klyftpotatis med skal, MF Majonnäs lätt fett 35 % ÄGGfri, Hamburgerbröd, Chilisås, Salt, Vitpeppar, GRÄDDfil, FilMJÖLK 3%  EKO, Falafel burger Ekologisk, Hultbergs senap mild 5,5kg",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter", "spannmål", "senap"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -438,7 +438,7 @@
 		"courses": [{
 			"name": "Falafelburgare m bröd, klyftpotatis, dressing",
 			"ingredientsLabel": "Paprikapulver, Klyftpotatis med skal, MF Majonnäs lätt fett 35 % ÄGGfri, Hamburgerbröd, Chilisås, Salt, Vitpeppar, GRÄDDfil, FilMJÖLK 3%  EKO, Falafel burger Ekologisk, Hultbergs senap mild 5,5kg",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter", "spannmål", "senap"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -510,7 +510,7 @@
 		"courses": [{
 			"name": "Spagetti, köttfärssås",
 			"ingredientsLabel": "Nötfärs 10 %, Toppredning, Ketchup tomat, Rapsolja  5L, Spagetti kort  EKO, Lök rå tärnad , Salt, Tomater krossade, Vitlök granulerad 650g, Kranvatten, Vitpeppar, Köttbuljong, Oregano",
-			"possibleAllergens": [],
+			"possibleAllergens": ["spannmål"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -582,7 +582,7 @@
 		"courses": [{
 			"name": "Spagetti, köttfärssås",
 			"ingredientsLabel": "Nötfärs 10 %, Toppredning, Ketchup tomat, Rapsolja  5L, Spagetti kort  EKO, Lök rå tärnad , Salt, Tomater krossade, Vitlök granulerad 650g, Kranvatten, Vitpeppar, Köttbuljong, Oregano",
-			"possibleAllergens": [],
+			"possibleAllergens": ["spannmål"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -654,7 +654,7 @@
 		"courses": [{
 			"name": "Spagetti, veg ost- och broccoli",
 			"ingredientsLabel": "Purjolök finskuren, Toppredning, Rapsolja  5L, Spagetti kort  EKO, Grönsaksbuljong pulver, Salt, Mjölkfritt flytande margarin, Persilja fryst, Kranvatten, Ostcreme stark 15%, Svartpeppar mald, MellanMJÖLK 1,5% 10L  EKO, Basilika, Broccoli buketter EKO",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter", "spannmål"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -726,7 +726,7 @@
 		"courses": [{
 			"name": "Ugnsstekt fisk, kryddgrön citronsås, potatis",
 			"ingredientsLabel": "Dill fryst, Toppredning, MF Ströbröd, Körvel, Grönsaksbuljong pulver, Dragon, Salt, Mjölkfritt flytande margarin, Persilja fryst, Kranvatten, Vitpeppar, Potatis skalad, MellanMJÖLK 1,5% 10L  EKO, Citron pressad konc., SEJfilé MSC",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter", "spannmål", "fisk"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -870,7 +870,7 @@
 		"courses": [{
 			"name": "Grönsaksbiff caribbean, tzatziki, ugnsrostad potatis",
 			"ingredientsLabel": "Borstad potatis kokt, Rapsolja  5L, MatlagningsYOGHURT 10% Turkisk 5kg, Salt, Gurka, Vitlök granulerad 650g, Timjan torkad, Oregano, Rosmarin torkad, Svartpeppar mald, Grönsaksbiff Caribbean",
-			"possibleAllergens": ["Selleri"],
+			"possibleAllergens": ["mjölkprodukter"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -942,7 +942,7 @@
 		"courses": [{
 			"name": "Grönsaksbiff caribbean, tzatziki, ugnsrostad potatis",
 			"ingredientsLabel": "Borstad potatis kokt, Rapsolja  5L, MatlagningsYOGHURT 10% Turkisk 5kg, Salt, Gurka, Vitlök granulerad 650g, Timjan torkad, Oregano, Rosmarin torkad, Svartpeppar mald, Grönsaksbiff Caribbean",
-			"possibleAllergens": ["Selleri"],
+			"possibleAllergens": ["mjölkprodukter"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -1014,7 +1014,7 @@
 		"courses": [{
 			"name": "Fransk pastagratäng med kyckling",
 			"ingredientsLabel": "Kycklingfond , GratängOST 28%, Lasagnette, Salt, SENAP Dijon, VispGRÄDDE, Pastakyckling, Paprika röd strimlad, Svartpeppar mald, MellanMJÖLK 1,5% 10L  EKO",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter", "spannmål", "senap"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -1086,7 +1086,7 @@
 		"courses": [{
 			"name": "Pastagratäng med ratatouille",
 			"ingredientsLabel": "Purjolök finskuren, GratängOST 28%, Toppredning, Ratatouille grönsaker, Penne Rigate Mini 5kg, Grönsaksbuljong pulver, Salt, VispGRÄDDE, Kranvatten, Ostcreme stark 15%, Hultbergs senap mild 5,5kg, Svartpeppar mald, MellanMJÖLK 1,5% 10L  EKO",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter", "senap"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -1158,7 +1158,7 @@
 		"courses": [{
 			"name": "Biff Stroganoff, kokt ris",
 			"ingredientsLabel": "Nötkött strimlat, Paprikapulver, Toppredning, Ris långkornigt, Lök rå tärnad , Salt, Mjölkfritt flytande margarin, VispGRÄDDE, Kranvatten, Vitpeppar, Köttbuljong, Tomatpuré, MellanMJÖLK 1,5% 10L  EKO",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -1342,7 +1342,7 @@
 		"courses": [{
 			"name": "Fiskpanett, kall sås med dill, kokt potatis",
 			"ingredientsLabel": "Dill fryst, Paprikapulver, MF Majonnäs lätt fett 35 % ÄGGfri, Salt, Torskfiskett, MSC, förstekt, GRÄDDfil, FilMJÖLK 3%  EKO, Potatis skalad, Svartpeppar mald",
-			"possibleAllergens": ["Fisk", "Vete"],
+			"possibleAllergens": ["mjölkprodukter", "fisk"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -1414,7 +1414,7 @@
 		"courses": [{
 			"name": "Pytt i panna",
 			"ingredientsLabel": "Eko Lunchpytt Ox",
-			"possibleAllergens": ["Selleri"],
+			"possibleAllergens": [],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -1494,7 +1494,7 @@
 		"courses": [{
 			"name": "Fiskpanett, kall sås med dill, kokt potatis",
 			"ingredientsLabel": "Dill fryst, Paprikapulver, MF Majonnäs lätt fett 35 % ÄGGfri, Salt, Torskfiskett, MSC, förstekt, GRÄDDfil, FilMJÖLK 3%  EKO, Potatis skalad, Svartpeppar mald",
-			"possibleAllergens": ["Fisk", "Vete"],
+			"possibleAllergens": ["mjölkprodukter", "fisk"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -1566,7 +1566,7 @@
 		"courses": [{
 			"name": "Grönsaksbiff, kall sås med dill, kokt potatis",
 			"ingredientsLabel": "Dill fryst, Paprikapulver, MF Majonnäs lätt fett 35 % ÄGGfri, Salt, GRÄDDfil, FilMJÖLK 3%  EKO, Potatis skalad, Svartpeppar mald, Grönsaksbiff Caribbean",
-			"possibleAllergens": ["Selleri"],
+			"possibleAllergens": ["mjölkprodukter"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -1638,7 +1638,7 @@
 		"courses": [{
 			"name": "Köttfärslåda med potatis och curry",
 			"ingredientsLabel": "Nötfärs 10 %, GratängOST 28%, Ketchup tomat, Potatis strimlad, Lök rå tärnad , Salt, Ostcreme stark 15%, Curry, MellanMJÖLK 1,5% 10L  EKO",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -1710,7 +1710,7 @@
 		"courses": [{
 			"name": "Quornfärslåda med potatis och curry",
 			"ingredientsLabel": "GratängOST 28%, Ketchup tomat, Potatis strimlad, Lök rå tärnad , Salt, Quornfärs, Ostcreme stark 15%, Curry, MellanMJÖLK 1,5% 10L  EKO",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -1782,7 +1782,7 @@
 		"courses": [{
 			"name": "Lasagnette med nötfärs",
 			"ingredientsLabel": "Nötfärs 10 %, GratängOST 28%, Toppredning, Lök rå tärnad , Lasagnette, Salt, Tomater krossade, Vitlök granulerad 650g, Vitpeppar, Köttbuljong, Timjan torkad, Ostcreme stark 15%, Oregano, MellanMJÖLK 1,5% 10L  EKO",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter", "spannmål"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -1854,7 +1854,7 @@
 		"courses": [{
 			"name": "Klimatsmart grönsakslasagnette",
 			"ingredientsLabel": "Svartpeppar grovmalen, GratängOST 28%, Toppredning, Lasagnette, Chilisås, Salt, Kranvatten, Timjan torkad, Oregano, Vitlök tärnad, Tomatpuré, Grönsaksfärs  (Grönsaksbas), MellanMJÖLK 1,5% 10L  EKO, Morot strimlad",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter", "spannmål"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -1926,7 +1926,7 @@
 		"courses": [{
 			"name": "Hamburgare m bröd, klyftpotatis, dressing",
 			"ingredientsLabel": "Paprikapulver, Klyftpotatis med skal, MF Majonnäs lätt fett 35 % ÄGGfri, Hamburgerbröd, Chilisås, Salt, Hamburgare Nöt fri från, Vitpeppar, GRÄDDfil, FilMJÖLK 3%  EKO, Hultbergs senap mild 5,5kg",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter", "spannmål", "senap"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -1998,7 +1998,7 @@
 		"courses": [{
 			"name": "Falafelburgare m bröd, klyftpotatis, dressing",
 			"ingredientsLabel": "Paprikapulver, Klyftpotatis med skal, MF Majonnäs lätt fett 35 % ÄGGfri, Hamburgerbröd, Chilisås, Salt, Vitpeppar, GRÄDDfil, FilMJÖLK 3%  EKO, Falafel burger Ekologisk, Hultbergs senap mild 5,5kg",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter", "spannmål", "senap"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -2070,7 +2070,7 @@
 		"courses": [{
 			"name": "Klimatsmart grönsakslasagnette",
 			"ingredientsLabel": "Svartpeppar grovmalen, GratängOST 28%, Toppredning, Lasagnette, Chilisås, Salt, Kranvatten, Timjan torkad, Oregano, Vitlök tärnad, Tomatpuré, Grönsaksfärs  (Grönsaksbas), MellanMJÖLK 1,5% 10L  EKO, Morot strimlad",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter", "spannmål"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -2142,7 +2142,7 @@
 		"courses": [{
 			"name": "Hamburgare m bröd, klyftpotatis, dressing",
 			"ingredientsLabel": "Paprikapulver, Klyftpotatis med skal, MF Majonnäs lätt fett 35 % ÄGGfri, Hamburgerbröd, Chilisås, Salt, Hamburgare Nöt fri från, Vitpeppar, GRÄDDfil, FilMJÖLK 3%  EKO, Hultbergs senap mild 5,5kg",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter", "spannmål", "senap"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -2214,7 +2214,7 @@
 		"courses": [{
 			"name": "Spagetti, köttfärssås",
 			"ingredientsLabel": "Nötfärs 10 %, Toppredning, Ketchup tomat, Rapsolja  5L, Spagetti kort  EKO, Lök rå tärnad , Salt, Tomater krossade, Vitlök granulerad 650g, Kranvatten, Vitpeppar, Köttbuljong, Oregano",
-			"possibleAllergens": [],
+			"possibleAllergens": ["spannmål"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -2286,7 +2286,7 @@
 		"courses": [{
 			"name": "Spagetti, veg ost- och broccoli",
 			"ingredientsLabel": "Purjolök finskuren, Toppredning, Rapsolja  5L, Spagetti kort  EKO, Grönsaksbuljong pulver, Salt, Mjölkfritt flytande margarin, Persilja fryst, Kranvatten, Ostcreme stark 15%, Svartpeppar mald, MellanMJÖLK 1,5% 10L  EKO, Basilika, Broccoli buketter EKO",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter", "spannmål"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -2358,7 +2358,7 @@
 		"courses": [{
 			"name": "Ugnsstekt fisk, kryddgrön citronsås, potatis",
 			"ingredientsLabel": "Dill fryst, Toppredning, MF Ströbröd, Körvel, Grönsaksbuljong pulver, Dragon, Salt, Mjölkfritt flytande margarin, Persilja fryst, Kranvatten, Vitpeppar, Potatis skalad, MellanMJÖLK 1,5% 10L  EKO, Citron pressad konc., SEJfilé MSC",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter", "spannmål", "fisk"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -2502,7 +2502,7 @@
 		"courses": [{
 			"name": "Grönsaksbiff caribbean, tzatziki, ugnsrostad potatis",
 			"ingredientsLabel": "Borstad potatis kokt, Rapsolja  5L, MatlagningsYOGHURT 10% Turkisk 5kg, Salt, Gurka, Vitlök granulerad 650g, Timjan torkad, Oregano, Rosmarin torkad, Svartpeppar mald, Grönsaksbiff Caribbean",
-			"possibleAllergens": ["Selleri"],
+			"possibleAllergens": ["mjölkprodukter"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -2574,7 +2574,7 @@
 		"courses": [{
 			"name": "Grönsaksbiff caribbean, tzatziki, ugnsrostad potatis",
 			"ingredientsLabel": "Borstad potatis kokt, Rapsolja  5L, MatlagningsYOGHURT 10% Turkisk 5kg, Salt, Gurka, Vitlök granulerad 650g, Timjan torkad, Oregano, Rosmarin torkad, Svartpeppar mald, Grönsaksbiff Caribbean",
-			"possibleAllergens": ["Selleri"],
+			"possibleAllergens": ["mjölkprodukter"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -2646,7 +2646,7 @@
 		"courses": [{
 			"name": "Fransk pastagratäng med kyckling",
 			"ingredientsLabel": "Kycklingfond , GratängOST 28%, Lasagnette, Salt, SENAP Dijon, VispGRÄDDE, Pastakyckling, Paprika röd strimlad, Svartpeppar mald, MellanMJÖLK 1,5% 10L  EKO",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter", "spannmål", "senap"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -2718,7 +2718,7 @@
 		"courses": [{
 			"name": "Pastagratäng med ratatouille",
 			"ingredientsLabel": "Purjolök finskuren, GratängOST 28%, Toppredning, Ratatouille grönsaker, Penne Rigate Mini 5kg, Grönsaksbuljong pulver, Salt, VispGRÄDDE, Kranvatten, Ostcreme stark 15%, Hultbergs senap mild 5,5kg, Svartpeppar mald, MellanMJÖLK 1,5% 10L  EKO",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter", "senap"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -2790,7 +2790,7 @@
 		"courses": [{
 			"name": "Biff Stroganoff, kokt ris",
 			"ingredientsLabel": "Nötkött strimlat, Paprikapulver, Toppredning, Ris långkornigt, Lök rå tärnad , Salt, Mjölkfritt flytande margarin, VispGRÄDDE, Kranvatten, Vitpeppar, Köttbuljong, Tomatpuré, MellanMJÖLK 1,5% 10L  EKO",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -2934,7 +2934,7 @@
 		"courses": [{
 			"name": "Pastagratäng med ratatouille",
 			"ingredientsLabel": "Purjolök finskuren, GratängOST 28%, Toppredning, Ratatouille grönsaker, Penne Rigate Mini 5kg, Grönsaksbuljong pulver, Salt, VispGRÄDDE, Kranvatten, Ostcreme stark 15%, Hultbergs senap mild 5,5kg, Svartpeppar mald, MellanMJÖLK 1,5% 10L  EKO",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter", "senap"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -3006,7 +3006,7 @@
 		"courses": [{
 			"name": "Biff Stroganoff, kokt ris",
 			"ingredientsLabel": "Nötkött strimlat, Paprikapulver, Toppredning, Ris långkornigt, Lök rå tärnad , Salt, Mjölkfritt flytande margarin, VispGRÄDDE, Kranvatten, Vitpeppar, Köttbuljong, Tomatpuré, MellanMJÖLK 1,5% 10L  EKO",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -3078,7 +3078,7 @@
 		"courses": [{
 			"name": "Pytt i panna",
 			"ingredientsLabel": "Eko Lunchpytt Ox",
-			"possibleAllergens": ["Selleri"],
+			"possibleAllergens": [],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -3158,7 +3158,7 @@
 		"courses": [{
 			"name": "Fiskpanett, kall sås med dill, kokt potatis",
 			"ingredientsLabel": "Dill fryst, Paprikapulver, MF Majonnäs lätt fett 35 % ÄGGfri, Salt, Torskfiskett, MSC, förstekt, GRÄDDfil, FilMJÖLK 3%  EKO, Potatis skalad, Svartpeppar mald",
-			"possibleAllergens": ["Fisk", "Vete"],
+			"possibleAllergens": ["mjölkprodukter", "fisk"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -3230,7 +3230,7 @@
 		"courses": [{
 			"name": "Grönsaksbiff, kall sås med dill, kokt potatis",
 			"ingredientsLabel": "Dill fryst, Paprikapulver, MF Majonnäs lätt fett 35 % ÄGGfri, Salt, GRÄDDfil, FilMJÖLK 3%  EKO, Potatis skalad, Svartpeppar mald, Grönsaksbiff Caribbean",
-			"possibleAllergens": ["Selleri"],
+			"possibleAllergens": ["mjölkprodukter"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -3302,7 +3302,7 @@
 		"courses": [{
 			"name": "Köttfärslåda med potatis och curry",
 			"ingredientsLabel": "Nötfärs 10 %, GratängOST 28%, Ketchup tomat, Potatis strimlad, Lök rå tärnad , Salt, Ostcreme stark 15%, Curry, MellanMJÖLK 1,5% 10L  EKO",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -3374,7 +3374,7 @@
 		"courses": [{
 			"name": "Quornfärslåda med potatis och curry",
 			"ingredientsLabel": "GratängOST 28%, Ketchup tomat, Potatis strimlad, Lök rå tärnad , Salt, Quornfärs, Ostcreme stark 15%, Curry, MellanMJÖLK 1,5% 10L  EKO",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -3446,7 +3446,7 @@
 		"courses": [{
 			"name": "Lasagnette med nötfärs",
 			"ingredientsLabel": "Nötfärs 10 %, GratängOST 28%, Toppredning, Lök rå tärnad , Lasagnette, Salt, Tomater krossade, Vitlök granulerad 650g, Vitpeppar, Köttbuljong, Timjan torkad, Ostcreme stark 15%, Oregano, MellanMJÖLK 1,5% 10L  EKO",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter", "spannmål"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -3518,7 +3518,7 @@
 		"courses": [{
 			"name": "Klimatsmart grönsakslasagnette",
 			"ingredientsLabel": "Svartpeppar grovmalen, GratängOST 28%, Toppredning, Lasagnette, Chilisås, Salt, Kranvatten, Timjan torkad, Oregano, Vitlök tärnad, Tomatpuré, Grönsaksfärs  (Grönsaksbas), MellanMJÖLK 1,5% 10L  EKO, Morot strimlad",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter", "spannmål"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -3590,7 +3590,7 @@
 		"courses": [{
 			"name": "Hamburgare m bröd, klyftpotatis, dressing",
 			"ingredientsLabel": "Paprikapulver, Klyftpotatis med skal, MF Majonnäs lätt fett 35 % ÄGGfri, Hamburgerbröd, Chilisås, Salt, Hamburgare Nöt fri från, Vitpeppar, GRÄDDfil, FilMJÖLK 3%  EKO, Hultbergs senap mild 5,5kg",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter", "spannmål", "senap"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
@@ -3662,7 +3662,7 @@
 		"courses": [{
 			"name": "Falafelburgare m bröd, klyftpotatis, dressing",
 			"ingredientsLabel": "Paprikapulver, Klyftpotatis med skal, MF Majonnäs lätt fett 35 % ÄGGfri, Hamburgerbröd, Chilisås, Salt, Vitpeppar, GRÄDDfil, FilMJÖLK 3%  EKO, Falafel burger Ekologisk, Hultbergs senap mild 5,5kg",
-			"possibleAllergens": [],
+			"possibleAllergens": ["mjölkprodukter", "spannmål", "senap"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
