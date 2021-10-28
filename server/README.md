@@ -72,7 +72,7 @@ server/docker> docker-compose up
 To start the backend **on production server** (with vklass emuator):
 
 ```bash
-server/docker> docker-compose -f docker-compose.yml -f docker-compose.server.yml up
+server/docker> docker-compose -f docker-compose.yml -f docker-compose.server.yml up -d
 ```
 
 The first startup takes a while, since all containers are downloaded/built.
