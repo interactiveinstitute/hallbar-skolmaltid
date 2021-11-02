@@ -25,6 +25,10 @@ export default {
     },
     logout: function (state) {
       Vue.set(state, 'graphs', []);
+    },
+    setGraphData (state, payload) {
+      Vue.set(payload.graph, 'endpointData', payload.data);
+      // payload.graph.endpointData = payload.data;
     }
   },
   actions: {
@@ -35,31 +39,25 @@ export default {
           dispatch('addGraphs', { graphs: response.data });
         });
     },
-    addGraphs: function ({ dispatch }, payload) {
+    addGraphs: function ({ commit }, payload) {
       payload.graphs.forEach((graph, i) => {
-        dispatch('addGraph', { graph: graph });
+        commit('addGraph', { graph: graph });
       });
     },
-    addGraph: function ({ commit }, payload) {
+    setGraphData ({ state, commit }, payload) {
+      console.log('SET GRAPH DATA', payload.graph);
       const graph = graphTypes(payload.graph.refGraphType);
       const promiseArray = [];
-      // graph.values = payload.graph.connectedData;
-      graph.endpoints(payload.graph.connectedData).forEach((ep, i) => {
-        // if (ep) {
+      graph.endpoints(payload.endpointDataRequest).forEach((ep, i) => {
+        console.log(ep);
         promiseArray.push(
           backendUtils.getEntity(ep).then(response => {
             graph.values[i] = response.data;
           })
         );
-        /* } else {
-          graph.values[i] = payload.graph.connectedData[i];
-        } */
       });
-
-      payload.graph.endpointData = graph;
-
       Promise.all(promiseArray).then(values => {
-        commit('addGraph', { graph: payload.graph });
+        commit('setGraphData', { graph: payload.graph, data: graph });
       });
     }
   }

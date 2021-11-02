@@ -29,9 +29,7 @@
             <strong> {{ user.givenName }} {{ user.familyName }} </strong>
           </p>
 
-          <div v-for="(school, i) in schools" :key="i">
-            {{ school.name }}
-          </div>
+          <SchoolSelect />
         </q-item-label>
 
         <EssentialLink
@@ -51,11 +49,13 @@
 <script>
 import { mapState } from 'vuex';
 
+import SchoolSelect from 'components/SchoolSelect';
 import EssentialLink from 'components/EssentialLink';
 
 export default {
   name: 'MainLayout',
   components: {
+    SchoolSelect,
     EssentialLink
   },
   data () {
@@ -94,7 +94,7 @@ export default {
     }
   },
   computed: {
-    ...mapState('user', ['user', 'schools'])
+    ...mapState('user', ['user', 'schools', 'schoolSelectedId'])
   },
   created: function () {
     this.$store.dispatch('user/initUserByAuth');

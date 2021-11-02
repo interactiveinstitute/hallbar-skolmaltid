@@ -12,7 +12,9 @@ export default {
   state: {
     auth: {},
     user: {},
-    schools: []
+    schools: [],
+    schoolSelectedId: null,
+    dateSelected: new Date().toLocaleDateString()
   },
   getters: {
     getAuth: state => {
@@ -20,6 +22,9 @@ export default {
     },
     isLoggedIn: state => {
       return state.auth.access;
+    },
+    schoolSelected: state => {
+      return state.schools.find(s => s.id === state.schoolSelectedId);
     }
   },
   mutations: {
@@ -39,6 +44,12 @@ export default {
       Vue.set(state, 'auth', {});
       Vue.set(state, 'user', {});
       Vue.set(state, 'schools', []);
+    },
+    selectSchoolId: function (state, payload) {
+      state.schoolSelectedId = payload.id;
+    },
+    selectDate: function (state, payload) {
+      state.dateSelected = payload.date;
     }
   },
   actions: {
@@ -63,6 +74,9 @@ export default {
           commit('addSchool', { school: response.data });
         });
       });
+      if (payload.schools.length) {
+        commit('selectSchoolId', { id: payload.schools[0] });
+      }
     },
     loggedInTest: function ({ state }) {
       return new Promise((resolve, reject) => {

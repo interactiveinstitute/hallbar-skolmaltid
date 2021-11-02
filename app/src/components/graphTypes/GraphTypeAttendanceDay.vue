@@ -1,96 +1,41 @@
 <template>
-  <div class="GraphTypeAttendanceDay">
-    <h2>
-      Elevnärvaro, dagsvy
-    </h2>
-
+  <div v-if="graph.endpointData" class="GraphTypeAttendanceDay">
     <div class="info">
+      <h2 class="text-white">
+        Elevnärvaro
+      </h2>
       <p>
-        Graferna visar beräknad närvaro och anmäld frånvaro för {{ graph.endpointData.values[0].name }} ({{ graph.endpointData.values[0].studentCount }} elever) angivet datum.
+        Grafen visar beräknad närvaro och anmäld frånvaro för {{ schoolSelected.name }} ({{ schoolSelected.studentCount }} elever) {{ dateSelected }}.
       </p>
-
-      <label>Datum: <input v-model="dateSelected" required type="date"> </label>
     </div>
     <div class="columns border">
-      <div class="padding">
+      <div class="q-pa-md">
         <h3>Samtliga elever</h3>
 
         <div class="flex-center-rows">
-          <canvas :id="'chartAll' + _uid" />
+          <canvas :id="'chartAll' + _uid" ref="canvas" />
           <br>
           <div class="text-h3">
-            <strong>{{ school.studentCount - absence.length }}</strong> ({{
+            <strong>{{ schoolSelected.studentCount - absence.length }}</strong> ({{
               absence.length
             }})
           </div>
         </div>
       </div>
 
-      <div class="padding">
+      <div class="q-pa-md">
         <h3>Frånvarande elever med specialkost ({{ absenceDiet.length }})</h3>
 
         <div v-for="(student,i) in absenceDiet" :key="i">
-          {{ student.givenName }} {{ student.familyName }} <!--{{ dateRange(student.dateStart, student.dateEnd) }}-->
+          {{ student.givenName }} {{ student.familyName }}
         </div>
-
-        <!--table>
-          <tr>
-            <td>
-              Kostgrupp
-            </td>
-            <td>
-              Närvarande (frånvarande)
-            </td>
-            <td>
-              Frånvarande
-            </td>
-          </tr>
-          <tr
-            v-for="(dg, i) in dietGroups"
-            :key="i"
-            :class="{
-              redrow: dietGroupsAttendance[dg.name].attendance == 0,
-              greenrow: dietGroupsAttendance[dg.name].absent.length == 0
-            }"
-          >
-            <td>
-              <h4>{{ dg.name }}</h4>
-            </td>
-
-            <td>
-              <h4>
-                <strong>{{ dietGroupsAttendance[dg.name].attendance }}</strong>
-                ({{ dietGroupsAttendance[dg.name].absent.length }})
-              </h4>
-            </td>
-            <td>
-              <div
-                v-for="(p, i) in dietGroupsAttendance[dg.name].absent"
-                :key="i"
-              >
-                {{ p.givenName }} {{ p.familyName }}
-                <br>
-              </div>
-            </td>
-          </tr>
-        </table-->
-
-        <!--div v-for="(dg, i) in dietGroups" :key="i">
-          <h4>{{ dg.name }}</h4>
-          <ul>
-            <li v-for="(p, i) in absenceByDietGroup(dg)" :key="i">
-              {{ p.givenName }} {{ p.familyName }}
-            </li>
-          </ul>
-        </div-->
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { format } from 'date-fns';
-// import utils from '../../js/utils';
+import { mapState, mapGetters } from 'vuex';
 import backendUtils from '../../js/backend-utils';
 import Chart from 'chart.js'; // NOTE! npm package Chart.js
 
@@ -107,30 +52,21 @@ export default {
   },
   data: function () {
     return {
-      chartTotal: undefined,
-      dateSelected: ''
+      chartTotal: undefined
     };
   },
   computed: {
-    /** @returns {any} */
-    highlightList: function () {
-      return this.graph.connectedData[0];
-    },
-    /** @returns {any} */
-    school: function () {
-      return this.graph.endpointData.values[0];
-    },
+    ...mapState('user', ['schoolSelectedId', 'dateSelected']),
+    ...mapGetters('user', ['schoolSelected']),
     /** @returns {any} */
     absence: function () {
+      if (!this.graph.endpointData) {
+        return null;
+      }
       const absences = this.graph.endpointData.values[1];
       // console.log('endpoints 1 data:', data);
       // TODO: Actually compare dates ina reliable manner
       const foundAbsence = absences.find(absenceObj => {
-        // const selectedDate = new Date(this.dateSelected).toDateString();
-        // console.log('selectedDate :>> ', selectedDate);
-        // const testDate = new Date(absenceObj.dateObserved).toDateString();
-        // console.log('testDate :>> ', testDate);
-        // return testDate === selectedDate;
         return absenceObj.dateObserved.includes(this.dateSelected);
       });
       return foundAbsence ? foundAbsence.absent || [] : [];
@@ -143,90 +79,57 @@ export default {
     dietGroups: function () {
       return this.graph.endpointData.values[2];
     }
-    /* absenceDate: function () {
-      const absent = [];
-      this.absence.forEach((s, i) => {
-        if (
-          utils
-            .getDatesArray(s.dateStart, s.dateEnd)
-            .includes(this.dateSelected)
-        ) {
-          absent.push(s);
-        }
-      });
-      return absent;
-    }, */
-    /* dietGroupsAttendance: function () {
-      const groups = {};
-      this.dietGroups.forEach((dg, i) => {
-        const snAttending = dg.socialNumbers.filter(
-          sn => !this.absenceDate.map(a => a.socialNumber).includes(sn)
-        );
-        const snAbsent = dg.socialNumbers.filter(sn =>
-          this.absenceDate.map(a => a.socialNumber).includes(sn)
-        );
-        groups[dg.name] = {
-          attendance: snAttending.length,
-          absent: snAbsent.map(sn =>
-            this.absenceDate.find(a => a.socialNumber === sn)
-          )
-        };
-        // let snAbsent = absenceDate.filter(a => dg.socialNumbers.includes(a));
-      });
-      return groups;
-    } */
-    /* highlighted: function () {
-      return this.absence.absentList.filter(value =>
-        this.highlightList.includes(value)
-      );
-    } */
   },
   watch: {
+    'graph.endpointData' () {
+      console.log('Graph endpoint data changed');
+      this.updateGraphData();
+    },
+    schoolSelectedId () {
+      this.loadData();
+    },
     dateSelected: function () {
-      // this.initGraphs();
       this.updateGraphData();
     }
   },
   mounted: function () {
-    const date = new Date();
-    // this.dateSelected = date.toLocaleDateString();
-    this.dateSelected = format(date, 'yyyy-MM-dd');
-
-    this.initGraphs();
+    console.log(this._uid);
+    this.loadData();
+  },
+  updated () {
+    if (!this.chartTotal) {
+      this.initGraphs();
+    }
   },
   methods: {
-    endpoints: function (attached) {
+    endpoints: function (endpointDataRequest) {
       // Required method for all graph types
       return [
-        attached[0],
-        // '?type=SchoolAbsenceReported&q=refSchool==' + attached[0],
-        '?type=SchoolAttendanceObserved&q=refSchool==' + attached[0] + '&limit=1000',
-        '?type=DietGroup&q=refSchool==' + attached[0]
+        endpointDataRequest.school,
+        '?type=SchoolAttendanceObserved&q=refSchool==' + endpointDataRequest.school + '&limit=1000',
+        '?type=DietGroup&q=refSchool==' + endpointDataRequest.school
       ];
     },
+    loadData: function () {
+      console.log('Load data', this.schoolSelectedId);
+      this.$store.dispatch('graphs/setGraphData', {
+        graph: this.graph,
+        endpointDataRequest: {
+          school: this.schoolSelectedId
+        }
+      });
+    },
     initGraphs: function () {
-      console.log('Init graphs');
-      // Chart all
-      const ctxAll = document
-        .getElementById('chartAll' + this._uid)
-        .getContext('2d');
+      console.log('Init graphs', this.schoolSelectedId);
+      const ctxAll = this.$refs.canvas.getContext('2d');
       this.chartTotal = new Chart(ctxAll, this.chartSettingsAll());
+      this.updateGraphData();
     },
     chartSettingsAll: function () {
       return {
         type: 'pie',
         data: {
-          labels: ['Närvarande', 'Frånvarande'],
-          datasets: [
-            {
-              /* data: [
-                this.school.studentCount - this.absence.length,
-                this.absence.length
-              ], */
-              backgroundColor: ['rgb(0, 200, 0)', 'rgb(200, 0, 0)'],
-              borderWidth: 0
-            }
-          ]
+          labels: ['Beräknad närvaro', 'Anmäld frånvaro']
         },
         options: {
           legend: {
@@ -244,10 +147,13 @@ export default {
       };
     },
     updateGraphData: function () {
+      if (!this.chartTotal) {
+        return;
+      }
       this.chartTotal.data.datasets = [
         {
           data: [
-            this.school.studentCount - this.absence.length,
+            this.schoolSelected.studentCount - this.absence.length,
             this.absence.length
           ],
           backgroundColor: ['rgb(0, 200, 0)', 'rgb(200, 0, 0)'],
