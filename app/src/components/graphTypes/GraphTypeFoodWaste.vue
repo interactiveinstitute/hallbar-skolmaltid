@@ -5,7 +5,7 @@
         Matsvinn
       </h2>
       <p>
-        Matsvinn i kilogram/person för {{ schoolSelected.name }} {{ dateSelected }}.
+        Matsvinn i gram/person för {{ schoolSelected.name }} {{ dateSelected }}.
       </p>
     </div>
     <div v-if="wasteSelectedDate" class="border q-pa-md">
@@ -122,10 +122,10 @@ export default {
       this.chartTotal.data.datasets = [
         {
           data: [
-            this.wasteSelectedDate.kitchenWaste,
-            this.wasteSelectedDate.plateWaste,
-            this.wasteSelectedDate.servingWaste,
-            this.wasteSelectedDate.totalWaste
+            this.wasteSelectedDate.kitchenWaste * 1000,
+            this.wasteSelectedDate.plateWaste * 1000,
+            this.wasteSelectedDate.servingWaste * 1000,
+            this.wasteSelectedDate.totalWaste * 1000
           ],
           backgroundColor: ['rgb(250, 130, 0)', 'rgb(230, 150, 0)', 'rgb(210, 170, 0)', 'rgb(200, 0, 0)'],
           borderWidth: 0
