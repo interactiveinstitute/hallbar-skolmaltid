@@ -88,7 +88,6 @@ export default {
   },
   mounted: function () {
     this.loadData();
-    // this.initGraphs();
   },
   updated () {
   },
@@ -101,6 +100,7 @@ export default {
       ];
     },
     loadData: function () {
+      // Required method for all graph types
       console.log('Load data', this.schoolSelectedId);
       this.$store.dispatch('graphs/setGraphData', {
         graph: this.graph,
