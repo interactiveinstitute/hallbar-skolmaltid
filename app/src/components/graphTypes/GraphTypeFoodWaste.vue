@@ -5,7 +5,7 @@
         Matsvinn
       </h2>
       <p>
-        Matsvinn i kilogram för {{ schoolSelected.name }} {{ dateSelected }}.
+        Matsvinn i kilogram/person för {{ schoolSelected.name }} {{ dateSelected }}.
       </p>
     </div>
     <div v-if="wasteSelectedDate" class="border q-pa-md">
