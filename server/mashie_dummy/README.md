@@ -5,7 +5,11 @@
 This service generates meals data for every weekday, starting by generating a number of days history, configurable in compose file. The data model adheres as closely as it can to the work around the OpenMeal format. The data comes from one months' data downloaded from Mashie - see below.
 
 ## Mashie data file
-The 'mashie_one_months_meals.json' file contains meals data for a full month downloaded through the mashie api, with the manual addition of filling in the weekends so that every day of the month has data (for use in any other month). Also, the parentheses for nutrient energy are removed because of being fiware/ngsi non-compliant. The 'lang' attribute was filled in with the correct 'sv' value.
+The 'mashie_one_months_meals.json' file contains meals data for a full month downloaded through the mashie api, with the manual addition of
+- filling in the weekends so that every day of the month has data (for use in any other month)
+- the parentheses for nutrient energy are removed because of being fiware/ngsi non-compliant
+- the 'lang' attribute was filled in with the correct 'sv' value
+- possibleAllergens list was mostly empty, so some data was filled in (see [livsmedelsverket](https://www.livsmedelsverket.se/livsmedel-och-innehall/text-pa-forpackning-markning/allergimarkning)/[EU](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32003L0089))
 
 ## Example meals data for one day, one shool
 ```json
@@ -30,7 +34,7 @@ The 'mashie_one_months_meals.json' file contains meals data for a full month dow
 		"value": [{
 			"name": "Fiskpanett, kall s?s med dill, kokt potatis",
 			"ingredientsLabel": "Dill fryst, Paprikapulver, MF Majonn?s l?tt fett 35 % ?GGfri, Salt, Torskfiskett, MSC, f?rstekt, GR?DDfil, FilMJ?LK 3%  EKO, Potatis skalad, Svartpeppar mald",
-			"possibleAllergens": ["Fisk", "Vete"],
+			"possibleAllergens": ["fisk", "mjölkprodukter"],
 			"preferences": [],
 			"nutrients": [{
 				"name": "Energi",
