@@ -23,6 +23,10 @@ a {
   color: var(--color0);
 }
 
+a.undecorated {
+  text-decoration: none;
+}
+
 a:hover {
   //text-decoration: underline;
 }
