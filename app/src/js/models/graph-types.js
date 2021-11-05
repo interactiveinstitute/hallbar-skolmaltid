@@ -7,6 +7,7 @@ import GraphTypeAbsenceLines from 'components/graphTypes/GraphTypeAbsenceLines.v
 import GraphTypeAttendanceLongterm from 'components/graphTypes/GraphTypeAttendanceLongterm.vue';
 import GraphTypeOpenMeal from 'components/graphTypes/GraphTypeOpenMeal.vue';
 import GraphTypeFoodWaste from 'components/graphTypes/GraphTypeFoodWaste.vue';
+import GraphTypeKitchenOverview from 'components/graphTypes/GraphTypeKitchenOverview.vue';
 
 // Add graphs in the graphTypes object
 // Maps graph name to vue component
@@ -17,7 +18,8 @@ const graphTypes = {
   graphTypeAbsenceLines: GraphTypeAbsenceLines,
   graphTypeAttendanceLongterm: GraphTypeAttendanceLongterm,
   graphTypeOpenMeal: GraphTypeOpenMeal,
-  graphTypeFoodWaste: GraphTypeFoodWaste
+  graphTypeFoodWaste: GraphTypeFoodWaste,
+  GraphTypeKitchenOverview: GraphTypeKitchenOverview
 };
 
 export default function (type) {

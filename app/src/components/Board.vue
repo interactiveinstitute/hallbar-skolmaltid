@@ -24,6 +24,7 @@ import GraphTypeAbsenceLines from 'components/graphTypes/GraphTypeAbsenceLines.v
 import GraphTypeAttendanceLongterm from 'components/graphTypes/GraphTypeAttendanceLongterm.vue';
 import GraphTypeOpenMeal from 'src/components/graphTypes/GraphTypeOpenMeal.vue';
 import GraphTypeFoodWaste from 'src/components/graphTypes/GraphTypeFoodWaste.vue';
+import GraphTypeKitchenOverview from 'src/components/graphTypes/GraphTypeKitchenOverview.vue';
 
 export default {
   name: 'ComponentTemplate',
@@ -35,7 +36,8 @@ export default {
     GraphTypeAbsenceLines,
     GraphTypeAttendanceLongterm,
     GraphTypeOpenMeal,
-    GraphTypeFoodWaste
+    GraphTypeFoodWaste,
+    GraphTypeKitchenOverview
   },
   props: {
     board: Object
