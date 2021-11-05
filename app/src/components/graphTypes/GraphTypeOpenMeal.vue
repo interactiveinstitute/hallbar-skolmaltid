@@ -63,7 +63,7 @@
             <div class="col">
               <h4>Ingredienser</h4>
               <ul>
-                <li v-for="(ing,iIng) in course.ingredientsLabel.split(',')" :key="iIng">
+                <li v-for="(ing,iIng) in course.ingredientsLabel.split(', ')" :key="iIng">
                   {{ ing }}
                 </li>
               </ul>
