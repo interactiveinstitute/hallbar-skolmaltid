@@ -26,11 +26,24 @@
       <div class="q-pa-md">
         <h3>Frånvarande elever med specialkost ({{ absenceDiet.length }})</h3>
 
-        <div v-for="(student,i) in absenceDiet" :key="i">
-          {{ student.givenName }} {{ student.familyName }}
+        <div class="list scroll" style="height:150px">
+          <q-btn color="primary" @click="showAbsenceDiet = true">
+            Visa elever
+          </q-btn>
         </div>
       </div>
     </div>
+
+    <q-dialog v-model="showAbsenceDiet">
+      <q-card>
+        <q-card-section>
+          <h3>Frånvarande elever med specialkost ({{ absenceDiet.length }})</h3>
+          <div v-for="(student,i) in absenceDiet" :key="i">
+            {{ student.givenName }} {{ student.familyName }}
+          </div>
+        </q-card-section>
+      </q-card>
+    </q-dialog>
   </div>
 </template>
 
@@ -52,7 +65,8 @@ export default {
   },
   data: function () {
     return {
-      chartTotal: undefined
+      chartTotal: undefined,
+      showAbsenceDiet: false
     };
   },
   computed: {

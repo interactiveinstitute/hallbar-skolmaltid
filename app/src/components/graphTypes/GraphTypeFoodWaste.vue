@@ -125,7 +125,7 @@ export default {
             this.wasteSelectedDate.kitchenWaste * 1000,
             this.wasteSelectedDate.plateWaste * 1000,
             this.wasteSelectedDate.servingWaste * 1000,
-            this.wasteSelectedDate.totalWaste * 1000
+            (parseFloat(this.wasteSelectedDate.kitchenWaste) + parseFloat(this.wasteSelectedDate.plateWaste) + parseFloat(this.wasteSelectedDate.servingWaste)) * 1000
           ],
           backgroundColor: ['rgb(250, 130, 0)', 'rgb(230, 150, 0)', 'rgb(210, 170, 0)', 'rgb(200, 0, 0)'],
           borderWidth: 0
