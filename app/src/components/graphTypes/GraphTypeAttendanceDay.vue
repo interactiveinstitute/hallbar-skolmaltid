@@ -2,10 +2,10 @@
   <div v-if="graph.endpointData" class="GraphTypeAttendanceDay">
     <div class="info">
       <h2 class="text-white">
-        Elevnärvaro
+        Elevnärvaro ({{ dateSelected }})
       </h2>
       <p>
-        Grafen visar beräknad närvaro och anmäld frånvaro för {{ schoolSelected.name }} ({{ schoolSelected.studentCount }} elever) {{ dateSelected }}.
+        Grafen visar beräknad närvaro och anmäld frånvaro för {{ schoolSelected.name }} ({{ schoolSelected.studentCount }} elever).
       </p>
     </div>
     <div class="columns border">

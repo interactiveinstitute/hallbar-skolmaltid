@@ -2,10 +2,10 @@
   <div v-if="graph.endpointData" class="GraphTypeFoodWaste">
     <div class="info">
       <h2 class="text-white">
-        Matsvinn
+        Matsvinn ({{ dateSelected }})
       </h2>
       <p>
-        Matsvinn i gram/person för {{ schoolSelected.name }} {{ dateSelected }}.
+        Matsvinn i gram/person för {{ schoolSelected.name }}.
       </p>
     </div>
     <div v-if="wasteSelectedDate" class="border q-pa-md">
