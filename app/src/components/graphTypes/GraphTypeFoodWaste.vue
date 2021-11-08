@@ -8,11 +8,11 @@
         Matsvinn i gram/person för {{ schoolSelected.name }}.
       </p>
     </div>
-    <div v-if="wasteSelectedDate" class="border q-pa-md">
+    <div class="border q-pa-md">
       <canvas :id="'chart' + _uid" ref="canvas" />
-    </div>
-    <div v-else>
-      Inget matsvinn är registrerat för {{ dateSelected }}.
+      <div v-if="!wasteSelectedDate" class="text-negative">
+        Inget matsvinn är registrerat för {{ dateSelected }}.
+      </div>
     </div>
 
     <!--pre>
@@ -81,7 +81,6 @@ export default {
     },
     loadData: function () {
       // Required method for all graph types
-      console.log('Load data', this.schoolSelectedId);
       this.$store.dispatch('graphs/setGraphData', {
         graph: this.graph,
         endpointDataRequest: {
@@ -121,12 +120,12 @@ export default {
       }
       this.chartTotal.data.datasets = [
         {
-          data: [
+          data: this.wasteSelectedDate ? [
             this.wasteSelectedDate.kitchenWaste * 1000,
             this.wasteSelectedDate.plateWaste * 1000,
             this.wasteSelectedDate.servingWaste * 1000,
             (parseFloat(this.wasteSelectedDate.kitchenWaste) + parseFloat(this.wasteSelectedDate.plateWaste) + parseFloat(this.wasteSelectedDate.servingWaste)) * 1000
-          ],
+          ] : [0, 0, 0, 0],
           backgroundColor: ['rgb(250, 130, 0)', 'rgb(230, 150, 0)', 'rgb(210, 170, 0)', 'rgb(200, 0, 0)'],
           borderWidth: 0
         }

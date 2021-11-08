@@ -44,6 +44,9 @@
           </div>
         </div>
       </div>
+      <div v-else class="text-negative">
+        Måltider är ej planerade för {{ dateSelected }}.
+      </div>
     </div>
   </div>
 </template>
