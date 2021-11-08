@@ -46,7 +46,7 @@
 
 <script>
 import { mapState, mapGetters } from 'vuex';
-// import { format } from 'date-fns';
+import { subDays, addDays } from 'date-fns';
 // import backendUtils from '../../js/backend-utils';
 // import Chart from 'chart.js'; // NOTE! npm package Chart.js
 
@@ -87,8 +87,9 @@ export default {
     datesSelectedWeek () {
       var datesW = [];
       var date = new Date(this.dateSelected);
+      var monday = subDays(date, date.getDay() > 0 ? date.getDay() - 1 : 6);
       for (var i = 0; i < 5; i++) {
-        datesW[i] = new Date(date.setDate(date.getDate() - ((date.getDay() - 1) % 7) + i)).toLocaleDateString();
+        datesW[i] = addDays(monday, i).toLocaleDateString();
       }
       return datesW;
     },
