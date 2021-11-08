@@ -1,19 +1,15 @@
 <template>
   <div class="GraphType1">
-    <h4>Vad skulle du vilja se här?</h4>
+    <h4>Här är det än så länge tomt.</h4>
     <p>
-      Här är det än så länge tomt.
+      Vad skulle du vilja visades:
+      <ul>
+        <li>på skärmarna i skolans korridor?</li>
+        <li>i lärarrummet?</li>
+        <li>för skolkuratorn?</li>
+        <li>osv.</li>
+      </ul>
     </p>
-    <p>
-      Vad skulle du vilja visades här? Data om matsvinn, klimatavtryck eller något helt annat?
-    </p>
-
-    <!--form @submit.prevent="changeValue">
-      <input name="value" type="text" placeholder="Ange nytt värde">
-      <button type="submit">
-        Uppdatera värde
-      </button>
-    </form-->
   </div>
 </template>
 
