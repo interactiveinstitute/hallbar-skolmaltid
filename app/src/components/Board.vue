@@ -86,7 +86,6 @@ pre {
 }
 
 .boards > div {
-  flex: 1 0 50%;
   border: 0px solid rgb(240, 240, 240);
   margin-bottom: 10px;
 }
