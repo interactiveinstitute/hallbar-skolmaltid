@@ -1,7 +1,7 @@
 <template>
   <div class="Board">
     <div>
-      <h1>{{ board.name }}</h1>
+      <h1>{{ board.name }}: {{ schoolSelected.name }} </h1>
       <div class="bg-white q-pt-md q-pb-md text-bold">
         <label>Datum: <input v-model="dateSelected" required type="date"> </label>
       </div>
