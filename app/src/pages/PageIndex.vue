@@ -3,7 +3,8 @@
     <h1>Välkommen {{ user.givenName }}!</h1>
 
     <p class="q-mb-md">
-      <span class="info q-pa-md">
+      <span class="bg-grey-4 q-pa-md">
+        <q-icon name="person" size="sm" color="primary" />
         Du är inloggad som testanvändare {{ user.givenName }} {{ user.familyName }}.
       </span>
     </p>
