@@ -13,13 +13,14 @@
         <h3>Samtliga elever</h3>
 
         <div class="flex-center-rows">
-          <canvas :id="'chartAll' + _uid" ref="canvas" />
-          <br>
-          <div class="text-h3">
-            <strong>{{ schoolSelected.studentCount - absence.length }}</strong> ({{
-              absence.length
-            }})
+          <div>
+            <canvas :id="'chartAll' + _uid" ref="canvas" />
           </div>
+          <!--br>
+          <div class="text-h3">
+            <strong class="text-positive">{{ schoolSelected.studentCount - absence.length }}</strong>
+            <span class="text-negative"> ({{ absence.length }})</span>
+          </div-->
         </div>
       </div>
 
@@ -50,7 +51,11 @@
 <script>
 import { mapState, mapGetters } from 'vuex';
 import backendUtils from '../../js/backend-utils';
-import Chart from 'chart.js'; // NOTE! npm package Chart.js
+import Chart from 'chart.js/auto'; // NOTE! npm package Chart.js
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+Chart.register(ChartDataLabels);
+
+// Chart.register();
 
 export default {
   name: 'GraphTypeSchoolAttendance',
@@ -147,16 +152,29 @@ export default {
           labels: ['Beräknad närvaro', 'Anmäld frånvaro']
         },
         options: {
-          legend: {
-            display: false
-          },
-          scales: {
-            y: {
-              beginAtZero: true
+          // scales: {
+          //   y: {
+          //     beginAtZero: true
+          //   }
+          // },
+          plugins: {
+            legend: {
+              display: true
+            },
+            tooltip: {
+              mode: 'dataset'
+            },
+            datalabels: {
+              color: 'white',
+              labels: {
+                title: {
+                  font: {
+                    weight: 'bold',
+                    size: '20pt'
+                  }
+                }
+              }
             }
-          },
-          tooltips: {
-            mode: 'dataset'
           }
         }
       };

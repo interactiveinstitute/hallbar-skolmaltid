@@ -9,7 +9,9 @@
       </p>
     </div>
     <div class="border q-pa-md">
-      <canvas :id="'chart' + _uid" ref="canvas" />
+      <div>
+        <canvas :id="'chart' + _uid" ref="canvas" />
+      </div>
       <div v-if="!wasteSelectedDate" class="text-negative">
         Inget matsvinn är registrerat för {{ dateSelected }}.
       </div>
@@ -23,7 +25,9 @@
 
 <script>
 import { mapState, mapGetters } from 'vuex';
-import Chart from 'chart.js'; // NOTE! npm package Chart.js
+import Chart from 'chart.js/auto'; // NOTE! npm package Chart.js
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+Chart.register(ChartDataLabels);
 
 export default {
   name: 'GraphTypeFoodWaste',
@@ -103,12 +107,28 @@ export default {
           labels: ['Kökssvinn', 'Serveringssvinn', 'Tallrikssvinn', 'Totalt svinn']
         },
         options: {
-          legend: {
-            display: false
-          },
           scales: {
             y: {
               beginAtZero: true
+            }
+          },
+          plugins: {
+            legend: {
+              display: false
+            },
+            datalabels: {
+              color: 'white',
+              labels: {
+                title: {
+                  font: {
+                    weight: 'bold',
+                    size: '20pt'
+                  }
+                }
+              },
+              formatter: function (value, context) {
+                return value + ' g';
+              }
             }
           }
         }

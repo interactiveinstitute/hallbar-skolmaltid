@@ -14,7 +14,7 @@
             <q-chip :color="course.co2Equivalents > 0.5 ? 'negative' : 'positive'" text-color="white" dense>
               {{ course.co2Equivalents }} kg CO2e
             </q-chip>
-            {{ course.co2Equivalents / 0.5 * 100 }}% av <a href="https://www.wwf.se/mat-och-jordbruk/one-planet-plate/" target="_blank">
+            {{ Math.round(course.co2Equivalents / 0.5 * 100 * 100) / 100 }}% av <a href="https://www.wwf.se/mat-och-jordbruk/one-planet-plate/" target="_blank">
               WWFs klimatbudget per måltid</a> (0.5 kg CO2e).
           </div>
           <div class="flex row">
