@@ -41,7 +41,7 @@
         </q-tr>
       </template>
       <template v-slot:bottom-row>
-        <q-tr class="bg-blue-2">
+        <q-tr class="bg-blue-1 text-primary text-italic">
           <q-td>
             Medelvärden
           </q-td>
@@ -196,4 +196,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.means{
+  border-top: 1px solid dodgerblue;
+}
 </style>
