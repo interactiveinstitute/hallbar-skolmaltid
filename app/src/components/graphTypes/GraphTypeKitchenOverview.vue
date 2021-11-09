@@ -14,7 +14,7 @@
       hide-pagination
     >
       <template v-slot:body="props">
-        <q-tr :props="props" class="cursor-pointer" :class="{'bg-grey-3': props.row.date === dateToday && props.row.date !== dateSelected, 'bg-blue-2': props.row.date === dateSelected} " @click="onRowClick(props.row)">
+        <q-tr :props="props" class="cursor-pointer" :class="{'bg-grey-3': props.row.date === dateToday && props.row.date !== dateSelected, 'bg-green-2': props.row.date === dateSelected} " @click="onRowClick(props.row)">
           <q-td key="date" :props="props">
             {{ props.row.date }}
           </q-td>
@@ -37,6 +37,26 @@
           </q-td>
           <q-td key="waste" :props="props">
             {{ props.row.waste }}
+          </q-td>
+        </q-tr>
+      </template>
+      <template v-slot:bottom-row>
+        <q-tr class="bg-blue-2">
+          <q-td>
+            Medelvärden
+          </q-td>
+          <q-td />
+          <q-td />
+          <q-td>
+            {{ means.kcal }}
+          </q-td>
+          <q-td>
+            <q-chip v-if="means.co2" :color="means.co2 > 0.5 ? 'negative' : 'positive'" text-color="white" dense>
+              {{ means.co2 }}
+            </q-chip>
+          </q-td>
+          <q-td>
+            {{ means.waste }}
           </q-td>
         </q-tr>
       </template>
@@ -114,6 +134,28 @@ export default {
         }
         return row;
       });
+    },
+    means () {
+      const m = {
+        kcal: 0,
+        co2: 0,
+        waste: 0
+      };
+      let n = 0;
+      this.rows.forEach(r => {
+        if (r.name) {
+          console.log(r);
+          m.kcal += r.kcal;
+          m.co2 += r.co2;
+          m.waste += r.waste;
+          n++;
+        }
+      });
+      m.kcal = Math.round(m.kcal / n * 100) / 100;
+      m.co2 = Math.round(m.co2 / n * 100) / 100;
+      m.waste = Math.round(m.waste / n * 100) / 100;
+      console.log(m);
+      return m;
     }
   },
   watch: {
