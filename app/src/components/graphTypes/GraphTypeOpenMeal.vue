@@ -36,7 +36,7 @@
               <span v-else>Inga allergener</span>
             </div>
             <div class="col">
-              <h4>Näringsämnen <span class="text-grey-8">(g/normalpotion)</span></h4>
+              <h4>Näringsämnen <span class="text-grey-8">(per normalpotion)</span></h4>
               <div v-for="(nut, iNut) in course.nutrients" :key="iNut">
                 <strong>{{ nut.name }}: </strong> {{ nut.amount }} {{ nut.unit }}
               </div>
