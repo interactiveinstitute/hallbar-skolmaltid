@@ -11,7 +11,7 @@
           <h3> {{ course.name }}</h3>
           <h4>Klimatavtryck <span class="text-grey-8">(kg CO2e/normalpotion)</span></h4>
           <div>
-            <q-chip :color="course.co2Equivalents > 0.5 ? 'negative' : 'positive'" text-color="white" dense>
+            <q-chip :color="CO2eToColor(course.co2Equivalents)" text-color="white" dense>
               {{ course.co2Equivalents }} kg CO2e
             </q-chip>
             {{ Math.round(course.co2Equivalents / 0.5 * 100 * 100) / 100 }}% av <a href="https://www.wwf.se/mat-och-jordbruk/one-planet-plate/" target="_blank">
