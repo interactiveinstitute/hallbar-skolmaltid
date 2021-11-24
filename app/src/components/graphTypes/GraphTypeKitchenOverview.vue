@@ -31,7 +31,7 @@
             {{ props.row.kcal }}
           </q-td>
           <q-td key="co2" :props="props">
-            <q-chip v-if="props.row.co2" :color="props.row.co2 > 0.5 ? 'negative' : 'positive'" text-color="white" dense>
+            <q-chip v-if="props.row.co2" :color="CO2eToColor(props.row.co2)" text-color="white" dense>
               {{ props.row.co2 }}
             </q-chip>
           </q-td>
@@ -51,7 +51,7 @@
             {{ means.kcal }}
           </q-td>
           <q-td>
-            <q-chip v-if="means.co2" :color="means.co2 > 0.5 ? 'negative' : 'positive'" text-color="white" dense>
+            <q-chip v-if="means.co2" :color="CO2eToColor(means.co2)" text-color="white" dense>
               {{ means.co2 }}
             </q-chip>
           </q-td>
@@ -67,7 +67,7 @@
 <script>
 import { mapState, mapGetters } from 'vuex';
 import { subDays, addDays } from 'date-fns';
-// import backendUtils from '../../js/backend-utils';
+import utils from '../../js/utils';
 // import Chart from 'chart.js'; // NOTE! npm package Chart.js
 
 export default {
@@ -125,7 +125,7 @@ export default {
         if (m) {
           row.name = m.courses[0].name;
           row.allergens = m.courses[0].possibleAllergens.join(', ');
-          row.kcal = m.courses[0].nutrients.find(n => n.unit === 'kcal').amount;
+          row.kcal = Math.round(m.courses[0].nutrients.find(n => n.unit === 'kcal').amount);
           row.co2 = m.courses[0].co2Equivalents;
         }
         const w = this.waste.find(w => w.date.substring(0, 10) === d);
@@ -189,6 +189,9 @@ export default {
     },
     onRowClick (row) {
       this.$store.commit('user/selectDate', { date: row.date });
+    },
+    CO2eToColor (val) {
+      return utils.CO2eToColor(val);
     }
   }
 };

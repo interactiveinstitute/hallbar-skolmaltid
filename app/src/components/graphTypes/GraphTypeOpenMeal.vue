@@ -54,7 +54,7 @@
 <script>
 import { mapState, mapGetters } from 'vuex';
 // import { format } from 'date-fns';
-// import backendUtils from '../../js/backend-utils';
+import utils from '../../js/utils';
 // import Chart from 'chart.js'; // NOTE! npm package Chart.js
 
 export default {
@@ -113,6 +113,9 @@ export default {
           school: this.schoolSelectedId
         }
       });
+    },
+    CO2eToColor (val) {
+      return utils.CO2eToColor(val);
     }
   }
 };
