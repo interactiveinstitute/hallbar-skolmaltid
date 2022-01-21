@@ -1,12 +1,12 @@
 <template>
   <div class="Board">
     <div>
-      <h1>{{ board.name }}</h1>
-      <div class="sticky bg-white q-pt-md q-pb-md text-bold">
+      <h1>{{ board.name }}: {{ schoolSelected.name }} </h1>
+      <div class="bg-white q-pt-md q-pb-md text-bold">
         <label>Datum: <input v-model="dateSelected" required type="date"> </label>
       </div>
       <div class="boards">
-        <div v-for="(graph, i) in graphs" :key="i">
+        <div v-for="(graph, i) in graphs" :key="i" class="of">
           <component :is="graph.refGraphType" :graph="graph" />
         </div>
       </div>
@@ -85,19 +85,12 @@ pre {
   margin: 10px;
 }
 
-.boards {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
 .boards > div {
-  flex: 1 0 50%;
   border: 0px solid rgb(240, 240, 240);
   margin-bottom: 10px;
 }
 
 .sticky {
-  border-bottom: 1px solid dodgerblue;
+  border-bottom: 0px solid dodgerblue;
 }
 </style>

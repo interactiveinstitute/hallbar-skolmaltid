@@ -30,7 +30,18 @@ const weekdays = dates => {
   });
 };
 
+const CO2eToColor = (val) => {
+  if (val < 0.5) {
+    return 'positive';
+  } else if (val < 1.4) {
+    return 'yellow-9';
+  } else {
+    return 'negative';
+  }
+};
+
 export default {
   getDatesArray,
-  weekdays
+  weekdays,
+  CO2eToColor
 };

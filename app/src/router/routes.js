@@ -26,8 +26,15 @@ const routes = [
       },
       {
         name: 'AppBoards',
-        path: 'oversikt',
-        component: () => import('pages/PageDashboard.vue')
+        path: 'braden',
+        component: () => import('pages/PageDashboard.vue'),
+        children: [
+          // {
+          //   name: 'AppBoard',
+          //   path: ':id',
+          //   component: () => import('pages/PageBoard.vue')
+          // }
+        ]
       },
       {
         name: 'AppSettings',
@@ -36,7 +43,7 @@ const routes = [
       },
       {
         name: 'AppBoard',
-        path: 'brade/:id',
+        path: 'braden/:id',
         component: () => import('pages/PageBoard.vue')
       },
       {

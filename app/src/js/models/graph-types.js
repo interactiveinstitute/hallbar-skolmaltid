@@ -19,7 +19,7 @@ const graphTypes = {
   graphTypeAttendanceLongterm: GraphTypeAttendanceLongterm,
   graphTypeOpenMeal: GraphTypeOpenMeal,
   graphTypeFoodWaste: GraphTypeFoodWaste,
-  GraphTypeKitchenOverview: GraphTypeKitchenOverview
+  graphTypeKitchenOverview: GraphTypeKitchenOverview
 };
 
 export default function (type) {

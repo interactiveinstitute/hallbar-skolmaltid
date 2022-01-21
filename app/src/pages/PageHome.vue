@@ -7,10 +7,13 @@
         anmält frånvaro och ifall dessa äter specialkost.
       </p>
       <p>
-        Du kan se anmäld frånvaro och beräknad närvaro för dagens såväl som
-        framtida datum.
+        Du kan även se menyn för dagen eller för veckan samt allergener, energi, klimatavtryck, näringsinnehåll och matsvinn för varje rätt.
       </p>
-      <img src="~assets/graphics/Scenario_Attendance.png">
+      <q-img src="~assets/graphics/Scenario_Attendance.png" class="border">
+        <div class="absolute-bottom text-center">
+          Se anmäld frånvaro och planera skolmåltiderna därefter. En av flera funktioner i portalen.
+        </div>
+      </q-img>
     </div>
   </q-page>
 </template>
@@ -33,8 +36,8 @@ export default {
 .PageHome {
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+.border{
+  border: 1px solid gray;
 }
+
 </style>

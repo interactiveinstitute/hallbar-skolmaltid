@@ -2,17 +2,19 @@
   <div v-if="graph.endpointData" class="GraphTypeFoodWaste">
     <div class="info">
       <h2 class="text-white">
-        Matsvinn
+        Matsvinn ({{ dateSelected }})
       </h2>
       <p>
-        Matsvinn i gram/person för {{ schoolSelected.name }} {{ dateSelected }}.
+        Matsvinn i gram/person för {{ schoolSelected.name }}.
       </p>
     </div>
-    <div v-if="wasteSelectedDate" class="border q-pa-md">
-      <canvas :id="'chart' + _uid" ref="canvas" />
-    </div>
-    <div v-else>
-      Inget matsvinn är registrerat för {{ dateSelected }}.
+    <div class="border q-pa-md">
+      <div>
+        <canvas :id="'chart' + _uid" ref="canvas" />
+      </div>
+      <div v-if="!wasteSelectedDate" class="text-negative">
+        Inget matsvinn är registrerat för {{ dateSelected }}.
+      </div>
     </div>
 
     <!--pre>
@@ -23,7 +25,9 @@
 
 <script>
 import { mapState, mapGetters } from 'vuex';
-import Chart from 'chart.js'; // NOTE! npm package Chart.js
+import Chart from 'chart.js/auto'; // NOTE! npm package Chart.js
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+Chart.register(ChartDataLabels);
 
 export default {
   name: 'GraphTypeFoodWaste',
@@ -81,7 +85,6 @@ export default {
     },
     loadData: function () {
       // Required method for all graph types
-      console.log('Load data', this.schoolSelectedId);
       this.$store.dispatch('graphs/setGraphData', {
         graph: this.graph,
         endpointDataRequest: {
@@ -104,12 +107,28 @@ export default {
           labels: ['Kökssvinn', 'Serveringssvinn', 'Tallrikssvinn', 'Totalt svinn']
         },
         options: {
-          legend: {
-            display: false
-          },
           scales: {
             y: {
               beginAtZero: true
+            }
+          },
+          plugins: {
+            legend: {
+              display: false
+            },
+            datalabels: {
+              color: 'white',
+              labels: {
+                title: {
+                  font: {
+                    weight: 'bold',
+                    size: '20pt'
+                  }
+                }
+              },
+              formatter: function (value, context) {
+                return value + ' g';
+              }
             }
           }
         }
@@ -121,12 +140,12 @@ export default {
       }
       this.chartTotal.data.datasets = [
         {
-          data: [
-            this.wasteSelectedDate.kitchenWaste * 1000,
-            this.wasteSelectedDate.plateWaste * 1000,
-            this.wasteSelectedDate.servingWaste * 1000,
-            (parseFloat(this.wasteSelectedDate.kitchenWaste) + parseFloat(this.wasteSelectedDate.plateWaste) + parseFloat(this.wasteSelectedDate.servingWaste)) * 1000
-          ],
+          data: this.wasteSelectedDate ? [
+            Math.round(this.wasteSelectedDate.kitchenWaste * 1000 * 100) / 100,
+            Math.round(this.wasteSelectedDate.plateWaste * 1000 * 100) / 100,
+            Math.round(this.wasteSelectedDate.servingWaste * 1000 * 100) / 100,
+            Math.round((parseFloat(this.wasteSelectedDate.kitchenWaste) + parseFloat(this.wasteSelectedDate.plateWaste) + parseFloat(this.wasteSelectedDate.servingWaste)) * 1000 * 100) / 100
+          ] : [0, 0, 0, 0],
           backgroundColor: ['rgb(250, 130, 0)', 'rgb(230, 150, 0)', 'rgb(210, 170, 0)', 'rgb(200, 0, 0)'],
           borderWidth: 0
         }
