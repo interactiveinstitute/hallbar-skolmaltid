@@ -76,6 +76,13 @@ server/docker> docker-compose -f docker-compose.yml -f docker-compose.server.yml
 ```
 
 The first startup takes a while, since all containers are downloaded/built.
+<details style="background-color=grey">
+  <summary> <b>Current issues</b> </summary>
+  
+  - Potential starting timing issues with proxies, they may need a manual start.
+  - The last call from postman init collection not working remotely, use curl locally on server instead.
+  - If all else fails - stop, delete all data directories, delete images, checkout repo version of server/docker/draco folder ... and start again.
+</details>
 
 ### Persistent orion data
 *(Keyrock data currently in a mysql volume)*
